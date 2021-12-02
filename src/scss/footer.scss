@@ -1,0 +1,220 @@
+// start footer
+.footer {
+  background-color: $bg;
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    @include adaptiv-value("row-gap", 25, 15);
+    // row-gap: 15px;
+    column-gap: 15px;
+    justify-content: space-between;
+    padding: resp-value(100, 30) 0px resp-value(80, 25);
+
+    @media (max-width: em($md4)) {
+      flex-direction: column;
+    }
+  }
+
+  &__copy {
+    border-top: 1px solid #424d53;
+  }
+
+  &__copy-text {
+    text-align: center;
+    // font-size: 15px;
+    @include adaptiv-value("font-size", 15, 12);
+
+    color: #919699;
+    padding: resp-value(25, 15) 0px;
+  }
+
+  &__col {
+    // max-width: 270px;
+    // width: 100%;
+
+    &-menu {}
+
+    &-adress {
+      flex: 1 1 100%;
+
+      @media (min-width: em($md2)) {
+        flex: 0 1 270px;
+      }
+    }
+
+    &-title {
+      font-size: 22px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      color: #fff;
+      @include adaptiv-value("padding-bottom", 30, 10);
+      @include adaptiv-value("margin-bottom", 30, 10);
+      // padding-bottom: resp-value(30, 10);
+      // margin-bottom: resp-value(30, 10);
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 2px;
+        width: 51px;
+        height: 3px;
+        background-color: $green;
+      }
+
+      ._init & {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+
+        &::before {
+          content: "\f107";
+          transition: transform .3s;
+          font-family: icons;
+          color: $green;
+          transform: rotate(0deg);
+        }
+      }
+
+      &._active {
+        &::before {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    &-text {
+      color: #b7c3c8;
+      // margin-bottom: 30px;
+      @include adaptiv-value("margin-bottom", 30, 15);
+    }
+  }
+
+  &__info {
+    // margin-top: 18px;
+    font-weight: 500;
+    color: #fff;
+    padding-left: 30px;
+    position: relative;
+
+    &::before {
+      content: '\f041';
+      font-family: 'icons';
+      color: $green;
+      font-size: 18px;
+      position: absolute;
+      left: 0;
+    }
+  }
+
+  &__info-phone {
+    &::before {
+      content: '\f095';
+    }
+  }
+
+  &__col-list {
+    a {
+      margin-bottom: 13px;
+      color: #b7c3c8;
+      padding-left: 22px;
+      position: relative;
+
+      &::before {
+        content: '\f105';
+        color: $green;
+        position: absolute;
+        left: 0;
+        font-size: 18px;
+        font-family: 'icons';
+      }
+    }
+  }
+
+  &__social-link {
+    // margin-bottom: 33px;
+    @include adaptiv-value("margin-bottom", 33, 10);
+
+    li {
+      display: inline-block;
+
+      &+li {
+        margin-left: 7px;
+      }
+    }
+
+    a {
+      width: 28px;
+      height: 28px;
+      background-image: url(../img/css_sprites.png);
+    }
+  }
+
+  &__form-title {
+    margin-bottom: 15px;
+    color: #fff;
+    font-size: 20px;
+  }
+
+  &__form {
+    position: relative;
+
+    input {
+      border: none;
+      background-color: #2f3c43;
+      display: block;
+      width: 100%;
+      height: 40px;
+      color: #fff;
+      font-size: 14px;
+      padding-left: 13px;
+      padding-right: 50px;
+
+      &::placeholder {
+        color: #697378;
+      }
+    }
+
+    button {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-color: $green;
+      border: none;
+      height: 40px;
+      width: 43px;
+      cursor: pointer;
+
+      &::before {
+        content: '\f124';
+        position: absolute;
+        font-family: 'icons';
+        color: #fff;
+        font-size: 20px;
+        top: 11px;
+        left: 13px;
+      }
+    }
+  }
+}
+
+
+.link-twitter {
+  background-position: -28px 0;
+}
+
+.link-youtube {
+  background-position: 0 -28px;
+}
+
+.link-pinterest {
+  background-position: -28px -28px;
+}
+
+.link-linledin {
+  background-position: -56px 0;
+}
+
+// end footer

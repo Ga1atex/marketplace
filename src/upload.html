@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title":"Moderno"
+})
+
+<body>
+  <div class="wrapper">
+    <div class="content page-content">
+      @@include('_header.html',{})
+      <main class="page">
+        <section class="search page-search" style="background-image: url(img/search-bg.jpg);">
+          <div class="container">
+            <div class="search__inner">
+              <div class="search__inner-text">
+                Premium WordPress Themes, Web Templates and Many More ...
+              </div>
+              <div class="search__inner-form">
+                <form>
+                  <input type="text" placeholder="Search Your Keywords . . ." required>
+                  <button type="submit">
+                    <img src="img/icons/search.png" alt="">
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="breadcrumbs">
+          <div class="container">
+            <div class="breadcrumbs__inner">
+              <ul class="breadcrumbs__list">
+                <li><a href="#">Home</a></li>
+                <li><span>About US</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <section class="upload">
+          <div class="container">
+            <form>
+              <div class="upload__inner">
+                <div class="upload__inner-title">Upload Your item</div>
+                <div class="upload__inner-content">
+                  <div class="upload-line">
+                    <label>Select Categories <span>*</span></label>
+                    <select>
+                      <option>Select</option>
+                      <option>Select</option>
+                      <option>Select</option>
+                      <option>Select</option>
+                    </select>
+                  </div>
+                  <div class="upload-line">
+                    <label>Product Namespan <span>*</span></label>
+                    <input type="text" placeholder="Enter your product name here ..." required>
+                  </div>
+                  <div class="upload-line">
+                    <label>Product Description <span>*</span></label>
+                    <textarea placeholder="<h1> Type your text  here </h1>" required></textarea>
+                  </div>
+                  <div class="upload-line">
+                    <label>Upload Main File <span>*</span></label>
+                    <input type="file" required data-placeholder="No File Choosen" data-browse="Choose File">
+                  </div>
+                  <div class="upload-line">
+                    <label>Upload Screenshots <span>*</span></label>
+                    <input type="file" required data-placeholder="No File Choosen" data-browse="Choose File">
+                  </div>
+                  <div class="upload-line">
+                    <label>File Included <span>*</span></label>
+                    <select>
+                      <option value="">Select File Type</option>
+                      <option value="">Select File Type </option>
+                      <option value="">Select File Type </option>
+                      <option value="">Select File Type </option>
+                    </select>
+                  </div>
+                  <div class="upload-line">
+                    <label>File Dimensions <span>*</span></label>
+                    <input type="text" placeholder="Enter the item  dimentionss here ..." required>
+                  </div>
+                  <div class="upload-line">
+                    <label>Item Tagsspan <span>*</span></label>
+                    <input type="text" placeholder="Enter Tag Here" required>
+                  </div>
+                </div>
+                <div class="upload__inner-title">Set Your Price (US$)</div>
+                <div class="upload__inner-content">
+                  <div class="upload-line">
+                    <label>Regular License <span>*</span></label>
+                    <input type="text" placeholder="$00.00" required>
+                  </div>
+                  <div class="upload-line">
+                    <label>Extended License <span>*</span></label>
+                    <input type="text" placeholder="$00.00" required>
+                  </div>
+                  <button type="submit">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+
+
+    </div>
+    </main>
+    @@include('_footer.html',{})
+  </div>
+  @@include('_popup.html',{})
+  @@include('_js.html',{})
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title":"Moderno"
+})
+
+<body>
+  <div class="wrapper">
+    <div class="content page-content">
+      @@include('_header.html',{})
+      <main class="page">
+        <section class="search page-search" style="background-image: url(img/search-bg.jpg);">
+          <div class="container">
+            <div class="search__inner">
+              <div class="search__inner-text">
+                Premium WordPress Themes, Web Templates and Many More ...
+              </div>
+              <div class="search__inner-form">
+                <form>
+                  <input type="text" placeholder="Search Your Keywords . . ." required>
+                  <button type="submit">
+                    <img src="img/icons/search.png" alt="">
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="breadcrumbs">
+          <div class="container">
+            <div class="breadcrumbs__inner">
+              <ul class="breadcrumbs__list">
+                <li><a href="#">Home</a></li>
+                <li><span>404 Page</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-404">
+
+          <div class="container">
+            <div class="page-404__wrapper page__block-wrapper">
+              <div class="page-404__head page__block-title">
+                Error Page
+              </div>
+              <div class="page-404__inner">
+                <div class="page-404__404">
+                  404
+                  <div class="page-404__img"><img src="img/page-404.png" alt=""></div>
+                </div>
+                <div class="page-404__title">Sorry Page Was Not Found</div>
+                <div class="page-404__text">
+                  <p>The page you are looking is not available or has been removed.</p>
+                  <p>Try going to Home Page by using the button below.</p>
+                </div>
+                <a href="#" class="page-404__link">Go To Home Page</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+    </main>
+    @@include('_footer.html',{})
+  </div>
+  @@include('_popup.html',{})
+  @@include('_js.html',{})
+</body>
+
+</html>
