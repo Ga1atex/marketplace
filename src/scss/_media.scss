@@ -516,7 +516,7 @@
   .header__btn-menu {
     width: 70px;
     height: 70px;
-    background-color: $bg;
+    background-color: $mainColor;
     position: absolute;
     right: 0;
     top: 0;
@@ -557,7 +557,7 @@
     top: 24px;
 
     div {
-      background-color: $bg;
+      background-color: $mainColor;
     }
   }
 

@@ -1,19 +1,42 @@
 .pagging {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	// justify-content: center;
+
 	// .pagging__arrow
-	&__arrow {
-	}
+	&__arrow {}
+
 	// .pagging__list
 	&__list {
 		display: flex;
+
 		li {
+
+			&:not(:last-child) {
+				margin-right: 6px;
+			}
+
+			a,
+			span {
+				box-shadow: 0px 1px 2px 0px rgba(205, 214, 222, 0.75);
+				width: 43px;
+				height: 38px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: #fff;
+				font-size: 16px;
+				color: $mainColor;
+				font-weight: 500;
+			}
 		}
 	}
+
 	// .pagging__item
 	&__item {
 		&._active {
+			background-color: $red;
+			color: #fff;
 		}
 	}
 }

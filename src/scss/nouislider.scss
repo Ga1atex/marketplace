@@ -137,8 +137,7 @@
 	background-color: #f2f5f8; //color of inactive line
 	// margin: 0px 8px; // half of the handle width
 	position: relative;
-
-	margin-bottom: 50px;
+	@include adaptiv-value("margin-bottom", 55, 30);
 	display: flex;
 
 	&::before,
