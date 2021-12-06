@@ -1512,7 +1512,7 @@ if (priceSlider) {
 		priceSlider.noUiSlider.set([priceStartValue, priceEndValue]);
 	}
 }
-//BildSlider
+//Build Slider
 
 let sliders = document.querySelectorAll('._swiper');
 if (sliders) {
@@ -1576,7 +1576,7 @@ if (sliderScrollItems.length > 0) {
 
 function sliders_bild_callback(params) { }
 
-// MINE CODE
+// Settings
 if (document.querySelector('.product-slider__inner')) {
 	new Swiper('.product-slider__inner', {
 		observer: true,
@@ -1585,9 +1585,9 @@ if (document.querySelector('.product-slider__inner')) {
 		slidesPerGroup: 4,
 		spaceBetween: 30,
 		speed: 800,
-		// loop: true,
+		loop: true,
 		watchOverflow: true,
-		// loopAdditionalSlides: 5,
+		// loopAdditionalSlides: 4,
 		preloadImages: false,
 		// parallax: true,
 		// dots
@@ -1716,10 +1716,10 @@ window.onload = function () {
   }
 
 
-  // $('.product-one__tabs .tab, .settings__tabs .tab').on('click', function (event) {
+  // $('.product-details__tabs .tab, .settings__tabs .tab').on('click', function (event) {
   //   var id = $(this).attr('data-id');
-  //   $('.product-one__tabs, .settings__tabs').find('.tab-item').removeClass('active-tab').hide();
-  //   $('.product-one__tabs .tabs, .settings__tabs .tabs').find('.tab').removeClass('active');
+  //   $('.product-details__tabs, .settings__tabs').find('.tab-item').removeClass('active-tab').hide();
+  //   $('.product-details__tabs .tabs, .settings__tabs .tabs').find('.tab').removeClass('active');
   //   $(this).addClass('active');
   //   $('#' + id).addClass('active-tab').fadeIn();
   //   return false;

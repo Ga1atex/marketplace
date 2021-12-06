@@ -28,6 +28,12 @@
 				font-size: 16px;
 				color: $mainColor;
 				font-weight: 500;
+				transition: background-color .3s;
+
+				&:hover:not(._active) {
+					background-color: #ddd;
+				}
+
 			}
 		}
 	}

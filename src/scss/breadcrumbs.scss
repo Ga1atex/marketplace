@@ -1,0 +1,33 @@
+.breadcrumbs {
+  &__inner {
+    padding: resp-value(50, 20) 0 resp-value(40, 20);
+    // font-size: resp-value(16, 14);
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      position: relative;
+      display: flex;
+      @include adaptiv-value("font-size", 16, 14);
+      color: #b0bec5;
+
+      &:not(:last-child) {
+        &::after {
+          content: '-';
+          // padding: 0 em(8);
+          @include adaptiv-value("padding-left", 8, 4);
+          @include adaptiv-value("padding-right", 8, 4);
+          color: $green;
+        }
+      }
+
+      &:last-child {
+        color: $mainColor;
+        pointer-events: none;
+      }
+    }
+  }
+}

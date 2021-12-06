@@ -1,4 +1,4 @@
-//BildSlider
+//Build Slider
 
 let sliders = document.querySelectorAll('._swiper');
 if (sliders) {
@@ -62,7 +62,7 @@ if (sliderScrollItems.length > 0) {
 
 function sliders_bild_callback(params) { }
 
-// MINE CODE
+// Settings
 if (document.querySelector('.product-slider__inner')) {
 	new Swiper('.product-slider__inner', {
 		observer: true,
@@ -71,9 +71,9 @@ if (document.querySelector('.product-slider__inner')) {
 		slidesPerGroup: 4,
 		spaceBetween: 30,
 		speed: 800,
-		// loop: true,
+		loop: true,
 		watchOverflow: true,
-		// loopAdditionalSlides: 5,
+		// loopAdditionalSlides: 4,
 		preloadImages: false,
 		// parallax: true,
 		// dots

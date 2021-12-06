@@ -6,161 +6,149 @@
 
 <body>
   <div class="wrapper">
-    <div class="page-content">
-      @@include('_header.html',{})
-      <main class="page">
-        <section class="search page-search" style="background-image: url(img/search-bg.jpg);">
-          <div class="container">
-            <div class="search__inner">
-              <div class="search__inner-text">
-                Premium WordPress Themes, Web Templates and Many More ...
-              </div>
-              <div class="search__inner-form">
-                <form>
-                  <input type="text" placeholder="Search Your Keywords . . ." required>
-                  <button type="submit">
-                    <img src="img/icons/search.png" alt="">
-                  </button>
-                </form>
-              </div>
+    @@include('_header.html',{})
+    <main class="page">
+      <section class="search page-search" style="background-image: url(img/search-bg.jpg);">
+        <div class="container">
+          <div class="search__inner">
+            <div class="search__inner-text">
+              Premium WordPress Themes, Web Templates and Many More ...
             </div>
-          </div>
-        </section>
-        <div class="breadcrumbs">
-          <div class="container">
-            <div class="breadcrumbs__inner">
-              <ul class="breadcrumbs__list">
-                <li><a href="#">Home</a></li>
-                <li><span>Settings</span></li>
-              </ul>
+            <div class="search__inner-form">
+              <form>
+                <input type="text" placeholder="Search Your Keywords . . ." required>
+                <button type="submit">
+                  <img src="img/icons/search.png" alt="">
+                </button>
+              </form>
             </div>
           </div>
         </div>
+      </section>
+      @@include('_breadcrumbs.html', {arr: [["Settings"]]})
 
-        <section class="settings">
-          <div class="container">
-            <div class="product-one__tabs settings__tabs">
-              <div class="tabs">
-                <span class="tab active angle-right" data-id="1">Personal Information</span>
-                <span class="tab angle-right" data-id="2">Profile</span>
-                <span class="tab angle-right" data-id="3">Badges</span>
-                <span class="tab angle-right" data-id="4">E-mail Settings</span>
-                <span class="tab angle-right" data-id="5">Social Network</span>
+
+      <section class="settings">
+        <div class="container">
+          <div class="product-details__tabs settings__tabs">
+            <div class="tabs">
+              <span class="tab active angle-right" data-id="1">Personal Information</span>
+              <span class="tab angle-right" data-id="2">Profile</span>
+              <span class="tab angle-right" data-id="3">Badges</span>
+              <span class="tab angle-right" data-id="4">E-mail Settings</span>
+              <span class="tab angle-right" data-id="5">Social Network</span>
+            </div>
+            <div class="tab_content">
+              <div class="tab-item active-tab" id="1">
+                <div class="page-box">
+                  <div class="page-box__title">
+                    Personal Information
+                  </div>
+                  <div class="page-box__content">
+                    <form>
+                      <div class="settings__line">
+                        <label>First Name</label>
+                        <input type="text">
+                      </div>
+                      <div class="settings__line">
+                        <label>First Name</label>
+                        <input type="text">
+                      </div>
+                      <div class="settings__line">
+                        <label>Company Name</label>
+                        <input type="text">
+                      </div>
+                      <div class="settings__line">
+                        <label>Country</label>
+                        <select>
+                          <option>Select Your Country</option>
+                          <option>Select Your Country</option>
+                        </select>
+                      </div>
+                      <div class="settings__line">
+                        <label>Address Line 1</label>
+                        <input type="text">
+                      </div>
+                      <div class="settings__line">
+                        <label>Address Line 2</label>
+                        <input type="text">
+                      </div>
+                      <div class="settings__line">
+                        <label>City</label>
+                        <input type="text">
+                      </div>
+                      <div class="settings__line">
+                        <label>State / Province / Region</label>
+                        <input type="text">
+                      </div>
+                      <div class="settings__line">
+                        <label>Zip / Postal Code</label>
+                        <input type="text">
+                      </div>
+                    </form>
+                  </div>
+                </div>
               </div>
-              <div class="tab_content">
-                <div class="tab-item active-tab" id="1">
-                  <div class="page-box">
-                    <div class="page-box__title">
-                      Personal Information
-                    </div>
-                    <div class="page-box__content">
-                      <form>
-                        <div class="settings__line">
-                          <label>First Name</label>
-                          <input type="text">
-                        </div>
-                        <div class="settings__line">
-                          <label>First Name</label>
-                          <input type="text">
-                        </div>
-                        <div class="settings__line">
-                          <label>Company Name</label>
-                          <input type="text">
-                        </div>
-                        <div class="settings__line">
-                          <label>Country</label>
-                          <select>
-                            <option>Select Your Country</option>
-                            <option>Select Your Country</option>
-                          </select>
-                        </div>
-                        <div class="settings__line">
-                          <label>Address Line 1</label>
-                          <input type="text">
-                        </div>
-                        <div class="settings__line">
-                          <label>Address Line 2</label>
-                          <input type="text">
-                        </div>
-                        <div class="settings__line">
-                          <label>City</label>
-                          <input type="text">
-                        </div>
-                        <div class="settings__line">
-                          <label>State / Province / Region</label>
-                          <input type="text">
-                        </div>
-                        <div class="settings__line">
-                          <label>Zip / Postal Code</label>
-                          <input type="text">
-                        </div>
-                      </form>
-                    </div>
+              <div class="tab-item" id="2">
+                <div class="page-box">
+                  <div class="page-box__title">
+                    Personal Information
+                  </div>
+                  <div class="page-box__content">
+                    <form>
+                      <div class="settings__line">
+                        <label>First Name</label>
+                        <input type="text">
+                      </div>
+                      <div class="settings__line">
+                        <label>First Name</label>
+                        <input type="text">
+                      </div>
+                      <div class="settings__line">
+                        <label>Company Name</label>
+                        <input type="text">
+                      </div>
+                      <div class="settings__line">
+                        <label>Country</label>
+                        <select>
+                          <option>Select Your Country</option>
+                          <option>Select Your Country</option>
+                        </select>
+                      </div>
+                      <div class="settings__line">
+                        <label>Address Line 1</label>
+                        <input type="text">
+                      </div>
+                      <div class="settings__line">
+                        <label>Address Line 2</label>
+                        <input type="text">
+                      </div>
+                      <div class="settings__line">
+                        <label>City</label>
+                        <input type="text">
+                      </div>
+                      <div class="settings__line">
+                        <label>State / Province / Region</label>
+                        <input type="text">
+                      </div>
+                      <div class="settings__line">
+                        <label>Zip / Postal Code</label>
+                        <input type="text">
+                      </div>
+                    </form>
                   </div>
                 </div>
-                <div class="tab-item" id="2">
-                  <div class="page-box">
-                    <div class="page-box__title">
-                      Personal Information
-                    </div>
-                    <div class="page-box__content">
-                      <form>
-                        <div class="settings__line">
-                          <label>First Name</label>
-                          <input type="text">
-                        </div>
-                        <div class="settings__line">
-                          <label>First Name</label>
-                          <input type="text">
-                        </div>
-                        <div class="settings__line">
-                          <label>Company Name</label>
-                          <input type="text">
-                        </div>
-                        <div class="settings__line">
-                          <label>Country</label>
-                          <select>
-                            <option>Select Your Country</option>
-                            <option>Select Your Country</option>
-                          </select>
-                        </div>
-                        <div class="settings__line">
-                          <label>Address Line 1</label>
-                          <input type="text">
-                        </div>
-                        <div class="settings__line">
-                          <label>Address Line 2</label>
-                          <input type="text">
-                        </div>
-                        <div class="settings__line">
-                          <label>City</label>
-                          <input type="text">
-                        </div>
-                        <div class="settings__line">
-                          <label>State / Province / Region</label>
-                          <input type="text">
-                        </div>
-                        <div class="settings__line">
-                          <label>Zip / Postal Code</label>
-                          <input type="text">
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-item" id="3">
+              </div>
+              <div class="tab-item" id="3">
 
-                </div>
-                <div class="tab-item" id="4">
+              </div>
+              <div class="tab-item" id="4">
 
-                </div>
               </div>
             </div>
           </div>
-        </section>
-
-
-    </div>
+        </div>
+      </section>
     </main>
     @@include('_footer.html',{})
   </div>

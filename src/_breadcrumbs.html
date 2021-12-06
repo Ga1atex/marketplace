@@ -1,0 +1,20 @@
+<div class="breadcrumbs">
+	<div class="container">
+		<div class="breadcrumbs__inner">
+			<ul class="breadcrumbs__list">
+				<li><a href="/">Home</a></li> <!-- IF statements inside FOR don't work-->
+				@@if (context.arr) {
+
+				@@if(Array.isArray(context.arr)) {
+				@@for (var i = 0; i < arr.length; i++) { <li><a href="`+(arr[i][1] || '')+`">`+arr[i][0]+`</a></li>
+					}
+					}
+					}
+					@@if(!Array.isArray(context.arr)) {
+					<li><span>@@arr</span></li>
+					}
+
+			</ul>
+		</div>
+	</div>
+</div>

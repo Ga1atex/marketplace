@@ -20,10 +20,6 @@ a {
 	}
 }
 
-.page-content {
-	background-color: $grey;
-}
-
 .title {
 	text-align: center;
 	color: $mainColor;
@@ -38,38 +34,7 @@ a {
 	margin-right: 13px;
 }
 
-.breadcrumbs {
-	&__inner {
-		padding: resp-value(50, 20) 0 resp-value(40, 20);
-		// font-size: resp-value(16, 14);
-	}
 
-	&__list {
-		display: flex;
-		flex-wrap: wrap;
-
-		li {
-			position: relative;
-			display: flex;
-			@include adaptiv-value("font-size", 16, 12);
-			color: #b0bec5;
-
-			&:not(:last-child) {
-				&::after {
-					content: '-';
-					// padding: 0 em(8);
-					@include adaptiv-value("padding-left", 8, 4);
-					@include adaptiv-value("padding-right", 8, 4);
-					color: $green;
-				}
-			}
-
-			&:last-child {
-				color: $mainColor;
-			}
-		}
-	}
-}
 
 .angle-right {
 	position: relative;
@@ -290,7 +255,10 @@ ol.counter {
 //====================================================================================================
 ._ibg {
 	position: relative;
+	// if invisible then use setup width
+	// width: 100%;
 
+	// overflow: hidden;
 	img {
 		position: absolute;
 		width: 100%;
@@ -298,6 +266,11 @@ ol.counter {
 		top: 0;
 		left: 0;
 		object-fit: cover;
+		// margin: auto;
+		// right: 0;
+		// bottom: 0;
+		// height: auto;
+		// unccomment to use it without ojbect-fit
 	}
 }
 

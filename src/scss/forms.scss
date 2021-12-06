@@ -1,14 +1,61 @@
 //<FORM ()>====================================================================================================
 .form {
-	&__row {}
+
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		column-gap: 30px;
+	}
 
 	&__column {}
 
 	&__line {}
 
-	&__input {}
+	&__input {
+		border: none;
+		height: 43px;
+		padding-left: 17px;
+		padding-right: 17px;
+		background-color: #f1f4f5;
+		// width: 350px;
+		flex: 1 1 auto;
+		display: block;
+		@include adaptiv-value("margin-bottom", 30, 15);
 
-	&__button {}
+		&::placeholder {
+			font-size: 15px;
+			color: #7a7a7a;
+		}
+	}
+
+	&__textarea {
+		border: none;
+		padding: 13px 17px;
+		height: 190px;
+		background-color: #f1f4f5;
+		width: 100%;
+		display: block;
+		resize: none;
+		margin-bottom: 23px;
+
+		&::placeholder {
+			font-size: 15px;
+			color: #7a7a7a;
+		}
+	}
+
+	&__btn {
+		border: none;
+		background-color: $green;
+		font-size: 16px;
+		text-transform: uppercase;
+		text-align: center;
+		font-weight: 700;
+		color: #fff;
+		padding: 20px 5px;
+		width: 190px;
+	}
 
 	&__error {}
 }
@@ -20,13 +67,13 @@
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
-
+	cursor: pointer;
+	color: #fff;
 	transition: all .3s;
 	text-align: center;
-	// padding: 0px 30px;
-	@include adaptiv-value('padding-left', 30, 15, 1);
-	@include adaptiv-value('padding-right', 30, 15, 1);
+	padding: 0px 5px;
 	min-height: 32px;
+
 
 	// .btn_white
 	&_white {
@@ -62,52 +109,60 @@
 //<SELECT (sel+tab)>====================================================================================================
 .select {
 	position: relative;
-	line-height: 1em;
+	line-height: 130%;
+
 
 	// .select__item
 	&__item {
 		position: relative;
-	}
 
-	// .select__title
-	&__title {
-		color: #000;
-		border: 1px solid #d9d9d9;
-		background-color: #fff;
-		cursor: pointer;
-		border-radius: 4px;
+		font-size: 13px;
 
 		@media (max-width: ($md2+px)) {
 			font-size: 18px;
 		}
 	}
 
+	// .select__title
+	&__title {
+		color: #70838d;
+		border: 1px solid #d9d9d9;
+		background-color: #fff;
+		cursor: pointer;
+		// border-radius: 4px;
+	}
+
 	// .select__value
 	&__value {
 		display: flex;
-		font-size: 14px;
 		// height: 30px;
-		height: 2em;
-		padding: 0px 15px;
+		// height: 2em;
+		min-height: 25px;
+		// line-height: 1em;
+		padding: 0px 10px;
 		align-items: center;
 		justify-content: space-between;
 		flex-direction: row-reverse;
 
 		span {
-			height: 1em;
+			// height: 1em;
 			overflow: hidden;
 			display: -webkit-box;
 			-webkit-line-clamp: 1;
 			-webkit-box-orient: vertical;
+			padding-right: 10px;
+
 		}
 
 		&::before {
-			content: "";
-			display: inline-block;
+			content: "\f0d7";
+			font-family: 'icons';
+			// content: "";
+			// background: url("../img/icons/arrow-down.svg") center / 100% no-repeat;
+			color: $green;
 			transition: all 0.3s ease 0s;
-			width: 11px;
-			height: 7px;
-			background: url("../img/icons/arrow-down.svg") center / 100% no-repeat;
+			// width: 11px;
+			// height: 7px;
 		}
 	}
 
@@ -119,36 +174,37 @@
 
 	// .select__options
 	&__options {
-		color: #000;
+		// color: #000;
 		position: absolute;
 		// top: 29px;
 		top: calc(100% - 1px);
-		border-radius: 0 0 4px 4px;
+		// border-radius: 0 0 4px 4px;
 		min-width: 100%;
 		left: 0;
 		background-color: #fff;
 		border-top: 0;
 		border: 1px solid #d9d9d9;
 		border-top: 0;
-		font-size: 14px;
+		// font-size: 14px;
 		// padding: 10px 0px 5px 0px;
 
-		@media (max-width: ($md2+px)) {
-			font-size: 18px;
-		}
+		// @media (max-width: ($md2+px)) {
+		// 	font-size: 18px;
+		// }
 	}
 
 	// .select__option
 	&__option {
 		cursor: pointer;
 		// padding: 5px 15px;
-		padding: 0 15px;
-		line-height: 2em;
+		padding: 0 10px;
+		line-height: 1.5em;
 		margin: 0px 0px 0px 0px;
 
 		@media (min-width: 992px) {
 			&:hover {
 				background: #d9d9d9;
+				color: $mainColor;
 			}
 		}
 	}
@@ -471,5 +527,5 @@ textarea.input {
 //</QUANTITY>====================================================================================================
 
 //<RANGE>====================================================================================================
-
+//nouislider.scss
 //</RANGE>====================================================================================================

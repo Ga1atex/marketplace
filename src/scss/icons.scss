@@ -13,7 +13,7 @@
 [class*=" icon-"] {
 	&:before {
 		@extend %ic;
-		display: block;
+		display: inline-block;
 	}
 }
 
