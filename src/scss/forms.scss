@@ -1,27 +1,84 @@
+//<BUTTONS (a.btn+tab)>====================================================================================================
+.btn {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	color: #fff;
+	transition: all .3s;
+	text-align: center;
+	padding: 0px 5px;
+	min-height: 32px;
+
+	@media (any-hover: hover) {
+		&:hover {}
+	}
+
+	&._fw {
+		width: 100%;
+	}
+
+	// .btn_white
+	&_white {
+		min-height: 37px;
+		color: #263238;
+		background-color: #fff;
+		box-shadow: 0px 1px 3px 0px rgba(204, 216, 228, 0.75);
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #263238;
+				color: #fff;
+			}
+		}
+	}
+}
+
+//</BUTTONS>====================================================================================================
+
 //<FORM ()>====================================================================================================
 .form {
 
 	&__row {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-between;
+		align-items: center;
+
+		@media (max-width: em($md4)) {}
+
+
+		// justify-content: space-between;
 		column-gap: 30px;
+		@include adaptiv-value("row-gap", 30, 5);
+
+		&:not(:last-child) {
+			@include adaptiv-value("margin-bottom", 21, 15);
+		}
+
+
 	}
 
 	&__column {}
 
-	&__line {}
+	&__label {
+		flex: 0 1 prc(230, 798);
+		color: #444;
+
+		@media (max-width: em($md4)) {
+			flex: 1 1 100%;
+		}
+	}
 
 	&__input {
 		border: none;
-		height: 43px;
+		min-height: 40px;
 		padding-left: 17px;
 		padding-right: 17px;
 		background-color: #f1f4f5;
 		// width: 350px;
 		flex: 1 1 auto;
 		display: block;
-		@include adaptiv-value("margin-bottom", 30, 15);
+		// @include adaptiv-value("margin-bottom", 30, 15);
 
 		&::placeholder {
 			font-size: 15px;
@@ -53,58 +110,16 @@
 		text-align: center;
 		font-weight: 700;
 		color: #fff;
-		padding: 20px 5px;
-		width: 190px;
+		// padding: 20px 5px;
+		@include adaptiv-value("padding-right", 30, 15);
+		@include adaptiv-value("padding-left", 30, 15);
+		// width: 190px;
 	}
 
 	&__error {}
 }
 
 //</FORM>====================================================================================================
-
-//<BUTTONS (a.btn+tab)>====================================================================================================
-.btn {
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
-	color: #fff;
-	transition: all .3s;
-	text-align: center;
-	padding: 0px 5px;
-	min-height: 32px;
-
-
-	// .btn_white
-	&_white {
-		min-height: 37px;
-		color: #263238;
-		background-color: #fff;
-		box-shadow: 0px 1px 3px 0px rgba(204, 216, 228, 0.75);
-
-		@media (any-hover: hover) {
-			&:hover {
-				background-color: #263238;
-				color: #fff;
-			}
-		}
-	}
-}
-
-.button {
-	display: inline-flex;
-	padding: 0px 0px;
-
-	@media (any-hover: hover) {
-		&:hover {}
-	}
-
-	&._fw {
-		width: 100%;
-	}
-}
-
-//</BUTTONS>====================================================================================================
 
 //<SELECT (sel+tab)>====================================================================================================
 .select {

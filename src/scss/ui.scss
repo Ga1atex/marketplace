@@ -29,29 +29,19 @@ a {
 	margin-bottom: em(30, 36);
 }
 
-.rate-star {
-	display: inline-block;
-	margin-right: 13px;
-}
-
-
-
 .angle-right {
 	position: relative;
-	padding-left: 15px;
 
 	&::before {
 		content: "\f105";
 		font-family: 'icons';
 		position: absolute;
 		left: 0;
+		top: calc(50% - 1px);
+		transform: translate3d(0, -50%, 0);
 		color: $green;
 		font-size: 14px;
 	}
-}
-
-#modal {
-	display: none;
 }
 
 // ._footer-title {

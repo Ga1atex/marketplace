@@ -1,116 +1,3 @@
-// start modal
-#modal {
-  background-color: $green;
-  max-width: 730px;
-  width: 100%;
-  padding-top: 90px;
-  padding-bottom: 100px;
-}
-
-.login {
-  &__title {
-    text-align: center;
-    font-size: 48px;
-    margin-bottom: 40px;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-
-  &__wrapper {
-    form {
-      max-width: 400px;
-      margin: 0 auto;
-    }
-
-    label {
-      position: relative;
-      display: block;
-      width: 100%;
-
-      &::before {
-        position: absolute;
-        font-family: 'icons';
-        font-size: 14px;
-        color: #fff;
-        left: 18px;
-        top: 9px;
-      }
-    }
-
-    .login__label-name::before {
-      content: "\f007";
-    }
-
-    .login__label-pass::before {
-      content: "\f023";
-    }
-
-    input {
-      height: 43px;
-      margin-bottom: 8px;
-      border: none;
-      background-color: #76ae36;
-      color: #fff;
-      font-size: 14px;
-      padding-left: 40px;
-      display: block;
-      width: 100%;
-
-      &::placeholder {
-        color: #fff;
-        font-size: 14px;
-      }
-    }
-
-    button {
-      margin-top: 19px;
-      padding: 18px 0 16px;
-      background-color: #fff;
-      width: 140px;
-      text-transform: uppercase;
-      border: none;
-      margin-right: 10px;
-      font-weight: 700;
-      color: #000;
-      text-align: center;
-      box-shadow: 0px 2px 2px 0px rgba(118, 174, 54, 0.75);
-    }
-  }
-}
-
-.lost-pass {
-  display: block;
-  margin-top: 20px;
-  color: #fff;
-  font-size: 18px;
-}
-
-.create-acc {
-  margin-top: 19px;
-  padding: 15px 0 15px 28px;
-  text-align: center;
-  width: 246px;
-  background-color: #76ae36;
-  color: #fff;
-  font-size: 18px;
-  position: relative;
-
-  &::before {
-    content: "\f044";
-    position: absolute;
-    top: 15px;
-    left: 35px;
-    font-family: 'icons'
-  }
-}
-
-.fancybox-button svg path {
-  color: #fff;
-}
-
-// end modal
-
 // start search
 
 .search {
@@ -1858,6 +1745,10 @@
 
   &__form {
     flex: 1 1 auto;
+
+    .form__btn {
+      min-height: 52px;
+    }
   }
 
   &__form-title {
@@ -1872,34 +1763,39 @@
 
 // start settings
 .settings {
-  padding-bottom: 100px;
-}
+  @include adaptiv-value("padding-bottom", 100, 20);
 
-.product-details__tabs.settings__tabs {
-  display: flex;
+  .tabs-block {
+    display: grid;
+    border: none;
+    gap: 30px;
 
-  .tabs {
-    max-width: 270px;
-    width: 100%;
-    margin-right: 30px;
-    border: 1px solid #dedede;
-    border-bottom: none;
-    text-align-last: left;
-    display: block;
-    height: 100%;
+    @media (min-width: em($md3)) {
+      grid-template-columns: prc(270, 1170) 1fr;
+    }
 
-    span {
+    &__nav {
       display: block;
-      background-color: #fff;
-      border-bottom: 1px solid #dedede;
-      padding: 17px 17px 17px 50px;
+      align-self: start;
+      border: 1px solid #dedede;
+      border-bottom: none;
+      text-align-last: left;
+    }
+
+    &__item {
+      display: block;
+      padding: 17px 17px 17px resp-value(50, 17);
       color: #707070;
       font-size: 14px;
       font-weight: 500;
+      border-left: none;
 
-      &.active {
-        border-bottom: 1px solid $green;
+      &._active {
         color: #37474f;
+
+        &::after {
+          height: 2px;
+        }
 
         &::before {
           color: $green;
@@ -1907,21 +1803,59 @@
       }
 
       &:before {
-        left: 24px;
+        @include adaptiv-value("left", 24, 7);
         color: #444;
       }
     }
+
+    &__body {
+      width: 100%;
+      padding: 0;
+      border: none;
+      background-color: transparent;
+    }
   }
 
-  .tabs .tab+.tab {
-    border-left: none;
-  }
+  .form {
 
-  .tab_content {
-    width: 100%;
-    padding: 0;
-    border: none;
-    background-color: transparent;
+    .select__title,
+    input {
+      background-color: #f9f9f9;
+      border: 1px solid #dedede;
+    }
+
+    .select {
+      flex: 1 1 auto;
+
+      @media (max-width: em($md4)) {
+        flex: 1 1 100%;
+      }
+
+      &__item {
+        font-size: 14px;
+      }
+
+      &__options {
+        background-color: #f9f9f9;
+        min-height: 100%;
+      }
+
+      &__value {
+        min-height: 40px;
+
+        &::before {
+          color: #444444;
+        }
+      }
+    }
+
+    &__btn {
+      min-height: 46px;
+
+      @media (max-width: em($md4)) {
+        width: 100%;
+      }
+    }
   }
 }
 
@@ -1929,57 +1863,31 @@
   background-color: #fff;
   border: 1px solid #dedede;
   min-height: 100%;
-}
 
-.page-box__title {
-  border-bottom: 1px solid #dedede;
-  padding: 18px 34px;
-  font-size: 24px;
-  font-weight: 500;
-  color: $mainColor;
-}
-
-.page-box__content {
-  padding: 30px 35px 80px;
-}
-
-.settings__line {
-  margin-bottom: 21px;
-  display: flex;
-  align-items: center;
-
-  label {
-    width: 260px;
-    color: #444;
+  &__title {
+    padding: em(18, 24) resp-value(34, 15);
+    color: $mainColor;
   }
 
-  input {
-    max-width: 540px;
-    width: 100%;
-    height: 40px;
-    background-color: #f9f9f9;
-    color: #000;
-    border: 1px solid #dedede;
-    padding: 0px 10px;
-  }
-
-  select {
-    max-width: 540px;
-    width: 100%;
-    height: 40px;
-    background-color: #f9f9f9;
-    color: #000;
-    border: 1px solid #dedede;
-    padding: 0px 10px;
-    color: #707070;
+  &__content {
+    @include adaptiv-value("padding-top", 30, 15);
+    @include adaptiv-value("padding-right", 35, 15);
+    @include adaptiv-value("padding-bottom", 80, 15);
+    @include adaptiv-value("padding-left", 35, 15);
+    // @media (max-width: em($md1)) {
+    // padding: resp-value(30, 15) resp-value(35, 15) resp-value(80, 20);
+    // }
   }
 }
 
 // end settings
+
 //start profile
-.profile__inner {
-  display: flex;
-  margin-bottom: 30px;
+.profile {
+  &__inner {
+    display: flex;
+    margin-bottom: 30px;
+  }
 }
 
 .profile__aside {
@@ -1997,10 +1905,7 @@
 }
 
 .profile-status {
-  font-size: 13px;
-  padding: 6px 9px 5px 30px;
-  border: 1px solid #d6d6d6;
-  color: #707070;
+  padding-left: 30px;
   position: relative;
 
   &::before {
@@ -2012,19 +1917,20 @@
     height: 9px;
     border-radius: 50%;
   }
-}
 
-.profile-on {
-  &::before {
-    background-color: $green;
+  &--online {
+    &::before {
+      background-color: $green;
+    }
+  }
+
+  &--offline {
+    &::before {
+      background-color: $red;
+    }
   }
 }
 
-.profile-off {
-  &::before {
-    background-color: $red;
-  }
-}
 
 .profile__aside-btn {
   margin-bottom: 13px;

@@ -16,7 +16,7 @@
             </div>
             <div class="search__inner-form">
               <form>
-                <input type="text" placeholder="Search Your Keywords . . ." required>
+                <input class="form__input" type="text" placeholder="Search Your Keywords . . ." required>
                 <button type="submit">
                   <img src="img/icons/search.png" alt="">
                 </button>
@@ -30,120 +30,80 @@
 
       <section class="settings">
         <div class="container">
-          <div class="product-details__tabs settings__tabs">
-            <div class="tabs">
-              <span class="tab active angle-right" data-id="1">Personal Information</span>
-              <span class="tab angle-right" data-id="2">Profile</span>
-              <span class="tab angle-right" data-id="3">Badges</span>
-              <span class="tab angle-right" data-id="4">E-mail Settings</span>
-              <span class="tab angle-right" data-id="5">Social Network</span>
-            </div>
-            <div class="tab_content">
-              <div class="tab-item active-tab" id="1">
+          <div class="settings__tabs-block tabs-block _tabs">
+            <nav class="tabs-block__nav">
+              <div class="tabs-block__item _tabs-item angle-right _active">Personal Information</div>
+              <div class="tabs-block__item _tabs-item angle-right">Profile</div>
+              <div class="tabs-block__item _tabs-item angle-right">Badges</div>
+              <div class="tabs-block__item _tabs-item angle-right">E-mail Settings</div>
+              <div class="tabs-block__item _tabs-item angle-right">Social Network</div>
+            </nav>
+            <div class="tabs-block__body">
+              <div class="tabs-block__block _tabs-block _active">
                 <div class="page-box">
-                  <div class="page-box__title">
+                  <div class="page-box__title page__block-title">
                     Personal Information
                   </div>
                   <div class="page-box__content">
-                    <form>
-                      <div class="settings__line">
-                        <label>First Name</label>
-                        <input type="text">
+                    <form class="form">
+                      <div class="form__row">
+                        <label class="form__label" for="firstName">First Name</label>
+                        <input class="form__input" type="text" id="firstName">
                       </div>
-                      <div class="settings__line">
-                        <label>First Name</label>
-                        <input type="text">
+                      <div class="form__row">
+                        <label class="form__label" for="lastName">Last Name</label>
+                        <input class="form__input" type="text" id="lastName">
                       </div>
-                      <div class="settings__line">
-                        <label>Company Name</label>
-                        <input type="text">
+                      <div class="form__row">
+                        <label class="form__label" for="companyName">Company Name</label>
+                        <input class="form__input" type="text" id="companyName">
                       </div>
-                      <div class="settings__line">
-                        <label>Country</label>
-                        <select>
+                      <div class="form__row">
+                        <label class="form__label" for="country">Country</label>
+                        <select id="country">
                           <option>Select Your Country</option>
-                          <option>Select Your Country</option>
+                          <option>Select Your Country1</option>
+                          <option>Select Your Country2</option>
                         </select>
                       </div>
-                      <div class="settings__line">
-                        <label>Address Line 1</label>
-                        <input type="text">
+                      <div class="form__row">
+                        <label class="form__label" for="adress1">Address Line 1</label>
+                        <input class="form__input" type="text" id="adress1">
                       </div>
-                      <div class="settings__line">
-                        <label>Address Line 2</label>
-                        <input type="text">
+                      <div class="form__row">
+                        <label class="form__label" for="adress2">Address Line 2</label>
+                        <input class="form__input" type="text" id="adress2">
                       </div>
-                      <div class="settings__line">
-                        <label>City</label>
-                        <input type="text">
+                      <div class="form__row">
+                        <label class="form__label" for="city">City</label>
+                        <input class="form__input" type="text" id="city">
                       </div>
-                      <div class="settings__line">
-                        <label>State / Province / Region</label>
-                        <input type="text">
+                      <div class="form__row">
+                        <label class="form__label" for="state">State / Province / Region</label>
+                        <input class="form__input" type="text" id="state">
                       </div>
-                      <div class="settings__line">
-                        <label>Zip / Postal Code</label>
-                        <input type="text">
+                      <div class="form__row">
+                        <label class="form__label" for="zip">Zip / Postal Code</label>
+                        <input class="form__input" type="text" id="zip">
+                      </div>
+                      <div class="form__row">
+                        <label class="form__label" for="" style="visibility: hidden;height:0;">Zip / Postal Code</label>
+                        <button class="form__btn btn">Update</button>
                       </div>
                     </form>
                   </div>
                 </div>
               </div>
-              <div class="tab-item" id="2">
-                <div class="page-box">
-                  <div class="page-box__title">
-                    Personal Information
-                  </div>
-                  <div class="page-box__content">
-                    <form>
-                      <div class="settings__line">
-                        <label>First Name</label>
-                        <input type="text">
-                      </div>
-                      <div class="settings__line">
-                        <label>First Name</label>
-                        <input type="text">
-                      </div>
-                      <div class="settings__line">
-                        <label>Company Name</label>
-                        <input type="text">
-                      </div>
-                      <div class="settings__line">
-                        <label>Country</label>
-                        <select>
-                          <option>Select Your Country</option>
-                          <option>Select Your Country</option>
-                        </select>
-                      </div>
-                      <div class="settings__line">
-                        <label>Address Line 1</label>
-                        <input type="text">
-                      </div>
-                      <div class="settings__line">
-                        <label>Address Line 2</label>
-                        <input type="text">
-                      </div>
-                      <div class="settings__line">
-                        <label>City</label>
-                        <input type="text">
-                      </div>
-                      <div class="settings__line">
-                        <label>State / Province / Region</label>
-                        <input type="text">
-                      </div>
-                      <div class="settings__line">
-                        <label>Zip / Postal Code</label>
-                        <input type="text">
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-item" id="3">
+              <div class="tabs-block__block _tabs-block">
 
               </div>
-              <div class="tab-item" id="4">
+              <div class="tabs-block__block _tabs-block">
 
+              </div>
+              <div class="tabs-block__block _tabs-block">
+              </div>
+
+              <div class="tabs-block__block _tabs-block">
               </div>
             </div>
           </div>

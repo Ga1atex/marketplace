@@ -107,7 +107,8 @@ body {
 	&__products {}
 
 	&__block-title {
-		font-size: resp-value(24, 18);
+		@include adaptiv-value("font-size", 24, 18);
+		// font-size: resp-value(24, 18);
 		color: #444;
 		padding: em(23, 24) resp-value(27, 15);
 		// min-height: em(69, 24);
@@ -122,6 +123,8 @@ body {
 		background-color: #fff;
 		@include adaptiv-value("margin-bottom", 150, 50, 1);
 	}
+
+	&__content {}
 }
 
 //===================================================================================================================================

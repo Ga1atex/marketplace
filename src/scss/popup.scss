@@ -10,6 +10,7 @@
 	height: 100%;
 	transition: visibility 0.8s ease 0s;
 	visibility: hidden;
+
 	&::before {
 		content: "";
 		background-color: rgba(0, 0, 0, 0.9);
@@ -21,27 +22,34 @@
 		opacity: 0;
 		transition: opacity 0.8s ease 0s;
 	}
+
 	&.show {
 		visibility: visible;
 		overflow: auto;
+
 		&::before {
 			opacity: 1;
 		}
+
 		.popup__body {
 			transform: scale(1);
 		}
 	}
+
 	&._active {
 		overflow: auto;
 		visibility: visible;
+
 		&::before {
 			opacity: 1;
 		}
+
 		.popup__body {
 			transition: all 0.3s ease 0.2s;
 			transform: scale(1);
 		}
 	}
+
 	// .popup__content
 	&__content {
 		display: flex;
@@ -54,6 +62,7 @@
 		justify-content: center;
 		align-items: center;
 	}
+
 	// .popup__body
 	&__body {
 		transform: scale(0);
@@ -63,6 +72,7 @@
 		width: 100%;
 		max-width: 800px;
 	}
+
 	// .popup__close
 	&__close {
 		width: 15px;
@@ -75,5 +85,120 @@
 		background: url("../img/icons/close.svg") 0 0 no-repeat;
 	}
 }
+
 //====================================================================================================
 //====================================================================================================
+
+// start modal
+#modal {
+	display: none;
+	background-color: $green;
+	max-width: 730px;
+	width: 100%;
+	padding-top: 90px;
+	padding-bottom: 100px;
+}
+
+.login {
+	&__title {
+		text-align: center;
+		font-size: 48px;
+		margin-bottom: 40px;
+		color: #fff;
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+
+	&__wrapper {
+		form {
+			max-width: 400px;
+			margin: 0 auto;
+		}
+
+		label {
+			position: relative;
+			display: block;
+			width: 100%;
+
+			&::before {
+				position: absolute;
+				font-family: 'icons';
+				font-size: 14px;
+				color: #fff;
+				left: 18px;
+				top: 9px;
+			}
+		}
+
+		.login__label-name::before {
+			content: "\f007";
+		}
+
+		.login__label-pass::before {
+			content: "\f023";
+		}
+
+		input {
+			height: 43px;
+			margin-bottom: 8px;
+			border: none;
+			background-color: #76ae36;
+			color: #fff;
+			font-size: 14px;
+			padding-left: 40px;
+			display: block;
+			width: 100%;
+
+			&::placeholder {
+				color: #fff;
+				font-size: 14px;
+			}
+		}
+
+		button {
+			margin-top: 19px;
+			padding: 18px 0 16px;
+			background-color: #fff;
+			width: 140px;
+			text-transform: uppercase;
+			border: none;
+			margin-right: 10px;
+			font-weight: 700;
+			color: #000;
+			text-align: center;
+			box-shadow: 0px 2px 2px 0px rgba(118, 174, 54, 0.75);
+		}
+	}
+}
+
+.lost-pass {
+	display: block;
+	margin-top: 20px;
+	color: #fff;
+	font-size: 18px;
+}
+
+.create-acc {
+	margin-top: 19px;
+	padding: 15px 0 15px 28px;
+	text-align: center;
+	width: 246px;
+	background-color: #76ae36;
+	color: #fff;
+	font-size: 18px;
+	position: relative;
+
+	&::before {
+		content: "\f044";
+		position: absolute;
+		top: 15px;
+		left: 35px;
+		font-family: 'icons'
+	}
+}
+
+.fancybox-button svg path {
+	color: #fff;
+}
+
+// end modal
