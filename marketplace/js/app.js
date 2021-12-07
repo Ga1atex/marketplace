@@ -325,25 +325,29 @@ if (title) {
 //=================
 //Tabs
 let tabs = document.querySelectorAll("._tabs");
-
-for (let index = 0; index < tabs.length; index++) {
-	let tab = tabs[index];
-	let tabsItems = tab.querySelectorAll("._tabs-item");
-	let tabsBlocks = tab.querySelectorAll("._tabs-block");
-	for (let index = 0; index < tabsItems.length; index++) {
-		let tabsItem = tabsItems[index];
-		tabsItem.addEventListener("click", function (e) {
+if (tabs.length) {
+	for (let index = 0; index < tabs.length; index++) {
+		let tab = tabs[index];
+		let tabsItems = tab.querySelectorAll("._tabs-item");
+		let tabsBlocks = tab.querySelectorAll("._tabs-block");
+		if (tabsItems.length && tabsBlocks.length) {
 			for (let index = 0; index < tabsItems.length; index++) {
 				let tabsItem = tabsItems[index];
-				tabsItem.classList.remove('_active');
-				tabsBlocks[index].classList.remove('_active');
+				tabsItem.addEventListener("click", function (e) {
+					for (let index = 0; index < tabsItems.length; index++) {
+						let tabsItem = tabsItems[index];
+						tabsItem.classList.remove('_active');
+						tabsBlocks[index].classList.remove('_active');
+					}
+					tabsItem.classList.add('_active');
+					tabsBlocks[index].classList.add('_active');
+					e.preventDefault();
+				});
 			}
-			tabsItem.classList.add('_active');
-			tabsBlocks[index].classList.add('_active');
-			e.preventDefault();
-		});
+		}
 	}
 }
+
 //=================
 /*
 Для родителя слойлеров пишем атрибут data-spollers
@@ -1715,17 +1719,6 @@ window.onload = function () {
     });
   }
 
-
-  // $('.product-details__tabs .tab, .settings__tabs .tab').on('click', function (event) {
-  //   var id = $(this).attr('data-id');
-  //   $('.product-details__tabs, .settings__tabs').find('.tab-item').removeClass('active-tab').hide();
-  //   $('.product-details__tabs .tabs, .settings__tabs .tabs').find('.tab').removeClass('active');
-  //   $(this).addClass('active');
-  //   $('#' + id).addClass('active-tab').fadeIn();
-  //   return false;
-  // });
-
-
   document.querySelector('.header__btn-menu').addEventListener('click', function (event) {
     document.querySelector('.header__box').classList.toggle('active');
   });
@@ -1735,5 +1728,12 @@ window.onload = function () {
   }
   if (document.querySelector('.product-page__items')) {
     const mixer = mixitup('.product-page__items', {});
+  }
+
+  let progressBars = document.querySelectorAll('.progress-bar');
+  if (progressBars.length) {
+    progressBars.forEach(item => {
+      item.querySelector('.progress-bar__lane span').style.maxWidth = item.querySelector('.progress-bar__number').innerHTML;
+    });
   }
 };

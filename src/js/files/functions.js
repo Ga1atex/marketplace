@@ -158,25 +158,29 @@ if (title) {
 //=================
 //Tabs
 let tabs = document.querySelectorAll("._tabs");
-
-for (let index = 0; index < tabs.length; index++) {
-	let tab = tabs[index];
-	let tabsItems = tab.querySelectorAll("._tabs-item");
-	let tabsBlocks = tab.querySelectorAll("._tabs-block");
-	for (let index = 0; index < tabsItems.length; index++) {
-		let tabsItem = tabsItems[index];
-		tabsItem.addEventListener("click", function (e) {
+if (tabs.length) {
+	for (let index = 0; index < tabs.length; index++) {
+		let tab = tabs[index];
+		let tabsItems = tab.querySelectorAll("._tabs-item");
+		let tabsBlocks = tab.querySelectorAll("._tabs-block");
+		if (tabsItems.length && tabsBlocks.length) {
 			for (let index = 0; index < tabsItems.length; index++) {
 				let tabsItem = tabsItems[index];
-				tabsItem.classList.remove('_active');
-				tabsBlocks[index].classList.remove('_active');
+				tabsItem.addEventListener("click", function (e) {
+					for (let index = 0; index < tabsItems.length; index++) {
+						let tabsItem = tabsItems[index];
+						tabsItem.classList.remove('_active');
+						tabsBlocks[index].classList.remove('_active');
+					}
+					tabsItem.classList.add('_active');
+					tabsBlocks[index].classList.add('_active');
+					e.preventDefault();
+				});
 			}
-			tabsItem.classList.add('_active');
-			tabsBlocks[index].classList.add('_active');
-			e.preventDefault();
-		});
+		}
 	}
 }
+
 //=================
 /*
 Для родителя слойлеров пишем атрибут data-spollers
