@@ -124,7 +124,9 @@ body {
 		@include adaptiv-value("margin-bottom", 150, 50, 1);
 	}
 
-	&__content {}
+	&__block-content {
+		padding: resp-value(40, 15) resp-value(50, 15);
+	}
 
 }
 

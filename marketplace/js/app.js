@@ -165,19 +165,28 @@ DynamicAdapt.prototype.arraySort = function (arr) {
 
 const da = new DynamicAdapt("max");
 da.init();
-var ua = window.navigator.userAgent;
-var msie = ua.indexOf("MSIE ");
-var isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
+function isMobile() {
+	let ua = window.navigator.userAgent;
+	// let msie = ua.indexOf("MSIE ");
+	let isMobile = {
+		Android: () => ua.match(/Android/i),
+		BlackBerry: () => ua.match(/BlackBerry/i),
+		iOS: () => ua.match(/iPhone|iPad|iPod/i),
+		Opera: () => ua.match(/Opera Mini/i),
+		Windows: () => ua.match(/IEMobile/i),
+		any: () => (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows())
+	};
+	return isMobile.any();
+}
 
 function isIE() {
-	ua = navigator.userAgent;
-	var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
-	return is_ie;
+	let ua = window.navigator.userAgent;
+	return ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
 }
 if (isIE()) {
 	document.querySelector('html').classList.add('ie');
 }
-if (isMobile.any()) {
+if (isMobile()) {
 	document.querySelector('html').classList.add('_touch');
 }
 
@@ -185,7 +194,7 @@ if (isMobile.any()) {
 //parseInt(itemContactpagePhone.replace(/[^\d]/g, ''))
 
 function testWebP(callback) {
-	var webP = new Image();
+	let webP = new Image();
 	webP.onload = webP.onerror = function () {
 		callback(webP.height == 2);
 	};
@@ -202,7 +211,7 @@ testWebP(function (support) {
 function ibg() {
 	if (isIE()) {
 		let ibg = document.querySelectorAll("._ibg");
-		for (var i = 0; i < ibg.length; i++) {
+		for (let i = 0; i < ibg.length; i++) {
 			if (ibg[i].querySelector('img') && ibg[i].querySelector('img').getAttribute('src') != null) {
 				ibg[i].style.backgroundImage = 'url(' + ibg[i].querySelector('img').getAttribute('src') + ')';
 			}
@@ -300,7 +309,7 @@ function bodyLockAdd(delay) {
 //=================
 // LettersAnimation
 let title = document.querySelectorAll('._letter-animation');
-if (title) {
+if (title.length) {
 	for (let index = 0; index < title.length; index++) {
 		let el = title[index];
 		let txt = el.innerHTML;
@@ -309,16 +318,16 @@ if (title) {
 		for (let index = 0; index < txtWords.length; index++) {
 			let txtWord = txtWords[index];
 			let len = txtWord.length;
-			newTitle = newTitle + '<p>';
+			newTitle += '<p>';
 			for (let index = 0; index < len; index++) {
 				let it = txtWord.substr(index, 1);
 				if (it == ' ') {
 					it = '&nbsp;';
 				}
-				newTitle = newTitle + '<span>' + it + '</span>';
+				newTitle += '<span>' + it + '</span>';
 			}
 			el.innerHTML = newTitle;
-			newTitle = newTitle + '&nbsp;</p>';
+			newTitle += '&nbsp;</p>';
 		}
 	}
 }
@@ -449,7 +458,7 @@ if (spoilersArray.length) {
 			const oneSpoiler = spoilersBlock.hasAttribute('data-one-spoiler');
 
 			if (!spoilersBlock.querySelectorAll('._slide').length) {
-				if (oneSpoiler && !spoilerTitle.classList.contains('_active')) { //finds for active element in parent and closes it
+				if (oneSpoiler && !spoilerTitle.classList.contains('_active')) { //looks for active element in parent and closes it
 					hideSpoilerBody(spoilersBlock);
 				}
 				spoilerTitle.classList.toggle('_active');
@@ -471,10 +480,10 @@ if (spoilersArray.length) {
 //=================
 //Gallery
 let gallery = document.querySelectorAll('._gallery');
-if (gallery) {
-	gallery_init();
+if (gallery.length) {
+	galleryInit();
 }
-function gallery_init() {
+function galleryInit() {
 	for (let index = 0; index < gallery.length; index++) {
 		const el = gallery[index];
 		lightGallery(el, {
@@ -505,8 +514,7 @@ function search_in_list(input) {
 //=================
 //DigiFormat
 function digi(str) {
-	var r = str.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ");
-	return r;
+	return str.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ");
 }
 //=================
 //DiGiAnimate
@@ -522,25 +530,25 @@ function digiAnimate(digiAnimate) {
 	}
 }
 function digiAnimateValue(el, start, end, duration) {
-	var obj = el;
-	var range = end - start;
+	let obj = el;
+	let range = end - start;
 	// no timer shorter than 50ms (not really visible any way)
-	var minTimer = 50;
+	let minTimer = 50;
 	// calc step time to show all interediate values
-	var stepTime = Math.abs(Math.floor(duration / range));
+	let stepTime = Math.abs(Math.floor(duration / range));
 
 	// never go below minTimer
 	stepTime = Math.max(stepTime, minTimer);
 
 	// get current time and calculate desired end time
-	var startTime = new Date().getTime();
-	var endTime = startTime + duration;
-	var timer;
+	let startTime = new Date().getTime();
+	let endTime = startTime + duration;
+	let timer;
 
 	function run() {
-		var now = new Date().getTime();
-		var remaining = Math.max((endTime - now) / duration, 0);
-		var value = Math.round(end - (remaining * range));
+		let now = new Date().getTime();
+		let remaining = Math.max((endTime - now) / duration, 0);
+		let value = Math.round(end - (remaining * range));
 		obj.innerHTML = digi(value);
 		if (value == end) {
 			clearInterval(timer);
@@ -721,7 +729,7 @@ function _wrap(el, wrapper) {
 //========================================
 //RemoveClasses
 function _removeClasses(el, class_name) {
-	for (var i = 0; i < el.length; i++) {
+	for (let i = 0; i < el.length; i++) {
 		el[i].classList.remove(class_name);
 	}
 }
@@ -951,7 +959,7 @@ animate({
 	if (!Element.prototype.closest) {
 		// реализуем
 		Element.prototype.closest = function (css) {
-			var node = this;
+			let node = this;
 			while (node) {
 				if (node.matches(css)) return node;
 				else node = node.parentElement;

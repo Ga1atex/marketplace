@@ -16,7 +16,7 @@
             </div>
             <div class="search__inner-form">
               <form>
-                <input type="text" placeholder="Search Your Keywords . . ." required>
+                <input class="input form__input" id="" type="text" placeholder="Search Your Keywords . . ." required>
                 <button type="submit">
                   <img src="img/icons/search.png" alt="">
                 </button>
@@ -28,73 +28,87 @@
       @@include('_breadcrumbs.html', {arr: [["Upload"]]})
 
 
-      <section class="upload">
-        <div class="container">
-          <form>
-            <div class="upload__inner">
-              <div class="upload__inner-title">Upload Your item</div>
-              <div class="upload__inner-content">
-                <div class="upload-line">
-                  <label>Select Categories <span>*</span></label>
-                  <select>
+      <section class="page__upload upload">
+        <div class="upload__container">
+          <div class="upload__inner page__block-wrapper">
+            <h2 class="upload__inner-title page__block-title">Upload Your item</h2>
+            <form class="form">
+              <div class="upload__inner-content page__block-content">
+                <div class="upload__row form__row">
+                  <label class="form__label" for="categories">Select Categories <span>*</span></label>
+                  <select id="categories">
                     <option>Select</option>
-                    <option>Select</option>
-                    <option>Select</option>
-                    <option>Select</option>
+                    <option>Select1</option>
+                    <option>Select2</option>
+                    <option>Select3</option>
                   </select>
                 </div>
-                <div class="upload-line">
-                  <label>Product Namespan <span>*</span></label>
-                  <input type="text" placeholder="Enter your product name here ..." required>
+                <div class="upload__row form__row">
+                  <label class="form__label" for="nameSpan">Product Namespan <span>*</span></label>
+                  <input class="input form__input" id="nameSpan" type="text" placeholder="Enter your product name here ..." required>
                 </div>
-                <div class="upload-line">
-                  <label>Product Description <span>*</span></label>
-                  <textarea placeholder="<h1> Type your text  here </h1>" required></textarea>
+                <div class="upload__row form__row">
+                  <label class="form__label" for="description">Product Description <span>*</span></label>
+                  <textarea class="form__textarea" id="description" placeholder="Type your text  here" required></textarea>
                 </div>
-                <div class="upload-line">
-                  <label>Upload Main File <span>*</span></label>
-                  <input type="file" required data-placeholder="No File Choosen" data-browse="Choose File">
+                <div class="upload__row form__row">
+                  <label class="form__label" for="mainFile">Upload Main File <span>*</span></label>
+                  <label class="input-file">
+                    <span class="input-file__btn">Choose File</span>
+                    <input class="input input-file__input visually-hidden" id="mainFile" type="file" required data-placeholder="No File Choosen"
+                      data-browse="Choose File">
+                    <span class="input-file__filename">No File Choosen</span>
+                  </label>
                 </div>
-                <div class="upload-line">
-                  <label>Upload Screenshots <span>*</span></label>
-                  <input type="file" required data-placeholder="No File Choosen" data-browse="Choose File">
+                <div class="upload__row form__row">
+                  <label class="form__label" for="screenshots">Upload Screenshots <span>*</span></label>
+                  <label class="input-file">
+                    <span class="input-file__btn">Choose File</span>
+                    <input class="input input-file__input visually-hidden" id="mainFile" type="file" required data-placeholder="No File Choosen"
+                      data-browse="Choose File">
+                    <span class="input-file__filename">No File Choosen</span>
+                  </label>
                 </div>
-                <div class="upload-line">
-                  <label>File Included <span>*</span></label>
-                  <select>
-                    <option value="">Select File Type</option>
-                    <option value="">Select File Type </option>
-                    <option value="">Select File Type </option>
-                    <option value="">Select File Type </option>
+                <div class="upload__row form__row">
+                  <label class="form__label" for="fileType">File Included <span>*</span></label>
+                  <select id="fileType">
+                    <option>Select File Type</option>
+                    <option>Select File Type1</option>
+                    <option>Select File Type2</option>
+                    <option>Select File Type3</option>
                   </select>
                 </div>
-                <div class="upload-line">
-                  <label>File Dimensions <span>*</span></label>
-                  <input type="text" placeholder="Enter the item  dimentionss here ..." required>
+                <div class="upload__row form__row">
+                  <label class="form__label" for="fileDimension">File Dimensions <span>*</span></label>
+                  <input class="input form__input" id="fileDimension" type="text" placeholder="Enter the item  dimensions here ..." required>
                 </div>
-                <div class="upload-line">
-                  <label>Item Tagsspan <span>*</span></label>
-                  <input type="text" placeholder="Enter Tag Here" required>
+                <div class="upload__row form__row">
+                  <label class="form__label" for="tagSpan">Item Tagsspan <span>*</span></label>
+                  <input class="input form__input" id="tagSpan" type="text" placeholder="Enter Tag Here" required>
                 </div>
               </div>
-              <div class="upload__inner-title">Set Your Price (US$)</div>
-              <div class="upload__inner-content">
-                <div class="upload-line">
-                  <label>Regular License <span>*</span></label>
-                  <input type="text" placeholder="$00.00" required>
+              <div class="upload__inner-title page__block-title">Set Your Price (US$)</div>
+              <div class="upload__inner-content page__block-content">
+                <div class="upload__row form__row">
+                  <label class="form__label" for="regularLicense">Regular License <span>*</span></label>
+                  <input class="input form__input" id="regularLicense" type="text" placeholder="$00.00" required>
                 </div>
-                <div class="upload-line">
-                  <label>Extended License <span>*</span></label>
-                  <input type="text" placeholder="$00.00" required>
+                <div class="upload__row form__row">
+                  <label class="form__label" for="extendedLicense">Extended License <span>*</span></label>
+                  <input class="input form__input" id="extendedLicense" type="text" placeholder="$00.00" required>
                 </div>
-                <button type="submit">Submit</button>
-              </div>
-            </div>
-          </form>
+                <div class="form__row">
+                  <label class="form__label visually-hidden" for="">Press button to update</label>
+                  <button class="form__btn btn" type="submit">Submit</button>
+                </div>
+            </form>
+          </div>
+
         </div>
-      </section>
-    </main>
-    @@include('_footer.html',{})
+  </div>
+  </section>
+  </main>
+  @@include('_footer.html',{})
   </div>
   @@include('_popup.html',{})
   @@include('_js.html',{})

@@ -163,7 +163,7 @@ function scrParallax(block, scrProcent, blockHeight) {
 	}
 }
 //FullScreenScroll
-if (scr_blocks.length > 0 && !isMobile.any()) {
+if (scr_blocks.length > 0 && !isMobile()) {
 	disableScroll();
 	window.addEventListener('wheel', full_scroll);
 
@@ -397,7 +397,7 @@ function fix_block(scr_fix_block, scr_value) {
 	}
 }
 
-if (!isMobile.any()) {
+if (!isMobile()) {
 	//custom_scroll();
 	/*
 	window.addEventListener('wheel', scroll_animate, {
