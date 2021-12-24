@@ -2,96 +2,96 @@
   <div class="header__top">
     <div class="container">
       <div class="header__top-inner">
-        <div class="header__logo">
-          <a class="header__logo-img" href="/" title="To Home Page">
-            <img src="img/logo.png" alt="">
+        <div class="header__logo logo">
+          <a class="logo__img" href="/" title="To Home Page">
+            <img src="img/logo.png" alt="Logo" width="144">
           </a>
         </div>
         <div class="header__text">
-          <a href="#">
-            <span>Need help?</span>
-          </a> Talk to an expert:
+          <a href="#"><span>Need help?</span></a> Talk to an expert:
           <a class="header__phone" href="tel:61383766284">+61 3 8376 6284</a>
         </div>
         <div class="header__box">
-          <div class="notification header-icon">
-            <a class="notification__box header-icon__icon active icon-bell-o" href="#">
+          <div class="notification header-dropdown header-icon @@if(!context.unlogged){is-visible}">
+            <a class="notification__box header-icon__icon icon-bell-o" href="#">
               <span>8</span>
             </a>
-            <div class="header-icon__menu notification__menu">
+            <div class="header-icon__menu notification__menu header-dropdown__menu">
               <a href="#" class="header-icon__item icon-bell-o">
-                <img class="header-icon__img" src="img/content/message.jpg" alt="">
+                <img class="header-icon__img header-icon__img--round" src="img/content/message.jpg" alt="Profile's Avatar" width="48" height="48">
                 <div class="header-icon__info">
-                  <div class="header-icon__info-category">WordPress</div>
-                  <div class="header-icon__info-date">01 Dec, 2016</div>
+                  <div class="header-icon__info-category">Need WP Help!</div>
+                  <div class="header-icon__info-date">01 Dec, 2021</div>
                 </div>
               </a>
               <a href="#" class="header-icon__item icon-bell-o">
-                <img class="header-icon__img" src="img/content/message.jpg" alt="">
+                <img class="header-icon__img header-icon__img--round" src="img/content/message.jpg" alt="Profile's Avatar" width="48" height="48">
                 <div class="header-icon__info">
-                  <div class="header-icon__info-category">WordPress</div>
-                  <div class="header-icon__info-date">01 Dec, 2016</div>
+                  <div class="header-icon__info-category">Need WP Help!</div>
+                  <div class="header-icon__info-date">27 Hov, 2021</div>
                 </div>
               </a>
               <a href="#" class="header-icon__item icon-bell-o">
-                <img class="header-icon__img" src="img/content/message.jpg" alt="">
+                <img class="header-icon__img header-icon__img--round" src="img/content/message.jpg" alt="Profile's Avatar" width="48" height="48">
                 <div class="header-icon__info">
-                  <div class="header-icon__info-category">WordPress</div>
-                  <div class="header-icon__info-date">01 Dec, 2016</div>
+                  <div class="header-icon__info-category">Psd Template Help!</div>
+                  <div class="header-icon__info-date">26 Nov, 2021</div>
                 </div>
               </a>
             </div>
           </div>
-          <div class="message header-icon">
-            <a class="message__box header-icon__icon active icon-envelope-o" href="#">
+          <div class="message header-icon header-dropdown @@if(!context.unlogged){is-visible}">
+            <a class="message__box header-icon__icon icon-envelope-o" href="#">
               <span>5</span>
             </a>
-            <div class="header-icon__menu message__menu">
+            <div class="header-icon__menu message__menu header-dropdown__menu">
               <a href="#" class="header-icon__item icon-envelope-o icons-color">
-                <img class="header-icon__img" src="img/content/message.jpg" alt="">
+                <img class="header-icon__img header-icon__img--round" src="img/content/message.jpg" alt="Profile's Avatar" width="48" height="48">
                 <div class="header-icon__info">
                   <div class="header-icon__info-name">Kazi Fahim</div>
-                  <div class="header-icon__info-category">WordPress</div>
-                  <div class="header-icon__info-date">01 Dec, 2016</div>
+                  <div class="header-icon__info-category">Psd Template Help!</div>
+                  <div class="header-icon__info-date">01 Dec, 2021</div>
                 </div>
               </a>
               <a href="#" class="header-icon__item icon-envelope-o">
-                <img class="header-icon__img" src="img/content/message.jpg" alt="">
+                <img class="header-icon__img header-icon__img--round" src="img/content/message.jpg" alt="Profile's Avatar" width="48" height="48">
                 <div class="header-icon__info">
-                  <div class="header-icon__info-name">Kazi Fahim</div>
-                  <div class="header-icon__info-category">WordPress</div>
-                  <div class="header-icon__info-date">01 Dec, 2016</div>
+                  <div class="header-icon__info-name">Richi Lenal</div>
+                  <div class="header-icon__info-category">WordPress Help!</div>
+                  <div class="header-icon__info-date">01 Dec, 2021</div>
                 </div>
               </a>
               <a href="#" class="header-icon__item icon-mail-reply">
-                <img class="header-icon__img" src="img/content/message.jpg" alt="">
+                <img class="header-icon__img header-icon__img--round" src="img/content/message.jpg" alt="Profile's Avatar" width="48" height="48">
                 <div class="header-icon__info">
-                  <div class="header-icon__info-name">Kazi Fahim</div>
-                  <div class="header-icon__info-category">WordPress</div>
-                  <div class="header-icon__info-date">01 Dec, 2016</div>
+                  <div class="header-icon__info-name">PsdBoss</div>
+                  <div class="header-icon__info-category">Psd Template Help!</div>
+                  <div class="header-icon__info-date">26 Nov, 2021</div>
                 </div>
               </a>
             </div>
           </div>
-          <div class="basket header-icon">
-            <a class="basket__box header-icon__icon active icon-shopping-cart" href="#">
+          <div class="basket header-icon header-dropdown is-visible">
+            <a class="basket__box header-icon__icon icon-shopping-cart" href="#">
               <span>8</span>
             </a>
-            <div class="header-icon__menu">
-              <div class="header-icon__item">
-                <img class="header-icon__img" src="img/content/basket.jpg" alt="">
-                <div class="header-icon__info">
-                  <div class="header-icon__info-name">Grand Ballet</div>
-                  <div class="header-icon__info-category">WordPress</div>
-                  <div class="header-icon__info-price">$59</div>
+            <div class="header-icon__menu header-dropdown__menu">
+              <div class="header-icon__items">
+                <div class="header-icon__item">
+                  <img class="header-icon__img" src="img/content/basket.jpg" alt="Product Image" width="73" height="57">
+                  <div class="header-icon__info">
+                    <div class="header-icon__info-name">Grand Ballet</div>
+                    <div class="header-icon__info-category">WordPress</div>
+                    <div class="header-icon__info-price">$59</div>
+                  </div>
                 </div>
-              </div>
-              <div class="header-icon__item">
-                <img class="header-icon__img" src="img/content/basket.jpg" alt="">
-                <div class="header-icon__info">
-                  <div class="header-icon__info-name">Grand Ballet</div>
-                  <div class="header-icon__info-category">WordPress</div>
-                  <div class="header-icon__info-price">$59</div>
+                <div class="header-icon__item">
+                  <img class="header-icon__img" src="img/content/product-item.jpg" alt="Product Image" width="73" height="57">
+                  <div class="header-icon__info">
+                    <div class="header-icon__info-name">Apple Device</div>
+                    <div class="header-icon__info-category">WordPress</div>
+                    <div class="header-icon__info-price">$59</div>
+                  </div>
                 </div>
               </div>
               <div class="basket__summ">
@@ -104,10 +104,10 @@
               </div>
             </div>
           </div>
-          <div class="user">
+          <div class="user header-dropdown @@if(!context.unlogged){is-visible}">
             <a class="user__box" href="#">
               <div class="user__img">
-                <img src="img/content/user-login.jpg" alt="">
+                <img src="img/content/user-avatar.jpg" alt="User's avatar" width="34" height="34">
               </div>
               <div class="user__info">
                 <div class="user__name">
@@ -118,7 +118,7 @@
                 </div>
               </div>
             </a>
-            <div class="user__menu">
+            <div class="user__menu header-dropdown__menu">
               <ul>
                 <li><a class="angle-right" href="#">Profile Page</a></li>
                 <li><a class="angle-right" href="#">Portfolio</a></li>
@@ -131,36 +131,61 @@
               </ul>
             </div>
           </div>
-          <button class="header__btn header__btn-login header__btn-login--off btn" href="#">Login</button>
-          <button class="header__btn header__btn-logout header__btn-login--on btn" data-da=".user__menu,768" href="">Logout</button>
-          <button class="header__btn header__btn-register header__btn-login--off btn" href="#">Register</button>
+          <a class="header__btn header__btn--login @@if(!context.unlogged){hidden} btn btn--green _popup-link" href="#login">Login</a>
+          <button class="header__btn header__btn--logout @@if(context.unlogged){hidden} btn btn--red" data-da=".user__menu,767.98"
+            href="">Logout</button>
+          <a class="header__btn header__btn--register @@if(!context.unlogged){hidden} btn btn--red" href="#">Register</a>
         </div>
-        <div class="header__btn-menu icon-user"></div>
       </div>
     </div>
   </div>
 
   <div class="header__menu menu">
     <div class="container">
-      <nav class="menu__body">
-        <button class="menu__btn icon-menu">
+      <nav class="menu__body" aria-label="Main menu">
+        <button class="menu__btn icon-menu" aria-label="Open Menu Button" aria-expanded="false" aria-controls="menu__list">
           <span></span>
           <span></span>
           <span></span>
         </button>
-        <ul class="menu__list">
-          <li><a href="/">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="#">WordPress</a></li>
-          <li><a href="#">Joomla</a></li>
-          <li><a href="#">PSD</a></li>
-          <li><a href="#">Plugins</a></li>
-          <li><a href="#">Compnents</a></li>
-          <li><a href="#">Pages</a></li>
-          <li><a href="contacts.html">Contact</a></li>
-          <li><a href="#">Help</a></li>
+        <!-- {_active" aria-current="page}  -->
+        <ul class="menu__list" id="menu__list">
+          <li class="menu__list-item @@if(context.home){_active}"><a href="/" @@if(context.home){aria-current="page" }>Home</a></li>
+          <li class="menu__list-item @@if(context.link=='about'){_active}"><a href="about.html" @@if(context.link=='about' ){aria-current="page"
+              }>About</a></li>
+          <li class="menu__list-item"><a href="#">WordPress</a></li>
+          <li class="menu__list-item"><a href="#">Joomla</a></li>
+          <li class="menu__list-item"><a href="#">PSD</a></li>
+          <li class="menu__list-item"><a href="#">Plugins</a></li>
+          <li class="menu__list-item"><a href="#">Components</a></li>
+          <li class="menu__list-item"><a href="#">Pages</a></li>
+          <li class="menu__list-item @@if(context.link=='contacts'){_active}"><a href="contacts.html" @@if(context.link=='contacts'
+              ){aria-current="page" }>Contact</a></li>
+          <li class="menu__list-item"><a href="#">Help</a></li>
         </ul>
       </nav>
+    </div>
+  </div>
+
+  <div class="header__search search @@if(context.home){search--home}" style="background-image: url(img/search-bg.jpg);" role="search">
+    <div class="search__container">
+      <div class="search__inner">
+        @@if (context.home) {
+        <h1 class="search__inner-title">
+          Welcome To Moderno Market Place!
+        </h1>
+        }
+
+        <div class="search__inner-text">
+          Premium WordPress Themes, Web Templates and Many More ...
+        </div>
+        <div class="search__inner-form">
+          <form>
+            <input class="form__input" id="" type="text" placeholder="Search Your Keywords . . ." required aria-label="Site Search">
+            <button type="submit" style="background-image:url(img/icons/search.png)" aria-label="Submit Search"></button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </header>

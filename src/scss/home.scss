@@ -2,21 +2,23 @@
 // start products
 
 .products {
-
-  @include adaptiv-value('padding-top', 110, 30, '');
-  @include adaptiv-value('padding-bottom', 110, 30, '');
-  @include adaptiv-value('padding-left', 30, 15, '');
-  @include adaptiv-value('padding-right', 30, 15, '');
   background-color: #f4f6f5;
 
   // .products__container
 
-  &__wrapper {}
+  &__wrapper {
+    max-width: $maxWidth + px;
+    margin: 0 auto;
+    @include adaptiveValue('padding-top', 110, 30);
+    @include adaptiveValue('padding-bottom', 110, 30);
+    @include adaptiveValue('padding-left', 30, 15);
+    @include adaptiveValue('padding-right', 30, 15);
+  }
 
   // .products__title
 
   &__title {
-    @include adaptiv-value('margin-bottom', 30, 20, 1);
+    @include adaptiveValue('margin-bottom', 30, 20, 1);
   }
 
   // .products__filters
@@ -27,7 +29,7 @@
     flex-wrap: wrap;
 
     &:not(:last-child) {
-      @include adaptiv-value('margin-bottom', 54, 30, 1);
+      @include adaptiveValue('margin-bottom', 54, 30, 1);
     }
   }
 
@@ -35,12 +37,12 @@
 
   &__filters-btn {
     // min-height: 37px;
-    font-size: 14px;
+    font-size: rem(14);
     cursor: pointer;
     font-weight: 500;
     margin-bottom: 6px;
-    @include adaptiv-value('padding-left', 30, 15, 1);
-    @include adaptiv-value('padding-right', 30, 15, 1);
+    @include adaptiveValue('padding-left', 30, 15, 1);
+    @include adaptiveValue('padding-right', 30, 15, 1);
 
     &:not(:last-child) {
       margin-right: 6px;
@@ -56,23 +58,22 @@
 
   &__items {
     display: grid;
-    @include adaptiv-value("column-gap", 30, 5, '');
-    @include adaptiv-value("row-gap", 30, 15, '');
-    @include adaptiv-value('margin-bottom', 90, 30, 1);
+    @include adaptiveValue("column-gap", 30, 5);
+    @include adaptiveValue("row-gap", 30, 15);
+    @include adaptiveValue('margin-bottom', 90, 30, 1);
+
     // grid-template-columns: repeat(auto-fit, minmax(min(calc(200px + (442 - 200) * (100vw - 320px) / (2400 - $minWidth)), 442px), 1fr));
     // grid-template-columns: repeat(auto-fit, minmax(min(calc(220px + (442 - 185) * (100vw - 320px) / ($maxWidth - $minWidth)), 442px), 1fr));
-    grid-template-columns: repeat(4, 1fr);
+    @media (min-width:em($md1)) {
+      grid-template-columns: repeat(4, 1fr);
+    }
 
-    @media (max-width: ($md1 + px)) {
+    @media (min-width: em($md2)) {
       grid-template-columns: repeat(3, 1fr);
     }
 
-    @media (max-width: ($md3 + px)) {
+    @media (min-width: em($md4)) {
       grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (max-width: ($md4 + px)) {
-      grid-template-columns: 1fr;
     }
   }
 
@@ -116,7 +117,6 @@
   &__footer-popular {}
 }
 
-
 .item-product {
   background-color: #fff;
   display: flex;
@@ -148,20 +148,21 @@
   // .item-product__label
 
   &__label {
-    border-left: resp-value(64, 32) solid #8bc34a;
-    border-bottom: resp-value(64, 32) solid transparent;
+    border-left: solid #8bc34a;
+    border-bottom: solid transparent;
+    @include adaptiveValue("border-width", 64, 32);
+    // border-width: 32px;
+    // border: resp-value(32, 16) solid;
+    // border-color: #8bc34a transparent transparent #8bc34a;
     // .item-product__label_zip
 
-
     &_zip {
-
-
       &::before {
         color: #fff;
         position: absolute;
         top: 12px;
-        @include adaptiv-value("top", 12, 4);
-        @include adaptiv-value("left", 18, 4);
+        @include adaptiveValue("top", 12, 4);
+        @include adaptiveValue("left", 18, 4);
         // left: resp-value(18, 5);
         // transform: translate3d(0, -50%, 0);
       }
@@ -176,11 +177,11 @@
     justify-content: space-between;
     align-items: center;
     flex: 1 1 auto;
-    @include adaptiv-value('min-height', 90, 70, 1);
+    @include adaptiveValue('min-height', 90, 70, 1);
     padding-top: 12px;
     padding-bottom: 12px;
-    @include adaptiv-value('padding-right', 32, 12, 1);
-    @include adaptiv-value('padding-left', 32, 12, 1);
+    @include adaptiveValue('padding-right', 32, 12, 1);
+    @include adaptiveValue('padding-left', 32, 12, 1);
     background-color: #fff;
     border-bottom: 1px solid #e7ecf2;
   }
@@ -194,10 +195,10 @@
     justify-content: center;
     line-height: 1.15em;
 
-    @include adaptiv-value('padding-right', 15, 10, 1);
+    @include adaptiveValue('padding-right', 15, 10, 1);
 
     >:not(:last-child) {
-      @include adaptiv-value('margin-bottom', 10, 4, 1);
+      @include adaptiveValue('margin-bottom', 10, 4, 1);
     }
   }
 
@@ -205,14 +206,14 @@
 
   &__title {
     font-weight: 500;
-    @include adaptiv-value('font-size', 18, 16, 1);
+    @include adaptiveValue('font-size', 18, 16, 1);
 
   }
 
   // .item-product__category
 
   &__category {
-    font-size: 14px;
+    font-size: rem(14);
     color: #8bc34a;
   }
 
@@ -220,7 +221,7 @@
 
   &__prices {
     font-weight: 700;
-    @include adaptiv-value('font-size', 20, 18, 1);
+    @include adaptiveValue('font-size', 20, 18, 1);
   }
 
   // .item-product__price
@@ -232,9 +233,9 @@
   &__author {
     display: flex;
     align-items: center;
-    @include adaptiv-value('min-height', 68, 45, 1);
-    @include adaptiv-value('padding-right', 32, 12, 1);
-    @include adaptiv-value('padding-left', 32, 12, 1);
+    @include adaptiveValue('min-height', 68, 45, 1);
+    @include adaptiveValue('padding-right', 32, 12, 1);
+    @include adaptiveValue('padding-left', 32, 12, 1);
   }
 
   &__author-avatar {
@@ -242,10 +243,11 @@
     height: 30px;
     border-radius: 50%;
     background-color: #b5b5b5;
-    @include adaptiv-value("margin-right", 14, 5);
+    @include adaptiveValue("margin-right", 14, 5);
 
     img {
       max-width: 100%;
+      max-height: 100%;
     }
   }
 
@@ -254,10 +256,10 @@
   &__author-name {
     flex: 1 1 auto;
     font-weight: 500;
-    font-size: 14px;
+    font-size: rem(14);
     color: #546e7a;
     word-break: break-all; // перенос
-    @include adaptiv-value("margin-right", 10, 0);
+    @include adaptiveValue("margin-right", 10, 0);
 
   }
 
@@ -273,7 +275,7 @@
   display: flex;
 
   &>:not(:last-child) {
-    @include adaptiv-value("margin-right", 13, 2);
+    @include adaptiveValue("margin-right", 13, 2);
   }
 
 
@@ -310,7 +312,7 @@
   // .star-rating__votes
 
   &__votes {
-    font-size: 12px;
+    font-size: rem(12);
     color: #b0bec5;
 
     span {
@@ -325,17 +327,22 @@
 .product-slider {
   // padding: 110px 0px 120px;
   background-color: #fff;
-  @include adaptiv-value("padding-top", 110, 25, 1);
-  @include adaptiv-value("padding-bottom", 120, 20, 1);
+  @include adaptiveValue("padding-top", 110, 25, 1);
+  @include adaptiveValue("padding-bottom", 120, 20, 1);
 
   &__wrapper {
-    max-width: 1920px;
+    max-width: $maxWidth + px;
     margin: 0 auto;
+    padding: 0 30px;
+
+    @media (max-width: em($md3)) {
+      padding: 0 15px;
+    }
   }
 
   &__inner {
     min-width: 0;
-    @include adaptiv-value("margin-bottom", 67, 20, 1);
+    @include adaptiveValue("margin-bottom", 67, 20, 1);
   }
 
   .swiper-wrapper {
@@ -370,9 +377,12 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    // align-items: center;
+    // justify-content: center;
 
     @media (max-width: em($md3)) {
-      @include adaptiv-value("margin-bottom", 30, 15, 1);
+      // @include adaptiveValue("margin-bottom", 30, 15, 1);
+      margin-bottom: resp-value(30, 15);
     }
 
 
@@ -402,22 +412,23 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 0 auto resp-value(30, 15);
+      margin: 0 auto;
+      @include adaptiveValue('margin-bottom', 30, 15);
       transition: all .5s;
     }
 
     &-title {
       // flex: 1 1 auto;
       margin-bottom: 1em;
-      @include adaptiv-value("font-size", 24, 18, 1);
-      // font-size: 24px;
+      @include adaptiveValue("font-size", 24, 18, 1);
+      // font-size: rem(24);
       color: #fff;
       font-weight: 500;
       transition: all .5s;
     }
 
     &-text {
-      font-size: 15px;
+      font-size: rem(15);
     }
   }
 }
@@ -430,7 +441,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   // min-height: 750px;
-  @include adaptiv-value("min-height", 750, 350, 1);
+  @include adaptiveValue("min-height", 750, 350, 1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -440,6 +451,7 @@
     max-width: 650px;
     width: 100%;
     min-height: 215px;
+    height: 50px; // ie11
     background-color: $green;
     display: flex;
     align-items: center;
@@ -454,7 +466,7 @@
   }
 
   &__title {
-    @include adaptiv-value("font-size", 30, 24, 1);
+    @include adaptiveValue("font-size", 30, 24, 1);
     line-height: 1em;
     color: #fff;
     // margin-right: em(45, 30);
@@ -466,10 +478,9 @@
   }
 
   &__link {
-    font-size: 18px;
-    line-height: 36px;
+    font-size: rem(18);
+    line-height: math.div(36, 18);
     padding: 15px 40px;
-    background-color: #fff;
   }
 }
 
@@ -494,8 +505,8 @@
 
     &-title {
       background-color: #f8f8f8;
-      // font-size: 24px;
-      @include adaptiv-value("font-size", 24, 20);
+      // font-size: rem(24);
+      @include adaptiveValue("font-size", 24, 20);
       text-align: center;
       font-weight: 700;
       padding: resp-value(30, 15) 15px;
@@ -510,35 +521,89 @@
 // start product-page
 .product-page {
   &__inner {
-    display: flex;
-    @include adaptiv-value("padding-bottom", 110, 30);
+    // display: flex;
+    @include adaptiveValue("padding-bottom", 110, 30);
 
-    @media (max-width: em($md2)) {
-      display: block;
+
+    @media (min-width: em($md2)) {
+      // display: block;
+      display: grid;
+      grid-template-columns: prc(270, $md1) 1fr;
     }
   }
 
   &__aside {
-    @media (min-width: em($md2)) {
-      @include adaptiv-value("margin-right", 30, 15);
+    // flex: 0 1 270px;
+
+    // @media (min-width: em($md2)) {
+    // @include adaptiveValue("margin-right", 30, 15);
+    // }
+
+    // @media (max-width: em($md2)) {
+    // @include adaptiveValue("margin-bottom", 30, 15);
+    // }
+
+    .item-product {
+      box-shadow: none;
+      @include adaptiveValue("margin-bottom", 30, 15);
+
+      &:not(:last-child) {
+        @include adaptiveValue("padding-bottom", 30, 15);
+        border-bottom: 1px solid #dde3e8;
+      }
+
+      // &__image {
+      //   min-height: 120px;
+      // }
+
+      &__body {
+        padding: 0;
+        min-height: 75px;
+        border-bottom: none;
+        // flex: 0 0 auto;
+      }
+
+      &__author {
+        padding: 0;
+        min-height: 0;
+      }
+
+      // &__author-avatar {
+      //   margin-right: 9px;
+      // }
+
+      &__title {
+        font-size: rem(16);
+      }
+
+      &__prices {
+        font-size: rem(16);
+      }
     }
 
+    .star-rating {
+      &__group {
+        margin-right: 0;
+      }
+
+      &__votes {
+        display: none;
+      }
+    }
   }
 
   &__filter {
     background-color: #fff;
     border: 1px solid #dedede;
     padding: 0px 20px;
-    @include adaptiv-value("margin-bottom", 30, 15);
-    // @include adaptiv-value("min-height", 60, 30);
+    @include adaptiveValue("margin-bottom", 30, 15);
+    // @include adaptiveValue("min-height", 60, 30);
     min-height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     button {
-      cursor: pointer;
-      color: #90a4ae;
 
       &:not(:last-child) {
         margin-right: 12px;
@@ -551,33 +616,36 @@
   }
 
   &__sort-btn {
-    font-size: 18px;
+    font-size: rem(18);
     color: #455a64;
+
   }
 
   &__unsorted-btn {
     margin-left: 12px;
-    font-size: 14px;
+    font-size: rem(14);
     color: #707070;
   }
 
   &__filter-sort {
     color: #707070;
-    font-size: 14px;
+    font-size: rem(14);
     display: flex;
     align-items: center;
   }
 
   &__btns {
     display: flex;
+    color: #90a4ae;
   }
 
   &__content {
+
     .item-product {
       transition: flex-basis .5s, box-shadow .5s;
       // transition stops working because of flex-grow;
       flex-basis: calc(33.3333% - 30px);
-      @include adaptiv-value("margin-left", 30, 10);
+      @include adaptiveValue("margin-left", 30, 10);
 
       @media (max-width: em($md1)) {
         flex-basis: calc(50% - resp-value(30, 10));
@@ -588,8 +656,8 @@
       // }
 
       &__body {
-        @include adaptiv-value("padding-left", 23, 8);
-        @include adaptiv-value("padding-right", 23, 8);
+        @include adaptiveValue("padding-left", 23, 8);
+        @include adaptiveValue("padding-right", 23, 8);
 
         @media (max-width: em($md4)) {
           flex-wrap: wrap;
@@ -605,15 +673,15 @@
       }
 
       &__title {
-        font-size: 16px;
+        font-size: rem(16);
       }
 
       &__author {
         padding-top: 5px;
         padding-bottom: 5px;
         min-height: 65px;
-        @include adaptiv-value("padding-left", 23, 8);
-        @include adaptiv-value("padding-right", 23, 8);
+        @include adaptiveValue("padding-left", 23, 8);
+        @include adaptiveValue("padding-right", 23, 8);
 
         @media (max-width: em($md3)) {
           flex-wrap: wrap;
@@ -651,7 +719,7 @@
         .icon-heart-o {
           display: flex;
           align-items: center;
-          font-size: 12px;
+          font-size: rem(12);
           color: #70838d;
           padding-left: 18px;
           border-left: 1px solid #aeb4bb;
@@ -663,7 +731,7 @@
           }
 
           &::before {
-            font-size: 16px;
+            font-size: rem(16);
             padding-right: 14px;
             color: $green;
             // position: absolute;
@@ -674,7 +742,7 @@
         }
 
         .icon-comment-o {
-          @include adaptiv-value("padding-right", 30, 5);
+          @include adaptiveValue("padding-right", 30, 5);
 
           &::before {
             // top: calc(50% - 1px);
@@ -688,9 +756,9 @@
       display: flex;
       justify-content: flex-start;
       flex-wrap: wrap;
-      @include adaptiv-value("margin-bottom", 30, 15);
-      @include adaptiv-value("margin-left", -30, -10);
-      @include adaptiv-value("row-gap", 30, 10);
+      @include adaptiveValue("margin-bottom", 30, 15);
+      @include adaptiveValue("margin-left", -30, -10);
+      @include adaptiveValue("row-gap", 30, 10);
 
       &_list {
 
@@ -718,18 +786,18 @@
           }
 
           &__body {
-            @include adaptiv-value("padding-top", 23, 15);
+            @include adaptiveValue("padding-top", 23, 15);
           }
 
           &__price {
-            font-size: 30px;
+            font-size: rem(30);
           }
 
           &__sales {
             display: block;
-            font-size: 13px;
+            font-size: rem(13);
             color: #aeb4bb;
-            @include adaptiv-value("margin-top", 23, 15);
+            @include adaptiveValue("margin-top", 23, 15);
 
             @media (max-width: em($md4)) {
               margin-top: 0;
@@ -738,14 +806,14 @@
 
           &__text {
             display: block;
-            font-size: 14px;
+            font-size: rem(14);
             color: #70838d;
             margin-top: 10px;
             margin-bottom: 5px;
           }
 
           &__rating {
-            @include adaptiv-value("margin-right", 30, 5);
+            @include adaptiveValue("margin-right", 30, 5);
             // margin-right: 30px;
           }
 
@@ -764,58 +832,6 @@
       }
     }
   }
-
-
-  &__aside {
-
-    .item-product {
-      box-shadow: none;
-      @include adaptiv-value("margin-bottom", 30, 15);
-
-      &:not(:last-child) {
-        @include adaptiv-value("padding-bottom", 30, 15);
-        border-bottom: 1px solid #dde3e8;
-      }
-
-      // &__image {
-      //   min-height: 120px;
-      // }
-
-      &__body {
-        padding: 0;
-        min-height: 75px;
-        border-bottom: none;
-        // flex: 0 0 auto;
-      }
-
-      &__author {
-        padding: 0;
-        min-height: 0;
-      }
-
-      // &__author-avatar {
-      //   margin-right: 9px;
-      // }
-
-      &__title {
-        font-size: 16px;
-      }
-
-      &__prices {
-        font-size: 16px;
-      }
-    }
-
-    .star-rating {
-      &__group {
-        margin-right: 0;
-      }
-
-      &__votes {
-        display: none;
-      }
-    }
-  }
 }
 
 .aside {
@@ -823,25 +839,25 @@
 
   &__item {
     background-color: #fff;
-    @include adaptiv-value("padding-top", 25, 15);
-    @include adaptiv-value("padding-right", 30, 15);
-    @include adaptiv-value("padding-bottom", 30, 15);
-    @include adaptiv-value("padding-left", 30, 15);
+    @include adaptiveValue("padding-top", 25, 15);
+    @include adaptiveValue("padding-right", 30, 15);
+    @include adaptiveValue("padding-bottom", 30, 15);
+    @include adaptiveValue("padding-left", 30, 15);
 
     &:not(:last-child) {
-      @include adaptiv-value("margin-bottom", 30, 15);
+      @include adaptiveValue("margin-bottom", 30, 15);
     }
 
     border: 1px solid #dedede;
-    // @include adaptiv-value("min-width", 270, 180);
+    // @include adaptiveValue("min-width", 270, 180);
 
   }
 
   &__title {
     border-bottom: 1px solid #dde3e8;
-    @include adaptiv-value("font-size", 20, 18);
+    @include adaptiveValue("font-size", 20, 18);
     color: $mainColor;
-    @include adaptiv-value("padding-bottom", 19, 11);
+    @include adaptiveValue("padding-bottom", 19, 11);
 
     // padding: 25px 0px 19px;
     font-weight: 700;
@@ -850,6 +866,9 @@
       display: flex;
       flex-direction: row-reverse;
       justify-content: space-between;
+      align-items: center;
+      border-bottom: 0;
+      padding-bottom: 0;
 
       &::before {
         content: "\f107";
@@ -857,15 +876,20 @@
         transition: transform .3s;
         color: $green;
         transform: rotate(0deg);
-        font-size: 30px;
+        font-size: rem(30);
+      }
+
+      &._active {
+        border-bottom: 1px solid #dde3e8;
+        padding-bottom: 15px;
+
+        &::before {
+          transform: rotate(180deg);
+        }
       }
     }
 
-    &._active {
-      &::before {
-        transform: rotate(180deg);
-      }
-    }
+
   }
 
   &__product-items {
@@ -876,7 +900,7 @@
       column-gap: 15px;
     }
 
-    @include adaptiv-value("padding-top", 30, 15);
+    @include adaptiveValue("padding-top", 30, 15);
   }
 
 }
@@ -888,14 +912,19 @@
     padding: 10px 0;
     display: flex;
     align-items: center;
-    @include adaptiv-value("font-size", 16, 14);
+    @include adaptiveValue("font-size", 16, 14);
 
+    @media (any-hover: hover) {
+      &:hover {
+        color: $green;
+      }
+    }
 
     &::before {
       transform: translate3d(0, -2px, 0);
-      color: #8bc34a;
+      color: $green;
       margin-right: 13px;
-      @include adaptiv-value("font-size", 18, 16);
+      @include adaptiveValue("font-size", 18, 16);
     }
 
     a {
@@ -910,26 +939,18 @@
 }
 
 .price-range {
-  form {
+  &__form {
     padding-top: 20px;
   }
 
-  button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 10px;
-    min-height: 46px;
-    background-color: $green;
-    text-align: center;
-    color: #fff;
+  &__btn {
+    padding: 16px 10px;
     font-weight: 500;
     width: 100%;
-    cursor: pointer;
 
     &::before {
       padding-right: 10px;
-      font-size: 15px;
+      font-size: rem(15);
     }
   }
 }
@@ -941,11 +962,8 @@
 
   &__link {
     padding: 16px 10px;
-    display: block;
-    background-color: $green;
-    color: #fff;
+    width: 100%;
     font-weight: 500;
-    text-align: center;
   }
 }
 
@@ -954,7 +972,7 @@
 
 // start product-details
 .product-details {
-  @include adaptiv-value("padding-bottom", 100, 30);
+  @include adaptiveValue("padding-bottom", 100, 30);
 
   &__container {
     @media (min-width: em($md2)) {
@@ -964,7 +982,7 @@
 
   &__content {
     @media (min-width: em($md2)) {
-      @include adaptiv-value("margin-right", 30, 15);
+      @include adaptiveValue("margin-right", 30, 15);
     }
 
     // max-width: 870px;
@@ -974,7 +992,7 @@
 
 
   &__title {
-    @include adaptiv-value("font-size", 30, 18);
+    @include adaptiveValue("font-size", 30, 18);
     // color: $mainColor;
     line-height: em(40, 30);
     font-weight: 500;
@@ -985,11 +1003,11 @@
 
   &__text {
     color: #707070;
-    @include adaptiv-value("margin-bottom", 35, 15);
+    @include adaptiveValue("margin-bottom", 35, 15);
   }
 
   &__box {
-    @include adaptiv-value("margin-bottom", 55, 15);
+    @include adaptiveValue("margin-bottom", 55, 15);
     display: flex;
     justify-content: space-between;
     text-align: center;
@@ -1015,10 +1033,11 @@
     // gap: 18px;
     a {
       // flex: 1 1 150px;
-      @include adaptiv-value("min-width", 150, 100);
+      @include adaptiveValue("min-width", 150, 100);
       color: $grey;
-      font-size: 14px;
+      font-size: rem(14);
       padding: 16px 8px;
+      font-weight: 500;
 
       @media (max-width: em($md4)) {
         width: 100%;
@@ -1028,6 +1047,7 @@
   }
 
   &__btn-list-item {
+
     &+& {
       margin-top: 10px;
 
@@ -1039,31 +1059,13 @@
 
     @media (any-hover: hover) {
       a:hover {
-        background-color: rgb(160, 159, 159);
-        color: $mainColor;
-        font-weight: 500;
+        color: inherit;
       }
     }
   }
 
   &__socials-list {
     display: flex;
-
-    a {
-      width: 54px;
-      height: 50px;
-      position: relative;
-
-      &::before {
-        font-size: 18px;
-        color: #fff;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-    }
   }
 
   &__socials-item {
@@ -1072,14 +1074,27 @@
     }
   }
 
+  &__socials-link {
+    width: 54px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+      font-size: rem(18);
+      color: #fff;
+    }
+  }
+
   &__more-title {
-    font-size: 18px;
+    font-size: rem(18);
     font-weight: 500;
     color: $mainColor;
     padding: resp-value(18, 15) resp-value(25, 15);
     background-color: #fff;
     border: 1px solid #dcdcdc;
-    @include adaptiv-value("margin-bottom", 28, 15);
+    @include adaptiveValue("margin-bottom", 28, 15);
     // margin-bottom: 28px;
   }
 
@@ -1089,41 +1104,12 @@
     // flex-wrap: wrap;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    @include adaptiv-value("gap", 30, 10);
-    @include adaptiv-value("margin-bottom", 30, 15);
+    @include adaptiveValue("gap", 30, 10);
+    @include adaptiveValue("margin-bottom", 30, 15);
 
   }
 }
 
-
-.link-live {
-  background-color: $red;
-}
-
-.link-screenshots {
-  background-color: #455a64;
-}
-
-.link-documentation {
-  background-color: $green;
-}
-
-
-.icon-facebook {
-  background-color: #6370b6;
-}
-
-.icon-twitter {
-  background-color: #64b5f6;
-}
-
-.icon-linkedin {
-  background-color: #4f71ce;
-}
-
-.icon-pinterest-p {
-  background-color: #d32f2f;
-}
 
 .productmini {
   display: flex;
@@ -1139,6 +1125,7 @@
     // height: 100%;
     img {
       max-width: 100%;
+      max-height: 100%;
       object-fit: cover;
     }
   }
@@ -1149,25 +1136,25 @@
 
   &__title {
     font-weight: 500;
-    font-size: 14px;
+    font-size: rem(14);
     color: $mainColor;
   }
 
   &__category {
     color: $green;
-    font-size: 12px;
+    font-size: rem(12);
   }
 
   &__price {
     font-weight: 700;
-    font-size: 18px;
+    font-size: rem(18);
     color: $mainColor;
   }
 }
 
 .product-tabs {
   &__tabs-block {
-    @include adaptiv-value("margin-bottom", 55, 15);
+    @include adaptiveValue("margin-bottom", 55, 15);
   }
 }
 
@@ -1191,7 +1178,7 @@
     // margin: 0px 2px;
     color: #70838d;
     background-color: #fff;
-    @include adaptiv-value("padding", 20, 10);
+    @include adaptiveValue("padding", 20, 10);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1207,7 +1194,7 @@
       // flex: 0 0 20px;
       width: 27px;
       color: $green;
-      font-size: 14px;
+      font-size: rem(14);
     }
 
     &+& {
@@ -1219,6 +1206,13 @@
 
       &:nth-child(odd) {
         border-left: none;
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $mainColor;
+
       }
     }
 
@@ -1240,10 +1234,10 @@
 
   // .tabs-block__body
   &__body {
-    @include adaptiv-value("padding-top", 30, 10);
-    @include adaptiv-value("padding-right", 35, 10);
-    @include adaptiv-value("padding-bottom", 60, 10);
-    @include adaptiv-value("padding-left", 50, 10);
+    @include adaptiveValue("padding-top", 30, 10);
+    @include adaptiveValue("padding-right", 35, 10);
+    @include adaptiveValue("padding-bottom", 60, 10);
+    @include adaptiveValue("padding-left", 50, 10);
   }
 
   // .tabs-block__block
@@ -1291,7 +1285,8 @@
     gap: 30px;
 
     @media (min-width: em($md3)) {
-      grid-template-columns: prc(270, 1170) 1fr;
+      grid-template-columns: resp-value(270, 150) 1fr;
+      // grid-template-columns: prc(270, 1170) 1fr;
     }
   }
 
@@ -1306,9 +1301,11 @@
 
     &__item {
       display: block;
-      padding: 17px 17px 17px resp-value(22, 17);
+      width: 100%;
+      padding: 17px;
+      @include adaptiveValue("padding-left", 22, 17);
       color: #707070;
-      font-size: 14px;
+      font-size: rem(14);
       font-weight: 500;
       border-left: none;
 
@@ -1325,7 +1322,7 @@
       }
 
       &:before {
-        // @include adaptiv-value("left", 24, 7);
+        // @include adaptiveValue("left", 24, 7);
         color: #444;
       }
     }
@@ -1342,9 +1339,10 @@
 .product-price {
   &__box {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    @include adaptiv-value("padding-top", 30, 15);
-    @include adaptiv-value("padding-bottom", 30, 15);
+    @include adaptiveValue("padding-top", 30, 15);
+    @include adaptiveValue("padding-bottom", 30, 15);
 
     .select {
       &__value {
@@ -1359,38 +1357,24 @@
   }
 
   &__product {
-    font-size: 22px;
+    font-size: rem(22);
     font-weight: 500;
     color: $red;
   }
 
   &__btn {
     box-shadow: 0px 1px 2px 0px rgba(69, 90, 100, 0.75);
-    border: none;
-    background-color: $text;
     font-weight: 700;
     min-height: 50px;
     width: 100%;
 
     &:not(:last-child) {
       margin-bottom: 7px;
-
-    }
-
-    @media (any-hover: hover) {
-      &:hover {
-        background-color: #fff;
-        color: $mainColor;
-      }
     }
 
     &::before {
       padding-right: 8px;
     }
-  }
-
-  .icon-shopping-cart {
-    background-color: $green;
   }
 
   .icon-heart-o {
@@ -1401,8 +1385,8 @@
 .product-author {
   &__box {
     // padding: 25px 0;
-    @include adaptiv-value("padding-top", 25, 15);
-    @include adaptiv-value("padding-bottom", 25, 15);
+    @include adaptiveValue("padding-top", 25, 15);
+    @include adaptiveValue("padding-bottom", 25, 15);
     display: flex;
     flex-wrap: wrap;
   }
@@ -1416,7 +1400,7 @@
   }
 
   &__name {
-    font-size: 18px;
+    font-size: rem(18);
     color: $mainColor;
     margin-bottom: 2px;
     word-break: break-all;
@@ -1424,7 +1408,7 @@
 
   &__btn {
     color: #707070;
-    font-size: 13px;
+    font-size: rem(13);
     padding: 6px 9px 5px;
     border: 1px solid #d6d6d6;
 
@@ -1443,7 +1427,7 @@
     li {
       display: inline-block;
       color: #fff;
-      font-size: 20px;
+      font-size: rem(20);
       text-align: center;
       position: relative;
       // width: prc(34, 208);
@@ -1489,16 +1473,16 @@
 }
 
 .sales-number {
-  @include adaptiv-value("padding-bottom", 23, 15);
-  @include adaptiv-value("padding-top", 23, 15);
+  @include adaptiveValue("padding-bottom", 23, 15);
+  @include adaptiveValue("padding-top", 23, 15);
 
   &__sales {
-    font-size: 16px;
+    font-size: rem(16);
     font-weight: 700;
     color: #707070;
 
     span {
-      font-size: 20px;
+      font-size: rem(20);
       font-weight: 700;
       color: #263238;
       padding-right: 13px;
@@ -1513,7 +1497,7 @@
 
 .product-info {
   &__line {
-    font-size: 14px;
+    font-size: rem(14);
     color: #70838d;
     margin-top: 20px;
     line-height: 18px;
@@ -1538,24 +1522,13 @@
   &__404 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 800;
-    @include adaptiv-value("font-size", 300, 100, 1);
+    @include adaptiveValue("font-size", 300, 100, 1);
     padding-top: em(70, 300);
     padding-bottom: em(20, 300);
-    line-height: 1em;
+    line-height: 0.1;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    // &::after {
-    //   content: "";
-    //   // position: absolute;
-    //   background-image: url(../img/page-404.png);
-    //   width: calc(150 / 1168 * 100%);
-    //   background-repeat: no-repeat;
-    //   background-size: contain;
-    //   height: calc(290 / 300 * 1em);
-    //   margin-left: 20px;
-    // }
   }
 
   &__img {
@@ -1564,32 +1537,40 @@
 
     img {
       max-width: 100%;
+      max-height: 100%;
     }
   }
 
   &__title {
     margin-bottom: 1em;
     font-weight: 700;
-    @include adaptiv-value("font-size", 30, 16, 1);
-    // font-size: 30px;
+    @include adaptiveValue("font-size", 30, 16, 1);
+    // font-size: rem(30);
   }
 
   &__text {
     max-width: prc(701, 1127);
     margin: 0 auto;
-    font-size: 18px;
-    @include adaptiv-value("font-size", 18, 14, 1);
-    @include adaptiv-value("margin-bottom", 60, 18, 1);
+    font-size: rem(18);
+    @include adaptiveValue("font-size", 18, 14, 1);
+    @include adaptiveValue("margin-bottom", 60, 18, 1);
   }
 
   &__link {
     color: #fff;
-    font-size: 14px;
+    font-size: rem(14);
     text-transform: uppercase;
     padding: em(20, 14) em(30, 14) em(16, 14);
     border: 1px solid #fff;
     border-radius: 4px;
-    @include adaptiv-value("margin-bottom", 100, 30, 1);
+    @include adaptiveValue("margin-bottom", 100, 30, 1);
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $green;
+        background-color: #fff;
+      }
+    }
   }
 }
 
@@ -1601,17 +1582,17 @@
 
   .about__box {
     &:not(:last-child) {
-      @include adaptiv-value("margin-bottom", 40, 15, 1);
+      @include adaptiveValue("margin-bottom", 40, 15, 1);
       // margin-bottom: 40px;
     }
 
     p {
-      @include adaptiv-value("font-size", 16, 14, 1);
+      @include adaptiveValue("font-size", 16, 14, 1);
     }
   }
 
   &__text-title {
-    @include adaptiv-value("font-size", 20, 16, 1);
+    @include adaptiveValue("font-size", 20, 16, 1);
     font-weight: 700;
     color: #444;
     // margin-top: 40px;
@@ -1624,21 +1605,22 @@
 // start contact
 .contact {
   &__head {
-    @include adaptiv-value("padding-left", 40, 15);
-    @include adaptiv-value("padding-right", 40, 15);
+    @include adaptiveValue("padding-left", 40, 15);
+    @include adaptiveValue("padding-right", 40, 15);
     // padding-left: em(40, 24);
     // padding-right: em(40, 24);
   }
 
   &__inner {
-    @include adaptiv-value("padding-top", 35, 15);
-    @include adaptiv-value("padding-left", 40, 15);
-    @include adaptiv-value("padding-right", 40, 15);
-    padding-bottom: 15px;
+    @include adaptiveValue("padding-top", 35, 15);
+    @include adaptiveValue("padding-bottom", 35, 15);
+    @include adaptiveValue("padding-left", 40, 15);
+    @include adaptiveValue("padding-right", 40, 15);
+    // padding-bottom: 15px;
   }
 
   &__map {
-    @include adaptiv-value("margin-bottom", 50, 15);
+    @include adaptiveValue("margin-bottom", 50, 15);
     padding-bottom: prc(415, 1088);
     position: relative;
 
@@ -1664,7 +1646,7 @@
   }
 
   &__info {
-    @include adaptiv-value("margin-right", 30, 15);
+    @include adaptiveValue("margin-right", 30, 15);
     flex: 0 1 330px;
 
     @media (max-width: em($md3)) {
@@ -1675,7 +1657,7 @@
   &__info-item {
 
     &:not(:last-child) {
-      @include adaptiv-value("margin-bottom", 30, 15);
+      @include adaptiveValue("margin-bottom", 30, 15);
 
     }
   }
@@ -1683,10 +1665,10 @@
   &__info-title {
     padding-bottom: 20px;
     position: relative;
-    font-size: 20px;
+    font-size: rem(20);
     font-weight: 500;
     color: $mainColor;
-    @include adaptiv-value("padding-left", 40, 25);
+    @include adaptiveValue("padding-left", 40, 25);
 
     margin-bottom: 20px;
     // display: grid;
@@ -1698,20 +1680,20 @@
       height: 4px;
       background-color: $green;
       position: absolute;
-      @include adaptiv-value("left", 40, 25);
+      @include adaptiveValue("left", 40, 25);
       bottom: 0;
     }
 
     &::before {
       color: $green;
-      font-size: 21px;
+      font-size: rem(21);
       position: absolute;
       left: 0;
     }
   }
 
   &__info-content {
-    @include adaptiv-value("padding-left", 40, 25);
+    @include adaptiveValue("padding-left", 40, 25);
     color: #707070;
     max-width: 230px;
   }
@@ -1719,16 +1701,29 @@
   &__form {
     flex: 1 1 auto;
 
-    .form__btn {
-      margin-top: 23px;
+    .form {
+      &__btn {
+        margin-top: 23px;
+        min-height: 52px;
+      }
 
-      min-height: 52px;
+      &__row {
+        // grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      &__input {
+        flex: 1 1 auto;
+      }
     }
   }
 
   &__form-title {
     margin-bottom: 25px;
-    font-size: 24px;
+    font-size: rem(24);
     font-weight: 500;
     color: #333;
   }
@@ -1738,7 +1733,7 @@
 
 // start settings
 .settings {
-  @include adaptiv-value("padding-bottom", 100, 20);
+  @include adaptiveValue("padding-bottom", 100, 20);
 
   .form {
     &__btn {
@@ -1758,10 +1753,10 @@
   }
 
   &__content {
-    @include adaptiv-value("padding-top", 30, 15);
-    @include adaptiv-value("padding-right", 35, 15);
-    @include adaptiv-value("padding-bottom", 80, 15);
-    @include adaptiv-value("padding-left", 35, 15);
+    @include adaptiveValue("padding-top", 30, 15);
+    @include adaptiveValue("padding-right", 35, 15);
+    @include adaptiveValue("padding-bottom", 80, 15);
+    @include adaptiveValue("padding-left", 35, 15);
     // @media (max-width: em($md1)) {
     // padding: resp-value(30, 15) resp-value(35, 15) resp-value(80, 20);
     // }
@@ -1783,7 +1778,7 @@
   }
 
   &__socials {
-    @include adaptiv-value("margin-bottom", 30, 10);
+    @include adaptiveValue("margin-bottom", 30, 10);
   }
 
   &__aside {
@@ -1802,7 +1797,8 @@
     width: 100%;
 
     @media (max-width: em($md2)) {
-      @include adaptiv-value("margin-bottom", 30, 10);
+      // @include adaptiveValue("margin-bottom", 30, 10);
+      margin-bottom: resp-value(30, 10);
     }
   }
 
@@ -1814,7 +1810,8 @@
       position: absolute;
       content: '';
       left: 11px;
-      top: 13px;
+      top: 50%;
+      transform: translateY(-50%);
       width: 9px;
       height: 9px;
       border-radius: 50%;
@@ -1836,17 +1833,15 @@
   &__aside-btns {}
 
   &__aside-btn {
-    &:not(:last-child) {
-      margin-bottom: 17px;
-    }
-
     width: 100%;
-    color: #fff;
     font-weight: 500;
     padding: 18px 10px;
     // position: relative;
     box-shadow: 0px 1px 2px 0px rgba(69, 90, 100, 0.75);
-    background-color: $green;
+
+    &:not(:last-child) {
+      margin-bottom: 17px;
+    }
 
     &--message {
 
@@ -1858,8 +1853,6 @@
         transform: translate3d(0, -1px, 0);
       }
     }
-
-    &--following {}
   }
 
   &__banner {
@@ -1896,7 +1889,7 @@
     text-align: center;
     padding: 0 5px;
     min-height: 78px;
-    font-size: 14px;
+    font-size: rem(14);
     font-weight: 500;
     color: $mainColor;
 
@@ -1929,16 +1922,16 @@
   &__container {}
 
   &__tabs-block {
-    @include adaptiv-value("padding-bottom", 115, 30);
+    @include adaptiveValue("padding-bottom", 115, 30);
   }
 }
 
 .personal-box {
   background-color: #fff;
-  @include adaptiv-value("padding-top", 35, 15);
-  @include adaptiv-value("padding-right", 40, 15);
-  @include adaptiv-value("padding-left", 40, 15);
-  @include adaptiv-value("padding-bottom", 25, 15);
+  @include adaptiveValue("padding-top", 35, 15);
+  @include adaptiveValue("padding-right", 40, 15);
+  @include adaptiveValue("padding-left", 40, 15);
+  @include adaptiveValue("padding-bottom", 25, 15);
 
   // padding: 35px 40px 25px;
   border: 1px solid #dedede;
@@ -1947,7 +1940,7 @@
     margin-bottom: 25px;
     font-weight: 700;
     color: $mainColor;
-    font-size: 20px;
+    font-size: rem(20);
   }
 
   &__text {
@@ -1974,7 +1967,7 @@
 
   &__number {
     font-weight: 700;
-    font-size: 16px;
+    font-size: rem(16);
     color: $mainColor;
   }
 
@@ -1999,11 +1992,11 @@
 // start upload
 
 .upload {
-  &__inner {
-    button {
-      font-weight: 500;
-      padding: 15px 36px;
-    }
+  &__inner {}
+
+  &__form-btn {
+    font-weight: 500;
+    padding: 15px 36px;
   }
 
   &__inner-content {
@@ -2017,7 +2010,7 @@
   }
 
   &__row {
-    font-size: 15px;
+    font-size: rem(15);
 
     @media (min-width: em($md3)) {
       grid-template-columns: 175px 1fr;
@@ -2029,147 +2022,118 @@
 // end upload
 
 // strat withdrawals
-.withdrawals__inner {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 110px;
-}
+.withdrawals {
+  &__container {
 
-.withdrawals__col {
-  max-width: 570px;
-  width: 100%;
-  background-color: #fff;
-  border: 1px solid #dedede;
-  height: 100%;
-}
-
-.withdrawals__title {
-  padding: 18px 32px 24px;
-  border-bottom: 1px solid #dedede;
-  margin-bottom: 30px;
-  color: $mainColor;
-  font-weight: 500;
-  font-size: 24px;
-}
-
-.withdrawals__content {
-  padding-left: 35px;
-  padding-right: 40px;
-
-  button {
-    margin-bottom: 50px;
-    color: #fff;
-    background-color: $green;
-    border: none;
-    padding: 15px 36px;
-    cursor: pointer;
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: space-between;
+    @media (min-width: em($md2)) {
+      display: grid;
+      @include adaptiveValue("gap", 30, 10);
+      grid-template-columns: repeat(auto-fit, minmax(47%, 1fr));
+    }
   }
-}
 
-.withdrawal__form-line {
-  margin-bottom: 25px;
+  &__col {
+    flex: 1 1 40%;
+    // background-color: #fff;
+    // border: 1px solid #dedede;
+    height: 100%;
 
-  label {
+    @media (max-width: em($md2)) {
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &__title {
+    color: $mainColor;
+  }
+
+  &__content {
+
+    button {
+      margin-bottom: 10px;
+      padding: 15px 36px;
+    }
+  }
+
+  &__form-line {
     display: block;
-    width: 100%;
-    font-size: 16px;
+    // margin-bottom: 25px;
+
+    // label {
+
+    // }
+  }
+
+  &__label {
+    display: block;
+    // width: 100%;
+    // font-size: rem(16);
     font-weight: 500;
     margin-bottom: 15px;
     color: $mainColor;
+    padding: 0;
+  }
+}
 
-    span {
+.table-content {
+  @media (max-width: em($md4)) {
+    // width: 320px;
+    overflow-x: auto;
+  }
+
+
+  &__table {
+    padding-bottom: 35px;
+    border-collapse: collapse;
+  }
+
+  &__item {
+    // display: flex;
+    // column-gap: 5px;
+    // align-items: center;
+    // justify-content: space-evenly;
+    height: 42px;
+    font-size: rem(13);
+    color: #444;
+    white-space: nowrap;
+
+    &:nth-child(odd) {
+      background-color: #f9f9f9;
+    }
+  }
+
+  &__date {
+    // width: 154px;
+    // flex: 0 0 154px;
+    // padding-left: 20px;
+    font-weight: 500;
+  }
+
+  &__email {
+    // width: 180px;
+    // flex: 0 1 180px;
+    font-weight: 500;
+  }
+
+  &__price {
+    // width: 70px;
+    // flex: 0 1 70px;
+    font-weight: 700;
+  }
+
+  &__status {
+    // width: 88px;
+    // flex: 0 1 88px;
+    font-weight: 700;
+
+    &.table-content__paid {
       color: $green;
     }
-  }
-
-  input,
-  select {
-    width: 100%;
-    display: block;
-    border: 1px solid #d7d7d7;
-    height: 40px;
-    background-color: #f9f9f9;
-    padding: 0px 18px;
-
-    &::placeholder {
-      color: #707070;
-    }
-  }
-
-  .jq-selectbox {
-    width: 100%;
-  }
-
-  .jq-selectbox__select {
-    height: 40px;
-    padding: 0px 18px;
-    border: 1px solid #d7d7d7;
-    border-bottom-color: #d7d7d7;
-    border-radius: 0px;
-    background: #f9f9f9;
-    box-shadow: none;
-    font-family: 'Roboto-Regular', sans-serif;
-    color: #707070;
-    text-shadow: none;
-    line-height: 40px;
-  }
-
-  .jq-selectbox__trigger-arrow {
-    border: none;
-    top: 0;
-    right: 20px;
-    line-height: 40px;
-    font-size: 15px;
-
-    &::before {
-      font-family: 'icons';
-      content: "\f0d7"
-    }
-  }
-
-  .jq-selectbox__trigger {
-    border-left: none;
-  }
-}
-
-.withdrawals__content-items {
-  padding-bottom: 35px;
-}
-
-.withdrawals__content-item {
-  display: flex;
-  height: 42px;
-  align-items: center;
-  font-size: 13px;
-  color: #444;
-
-  &:nth-child(odd) {
-    background-color: #f9f9f9;
-  }
-}
-
-.withdrawals__content-date {
-  width: 154px;
-  padding-left: 20px;
-  font-weight: 500;
-}
-
-.withdrawals__content-email {
-  width: 180px;
-  font-weight: 500;
-}
-
-.withdrawals__content-price {
-  width: 70px;
-  font-weight: 700;
-}
-
-.withdrawals__content-status {
-  width: 88px;
-  font-weight: 700;
-
-  &.withdrawals__content-paid {
-    color: $green
   }
 }
 

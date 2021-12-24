@@ -24,6 +24,16 @@ a:active {
 
 a {
 	color: inherit;
+	display: inline-block;
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
 }
 
 aside,
@@ -55,7 +65,8 @@ body {
 input,
 button,
 textarea {
-	font-family: $fontFamily;
+	// font-family: $fontFamily;
+	font-family: inherit;
 	font-size: inherit;
 }
 
@@ -65,6 +76,7 @@ input::-ms-clear {
 
 button {
 	cursor: pointer;
+	color: inherit;
 	background-color: inherit;
 	// background-color: transparent;
 }
@@ -72,15 +84,6 @@ button {
 button::-moz-focus-inner {
 	padding: 0;
 	border: 0;
-}
-
-a,
-a:visited {
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: none;
 }
 
 ul li {

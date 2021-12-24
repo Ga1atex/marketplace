@@ -1,93 +1,10 @@
 //<ОСНОВНОЙ БЛОК>====================================================================================================
-a {
-	display: inline-block;
+a {}
+
+.hidden {
+	display: none !important;
 }
 
-// start search
-
-.search {
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	@include adaptiv-value("min-height", 230, 160);
-
-	&--home {
-		@include adaptiv-value("min-height", 533, 260);
-	}
-
-	&__inner {
-		// padding: resp-value(155, 30) 0px resp-value(100, 30);
-		color: #fff;
-		text-align: center;
-
-		&-title {
-			margin-bottom: 10px;
-			@include adaptiv-value("font-size", 48, 28, 1);
-			font-weight: 700;
-			line-height: prc(72, 48);
-
-		}
-
-		&-text {
-			margin-bottom: 20px;
-			font-weight: 500;
-			font-size: resp-value(20, 16);
-			line-height: em(30, 20);
-
-			.search--home & {
-				@include adaptiv-value("margin-bottom", 50, 20, 1);
-			}
-
-		}
-
-		&-form {
-			max-width: 670px;
-			margin: 0 auto;
-			position: relative;
-
-			input {
-				display: block;
-				width: 100%;
-				box-shadow: 0px 1px 10px 0px rgba(124, 178, 64, 0.75);
-				border-radius: 4px;
-				height: 56px;
-				border: none;
-				font-size: 14px;
-				font-weight: 500;
-				padding-left: 25px;
-				padding-right: 60px;
-
-				&::before {
-					content: '123';
-				}
-
-				&::placeholder {
-					color: #90a4ae;
-					font-weight: 500;
-				}
-			}
-
-			button {
-				background-position: center;
-				background-size: cover;
-				width: 20px;
-				height: 20px;
-				position: absolute;
-				border: none;
-				background-color: transparent;
-				right: 20px;
-				top: 16px;
-			}
-		}
-	}
-
-
-}
-
-// end search
 .socials {
 	display: flex;
 	line-height: 0;
@@ -102,31 +19,37 @@ a {
 		width: 28px;
 		height: 28px;
 		background-image: url(../img/css_sprites.png);
+
+		&--twitter {
+			background-position: -28px 0;
+		}
+
+		&--youtube {
+			background-position: 0 -28px;
+		}
+
+		&--pinterest {
+			background-position: -28px -28px;
+		}
+
+		&--linkedin {
+			background-position: -56px 0;
+		}
 	}
 }
 
 .logo {
 	color: #000;
 	font-weight: 700;
-	font-size: 24px;
+	font-size: rem(24);
 	line-height: calc(29 / 24 * 100%);
-}
-
-.container-fluid {
-	max-width: 100%;
-	margin: 0 auto;
-	padding: 0 30px;
-
-	@media (max-width: 720px) {
-		padding: 0 15px;
-	}
 }
 
 .title {
 	text-align: center;
 	color: $mainColor;
 	font-weight: 700;
-	@include adaptiv-value("font-size", 36, 24, 1);
+	@include adaptiveValue("font-size", 36, 24, 1);
 	line-height: prc(60, 36);
 	margin-bottom: em(30, 36);
 }
@@ -142,7 +65,7 @@ a {
 // 		top: calc(50% - 1px);
 // 		transform: translate3d(0, -50%, 0);
 // 		color: $green;
-// 		font-size: 14px;
+// 		font-size: rem(14);
 // 	}
 // }
 
@@ -152,7 +75,10 @@ a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: resp-value(17, 4) resp-value(19, 4);
+	@include adaptiveValue('padding-top', 17, 4);
+	@include adaptiveValue('padding-bottom', 17, 4);
+	@include adaptiveValue('padding-left', 19, 4);
+	@include adaptiveValue('padding-right', 19, 4);
 
 	&__img {
 		padding-bottom: prc(332, 829);
@@ -172,17 +98,20 @@ a {
 
 .visually-hidden {
 	position: absolute;
-	width: 0.1px;
-	height: 0.1px;
+	width: 1px;
+	height: 1px;
 	overflow: hidden;
 	clip: rect(0 0 0 0);
 	padding: 0;
-	bottom: 0;
-	margin: -1px;
+	border: 0;
+
+	// margin: -1px;
+	// clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+	// white-space: nowrap;
 }
 
 // ._footer-title {
-// 	@include adaptiv-value("font-size", 24, 20, 1);
+// 	@include adaptiveValue("font-size", 24, 20, 1);
 // 	line-height: calc(29 / 24 * 100%);
 // 	color: #000;
 // 	font-weight: 700;
@@ -200,7 +129,7 @@ a {
 // 	height: 48px;
 // 	background-color: rgba(#E89F71, .3);
 // 	color: #E89F71;
-// 	font-size: 12px;
+// 	font-size: rem(12);
 // 	cursor: pointer;
 
 // 	// .slider-arrow_prev
@@ -332,7 +261,7 @@ ol.counter {
 			left: 0;
 			top: 0;
 			color: #818181;
-			font-size: 14px;
+			font-size: rem(14);
 			font-weight: 700;
 			text-align: center;
 			line-height: 26px;
@@ -373,6 +302,11 @@ ol.counter {
 
 .cell {
 	display: table-cell;
+	padding-right: 15px;
+
+	&:first-child {
+		padding-left: 20px;
+	}
 
 	&.full {
 		width: 100%;
@@ -620,6 +554,7 @@ body.ie {
 	opacity: 0;
 	height: 0;
 	overflow: hidden;
+	visibility: hidden;
 	transition: opacity .5s ease-out;
 	// display: none;
 
@@ -627,6 +562,7 @@ body.ie {
 		transition: opacity .5s ease-in;
 		opacity: 1;
 		height: auto;
+		visibility: visible;
 		// display: block;
 	}
 }

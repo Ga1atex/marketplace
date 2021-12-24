@@ -8,28 +8,9 @@
   <div class="wrapper">
     @@include('_header.html',{})
     <main class="page">
-      <section class="page__search search" style="background-image: url(img/search-bg.jpg);">
-        <div class="container">
-          <div class="search__inner">
-            <div class="search__inner-text">
-              Premium WordPress Themes, Web Templates and Many More ...
-            </div>
-            <div class="search__inner-form">
-              <form>
-                <input class="input form__input" id="" type="text" placeholder="Search Your Keywords . . ." required>
-                <button type="submit">
-                  <img src="img/icons/search.png" alt="">
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
       @@include('_breadcrumbs.html', {arr: [["Upload"]]})
-
-
       <section class="page__upload upload">
-        <div class="upload__container">
+        <div class="upload__container page__inner">
           <div class="upload__inner page__block-wrapper">
             <h2 class="upload__inner-title page__block-title">Upload Your item</h2>
             <form class="form">
@@ -53,21 +34,11 @@
                 </div>
                 <div class="upload__row form__row">
                   <label class="form__label" for="mainFile">Upload Main File <span>*</span></label>
-                  <label class="input-file">
-                    <span class="input-file__btn">Choose File</span>
-                    <input class="input input-file__input visually-hidden" id="mainFile" type="file" required data-placeholder="No File Choosen"
-                      data-browse="Choose File">
-                    <span class="input-file__filename">No File Choosen</span>
-                  </label>
+                  <input class="input-file" id="mainFile" type="file" required multiple data-placeholder="No File Choosen" data-browse="Choose File">
                 </div>
                 <div class="upload__row form__row">
                   <label class="form__label" for="screenshots">Upload Screenshots <span>*</span></label>
-                  <label class="input-file">
-                    <span class="input-file__btn">Choose File</span>
-                    <input class="input input-file__input visually-hidden" id="mainFile" type="file" required data-placeholder="No File Choosen"
-                      data-browse="Choose File">
-                    <span class="input-file__filename">No File Choosen</span>
-                  </label>
+                  <input class="input-file" id="screenshots" type="file" required data-placeholder="No File Choosen" data-browse="Choose File">
                 </div>
                 <div class="upload__row form__row">
                   <label class="form__label" for="fileType">File Included <span>*</span></label>
@@ -99,7 +70,7 @@
                 </div>
                 <div class="form__row">
                   <label class="form__label visually-hidden" for="">Press button to update</label>
-                  <button class="form__btn btn" type="submit">Submit</button>
+                  <button class="upload__form-btn form__btn btn" type="submit">Submit</button>
                 </div>
             </form>
           </div>

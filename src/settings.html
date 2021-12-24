@@ -8,35 +8,16 @@
   <div class="wrapper">
     @@include('_header.html',{})
     <main class="page">
-      <section class="page__search search" style="background-image: url(img/search-bg.jpg);">
-        <div class="container">
-          <div class="search__inner">
-            <div class="search__inner-text">
-              Premium WordPress Themes, Web Templates and Many More ...
-            </div>
-            <div class="search__inner-form">
-              <form>
-                <input class="form__input" type="text" placeholder="Search Your Keywords . . ." required>
-                <button type="submit">
-                  <img src="img/icons/search.png" alt="">
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
       @@include('_breadcrumbs.html', {arr: [["Settings"]]})
-
-
       <section class="settings">
         <div class="settings__container">
           <div class="settings__tabs-block tabs-block tabs-block--vertical _tabs">
             <nav class="tabs-block__nav">
-              <div class="tabs-block__item _tabs-item icon-angle-right _active">Personal Information</div>
-              <div class="tabs-block__item _tabs-item icon-angle-right">Profile</div>
-              <div class="tabs-block__item _tabs-item icon-angle-right">Badges</div>
-              <div class="tabs-block__item _tabs-item icon-angle-right">E-mail Settings</div>
-              <div class="tabs-block__item _tabs-item icon-angle-right">Social Network</div>
+              <button class="tabs-block__item _tabs-item icon-angle-right _active" type="button">Personal Information</button>
+              <button class="tabs-block__item _tabs-item icon-angle-right" type="button">Profile</button>
+              <button class="tabs-block__item _tabs-item icon-angle-right" type="button">Badges</button>
+              <button class="tabs-block__item _tabs-item icon-angle-right" type="button">E-mail Settings</button>
+              <button class="tabs-block__item _tabs-item icon-angle-right" type="button">Social Network</button>
             </nav>
             <div class="tabs-block__body">
               <div class="tabs-block__block _tabs-block _active">
@@ -87,8 +68,8 @@
                         <input class="form__input" type="text" id="zip">
                       </div>
                       <div class="form__row">
-                        <label class="form__label form__label--hidden" for="">Press button to update</label>
-                        <button class="form__btn btn">Update</button>
+                        <label class="form__label form__label--hidden" for="submit">Press button to update</label>
+                        <button id="submit" class="form__btn btn" type="submit">Update</button>
                       </div>
                     </form>
                   </div>

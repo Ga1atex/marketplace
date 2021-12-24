@@ -105,6 +105,7 @@
 	height: 18px;
 }
 
+//CHANGE
 .noUi-horizontal .noUi-handle {
 	width: 16px; //change for desired size of the handle
 	height: 16px;
@@ -132,19 +133,20 @@
 /* Styling;
  * Giving the connect element a border radius causes issues with using transform: scale
  */
+//CHANGE
 .noUi-target {
 	height: 4px; //height of the line
 	background-color: #f2f5f8; //color of inactive line
-	// margin: 0px 8px; // half of the handle width
+	// margin: 0px 8px; // half of the handle's width
 	position: relative;
-	@include adaptiv-value("margin-bottom", 55, 30);
+	@include adaptiveValue("margin-bottom", 55, 30);
 	display: flex;
 
 	&::before,
 	&::after {
 		content: "";
 		background-color: #f2f5f8;
-		width: 8px; // half of the handle width
+		width: 8px; // half of the handle's width
 		height: 4px;
 		// position: absolute;
 		// top: 0;
@@ -175,11 +177,12 @@
 	cursor: ns-resize;
 }
 
+//CHANGE
 .noUi-handle {
 	border: 4px solid #8bc34a;
 	background-color: #ffffff;
 	border-radius: 50%;
-	cursor: default;
+	cursor: ew-resize;
 
 	&::after {
 		content: "";
@@ -235,7 +238,7 @@
 
 .noUi-value-sub {
 	color: #ccc;
-	font-size: 10px;
+	font-size: rem(10);
 }
 
 /* Markings;
@@ -326,7 +329,7 @@
 
 .noUi-tooltip {
 	color: #999999;
-	font-size: 12px;
+	font-size: rem(12);
 	position: absolute;
 }
 

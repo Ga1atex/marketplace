@@ -78,13 +78,23 @@
 	content: "\f095";
 }
 
-.icon-twitter:before {
-	content: "\f099";
+.icon-twitter {
+	background-color: #64b5f6;
+
+	&:before {
+		content: "\f099";
+	}
 }
 
-.icon-facebook:before {
-	content: "\f09a";
+
+.icon-facebook {
+	background-color: #6370b6;
+
+	&:before {
+		content: "\f09a";
+	}
 }
+
 
 .icon-facebook-f:before {
 	content: "\f09a";
@@ -118,9 +128,14 @@
 	content: "\f0dc";
 }
 
-.icon-linkedin:before {
-	content: "\f0e1";
+.icon-linkedin {
+	background-color: #4f71ce;
+
+	&:before {
+		content: "\f0e1";
+	}
 }
+
 
 .icon-comment-o:before {
 	content: "\f0e5";
@@ -190,6 +205,10 @@
 	content: "\f18c";
 }
 
-.icon-pinterest-p:before {
-	content: "\f231";
+.icon-pinterest-p {
+	background-color: #d32f2f;
+
+	&:before {
+		content: "\f231";
+	}
 }

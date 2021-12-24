@@ -40,29 +40,30 @@
 				<div class="footer__col footer__col-social">
 					<h3 class="footer__col-title" data-spoiler>Follow Us On</h3>
 					<ul class="footer__social-links socials">
-						<li class="socials__item"><a class="socials__link link-facebook" href="#"></a></li>
-						<li class="socials__item"><a class="socials__link link-twitter" href="#"></a></li>
-						<li class="socials__item"><a class="socials__link link-youtube" href="#"></a></li>
-						<li class="socials__item"><a class="socials__link link-pinterest" href="#"></a></li>
-						<li class="socials__item"><a class="socials__link link-linledin" href="#"></a></li>
+						<li class="socials__item"><a class="socials__link socials__link--facebook" href="#" aria-label="facebook link"></a></li>
+						<li class="socials__item"><a class="socials__link socials__link--twitter" href="#" aria-label="twitter link"></a></li>
+						<li class="socials__item"><a class="socials__link socials__link--youtube" href="#" aria-label="youtube link"></a></li>
+						<li class="socials__item"><a class="socials__link socials__link--pinterest" href="#" aria-label="pinterest link"></a></li>
+						<li class="socials__item"><a class="socials__link socials__link--linkedin" href="#" aria-label="linkedin link"></a></li>
 					</ul>
 					<div class="footer__form">
 						<h3 class="footer__form-title">
 							Newsletter Sign Up!
 						</h3>
-						<form>
-							<input type="text" placeholder="E-mail Address">
-							<button type="submit"></button>
+						<form class="subscribe" data-message="subscribe form">
+							<input class="subscribe__input input _req _email" type="text" placeholder="E-mail Address" data-error="Error!">
+							<button class="subscribe__btn btn btn--green icon-location-arrow" type="submit" aria-label="Subscribe to Newsletter"></button>
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<!-- <div class="footer__copy" role="contentinfo"> -->
 	<div class="footer__copy">
 		<div class="container">
 			<div class="footer__copy-text">
-				© 2017 Foxtar market place. Trademarks and brands are the property of their respective owners.
+				© 2021 Foxtar market place. Trademarks and brands are the property of their respective owners.
 			</div>
 		</div>
 	</div>

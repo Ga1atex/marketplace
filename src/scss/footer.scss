@@ -5,11 +5,12 @@
   &__inner {
     display: flex;
     flex-wrap: wrap;
-    @include adaptiv-value("row-gap", 25, 15);
+    @include adaptiveValue("row-gap", 25, 15);
     // row-gap: 15px;
     column-gap: 15px;
     justify-content: space-between;
-    padding: resp-value(100, 30) 0px resp-value(80, 25);
+    @include adaptiveValue("padding-top", 100, 30);
+    @include adaptiveValue("padding-bottom", 80, 25);
 
     @media (max-width: em($md4)) {
       flex-direction: column;
@@ -22,11 +23,13 @@
 
   &__copy-text {
     text-align: center;
-    // font-size: 15px;
-    @include adaptiv-value("font-size", 15, 12);
+    // font-size: rem(15);
+    @include adaptiveValue("font-size", 15, 12);
+    @include adaptiveValue("padding-top", 25, 15);
+    @include adaptiveValue("padding-bottom", 25, 15);
 
     color: #919699;
-    padding: resp-value(25, 15) 0px;
+
   }
 
   &__col {
@@ -44,14 +47,12 @@
     }
 
     &-title {
-      font-size: 22px;
+      font-size: rem(22);
       font-family: 'Raleway', sans-serif;
       font-weight: 700;
       color: #fff;
-      @include adaptiv-value("padding-bottom", 30, 10);
-      @include adaptiv-value("margin-bottom", 30, 10);
-      // padding-bottom: resp-value(30, 10);
-      // margin-bottom: resp-value(30, 10);
+      @include adaptiveValue("padding-bottom", 30, 10);
+      @include adaptiveValue("margin-bottom", 30, 10);
       position: relative;
 
       &::after {
@@ -88,7 +89,7 @@
     &-text {
       color: #b7c3c8;
       // margin-bottom: 30px;
-      @include adaptiv-value("margin-bottom", 30, 15);
+      @include adaptiveValue("margin-bottom", 30, 15);
     }
   }
 
@@ -103,7 +104,7 @@
       content: '\f041';
       font-family: 'icons';
       color: $green;
-      font-size: 18px;
+      font-size: rem(18);
       position: absolute;
       left: 0;
     }
@@ -127,80 +128,75 @@
         color: $green;
         position: absolute;
         left: 0;
-        font-size: 18px;
+        font-size: rem(18);
         font-family: 'icons';
       }
     }
   }
 
   &__social-links {
-    @include adaptiv-value("margin-bottom", 33, 10);
-
+    @include adaptiveValue("margin-bottom", 33, 10);
   }
 
   &__form-title {
     margin-bottom: 15px;
     color: #fff;
-    font-size: 20px;
+    font-size: rem(20);
   }
 
   &__form {
     position: relative;
+  }
+}
 
-    input {
-      border: none;
-      background-color: #2f3c43;
-      display: block;
-      width: 100%;
-      height: 40px;
+.subscribe {
+  display: flex;
+
+  &__input {
+    border: none;
+    background-color: #2f3c43;
+    display: block;
+    width: 100%;
+    height: 40px;
+    color: #fff;
+    font-size: rem(14);
+    padding-left: 13px;
+    padding-right: 50px;
+
+    &::placeholder {
+      color: #697378;
+    }
+  }
+
+  &__btn {
+    // position: absolute;
+    // bottom: 0;
+    // right: 0;
+    // background-color: $green;
+    // border: none;
+    // height: 40px;
+    flex: 0 0 43px;
+    // cursor: pointer;
+    // position: relative;
+
+    &::before {
+      // position: absolute;
       color: #fff;
-      font-size: 14px;
-      padding-left: 13px;
-      padding-right: 50px;
-
-      &::placeholder {
-        color: #697378;
-      }
+      font-size: rem(20);
+      // top: 11px;
+      // left: 13px;
     }
 
-    button {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      background-color: $green;
-      border: none;
-      height: 40px;
-      width: 43px;
-      cursor: pointer;
-
-      &::before {
-        content: '\f124';
-        position: absolute;
-        font-family: 'icons';
-        color: #fff;
-        font-size: 20px;
-        top: 11px;
-        left: 13px;
+    @media (any-hover: hover) {
+      &:hover {
+        &:before {
+          color: $green;
+        }
       }
     }
   }
 }
 
 
-.link-twitter {
-  background-position: -28px 0;
-}
-
-.link-youtube {
-  background-position: 0 -28px;
-}
-
-.link-pinterest {
-  background-position: -28px -28px;
-}
-
-.link-linledin {
-  background-position: -56px 0;
-}
 
 // end footer

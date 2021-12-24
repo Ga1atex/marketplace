@@ -6,29 +6,12 @@
 
 <body>
   <div class="wrapper">
-    @@include('_header.html',{})
+    @@include('_header.html',{link: 'about'})
     <main class="page">
-      <section class="page__search search" style="background-image: url(img/search-bg.jpg);">
-        <div class="container">
-          <div class="search__inner">
-            <div class="search__inner-text">
-              Premium WordPress Themes, Web Templates and Many More ...
-            </div>
-            <div class="search__inner-form">
-              <form>
-                <input type="text" placeholder="Search Your Keywords . . ." required>
-                <button type="submit">
-                  <img src="img/icons/search.png" alt="">
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
       @@include('_breadcrumbs.html', {arr: [["About Us"]]})
 
-      <section class="about">
-        <div class="container">
+      <section class="page__about about">
+        <div class="about__container page__inner">
           <div class="about__wrapper page__block-wrapper">
             <h2 class="about__head page__block-title">
               To Know Who We Are

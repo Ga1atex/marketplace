@@ -8,23 +8,6 @@
   <div class="wrapper">
     @@include('_header.html',{})
     <main class="page">
-      <section class="page__search search" style="background-image: url(img/search-bg.jpg);">
-        <div class="container">
-          <div class="search__inner">
-            <div class="search__inner-text">
-              Premium WordPress Themes, Web Templates and Many More ...
-            </div>
-            <div class="search__inner-form">
-              <form>
-                <input type="text" placeholder="Search Your Keywords . . ." required>
-                <button type="submit">
-                  <img src="img/icons/search.png" alt="">
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
       @@include('_breadcrumbs.html', {arr: [["Product Page"]]})
       <section class="product-page">
         <div class="container">
@@ -48,9 +31,9 @@
                 <h3 class="aside__title" data-spoiler>
                   Price Range
                 </h3>
-                <form class="js-range-form">
+                <form class="price-range__form">
                   <div class="js-range-slider"></div>
-                  <button class="icon-search" type="submit">Search</button>
+                  <button class="price-range__btn icon-search btn btn--green" type="submit">Search</button>
                 </form>
               </div>
               <div class="top-sellers aside__item">
@@ -60,7 +43,7 @@
                 <div class="aside__product-items">
                   <article class="products__item item-product">
                     <a class="item-product__image _ibg" href="#">
-                      <img src="img/products/03.jpg" alt="Product 1">
+                      <img src="img/products/03.jpg" alt="Product 1" width="442" height="250">
                     </a>
                     <div class="item-product__content-wrapper">
                       <div class="item-product__body">
@@ -74,10 +57,10 @@
                         </div>
                       </div>
                       <div class="item-product__author">
-                        <a class="item-product__author-avatar" href="">
-                          <img src="img/authors/01.jpg" alt="">
+                        <a class="item-product__author-avatar" href="#">
+                          <img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
                         </a>
-                        <a class="item-product__author-name">Manilip</a>
+                        <a class="item-product__author-name" href="#">Manilip</a>
                         <div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
                           <a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
                             <div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)">
@@ -94,7 +77,7 @@
                   </article>
                   <article class="products__item item-product">
                     <a class="item-product__image _ibg" href="#">
-                      <img src="img/products/04.jpg" alt="Product 1">
+                      <img src="img/products/04.jpg" alt="Product 1" width="442" height="250">
                     </a>
                     <div class="item-product__content-wrapper">
                       <div class="item-product__body">
@@ -107,10 +90,10 @@
                         </div>
                       </div>
                       <div class="item-product__author">
-                        <a class="item-product__author-avatar" href="">
-                          <img src="img/authors/01.jpg" alt="">
+                        <a class="item-product__author-avatar" href="#">
+                          <img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
                         </a>
-                        <a class="item-product__author-name">Lolypop</a>
+                        <a class="item-product__author-name" href="#">Lolypop</a>
                         <div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
                           <a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
                             <div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)">
@@ -128,7 +111,7 @@
                   <article class="products__item item-product">
 
                     <a class="item-product__image _ibg" href="#">
-                      <img src="img/products/05.jpg" alt="Product 1">
+                      <img src="img/products/05.jpg" alt="Product 1" width="442" height="250">
                       <div class="item-product__labels">
                         <div class="item-product__label item-product__label_zip icon-flash"></div>
                       </div>
@@ -144,10 +127,10 @@
                         </div>
                       </div>
                       <div class="item-product__author">
-                        <a class="item-product__author-avatar" href="">
-                          <img src="img/authors/01.jpg" alt="">
+                        <a class="item-product__author-avatar" href="#">
+                          <img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
                         </a>
-                        <a class="item-product__author-name">Micrsof</a>
+                        <a class="item-product__author-name" href="#">Micrsof</a>
                         <div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
                           <a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
                             <div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)">
@@ -165,24 +148,24 @@
 
                 </div>
 
-                <a class="top-sellers__link" href="#">View All</a>
+                <a class="top-sellers__link btn btn--green" href="#">View All</a>
               </div>
             </aside>
             <div class="product-page__content">
               <div class="product-page__filter">
                 <div class="product-page__filter-sort">
-                  <button class="product-page__sort-btn icon-sort-amount-desc"></button> Sort by: New Items <button
-                    class="product-page__unsorted-btn icon-unsorted"></button>
+                  <button class="product-page__sort-btn icon-sort-amount-desc" type="button"></button> Sort by: New Items
+                  <button class="product-page__unsorted-btn icon-unsorted" type="button"></button>
                 </div>
                 <div class="product-page__btns">
-                  <button class="icon-th-large active"></button>
-                  <button class="icon-th-list"></button>
+                  <button class="icon-th-large active" type="button"></button>
+                  <button class="icon-th-list" type="button"></button>
                 </div>
               </div>
               <div class="product-page__items product-items">
                 <article class="products__item item-product mix category-component category-new" data-order="1">
                   <a class="item-product__image _ibg" href="#">
-                    <img src="img/products/01.jpg" alt="Product 1">
+                    <img src="img/products/01.jpg" alt="Product 1" width="442" height="250">
                   </a>
 
                   <div class="item-product__content-wrapper">
@@ -200,10 +183,10 @@
                       </div>
                     </div>
                     <div class="item-product__author">
-                      <a class="item-product__author-avatar" href="">
-                        <img src="img/authors/01.jpg" alt="">
+                      <a class="item-product__author-avatar" href="#">
+                        <img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
                       </a>
-                      <a class="item-product__author-name">Radiustheme</a>
+                      <a class="item-product__author-name" href="#">Radiustheme</a>
                       <div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
                         <a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
                           <div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)">
@@ -225,7 +208,7 @@
                 <article class="products__item item-product mix category-wordpress" data-order="2">
 
                   <a class="item-product__image _ibg" href="#">
-                    <img src="img/products/02.jpg" alt="Product 1">
+                    <img src="img/products/02.jpg" alt="Product 1" width="442" height="250">
                     <div class="item-product__labels">
                       <div class="item-product__label item-product__label_zip icon-flash"></div>
                     </div>
@@ -245,10 +228,10 @@
                       </div>
                     </div>
                     <div class="item-product__author">
-                      <a class="item-product__author-avatar" href="">
-                        <img src="img/authors/01.jpg" alt="">
+                      <a class="item-product__author-avatar" href="#">
+                        <img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
                       </a>
-                      <a class="item-product__author-name">PsdBosS</a>
+                      <a class="item-product__author-name" href="#">PsdBosS</a>
                       <div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
                         <a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
                           <div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)">
@@ -269,7 +252,7 @@
                 </article>
                 <article class="products__item item-product mix category-wordpress category-new" data-order="3">
                   <a class="item-product__image _ibg" href="#">
-                    <img src="img/products/03.jpg" alt="Product 1">
+                    <img src="img/products/03.jpg" alt="Product 1" width="442" height="250">
                   </a>
                   <div class="item-product__content-wrapper">
                     <div class="item-product__body">
@@ -286,10 +269,10 @@
                       </div>
                     </div>
                     <div class="item-product__author">
-                      <a class="item-product__author-avatar" href="">
-                        <img src="img/authors/01.jpg" alt="">
+                      <a class="item-product__author-avatar" href="#">
+                        <img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
                       </a>
-                      <a class="item-product__author-name">Manilip</a>
+                      <a class="item-product__author-name" href="#">Manilip</a>
                       <div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
                         <a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
                           <div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)">
@@ -310,7 +293,7 @@
                 </article>
                 <article class="products__item item-product mix category-psd category-popular" data-order="4">
                   <a class="item-product__image _ibg" href="#">
-                    <img src="img/products/04.jpg" alt="Product 1">
+                    <img src="img/products/04.jpg" alt="Product 1" width="442" height="250">
                   </a>
                   <div class="item-product__content-wrapper">
                     <div class="item-product__body">
@@ -327,10 +310,10 @@
                       </div>
                     </div>
                     <div class="item-product__author">
-                      <a class="item-product__author-avatar" href="">
-                        <img src="img/authors/01.jpg" alt="">
+                      <a class="item-product__author-avatar" href="#">
+                        <img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
                       </a>
-                      <a class="item-product__author-name">Lolypop</a>
+                      <a class="item-product__author-name" href="#">Lolypop</a>
                       <div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
                         <a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
                           <div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)">
@@ -351,7 +334,7 @@
                 </article>
                 <article class="products__item item-product mix category-joomla category-new" data-order="5">
                   <a class="item-product__image _ibg" href="#">
-                    <img src="img/products/05.jpg" alt="Product 1">
+                    <img src="img/products/05.jpg" alt="Product 1" width="442" height="250">
                     <div class="item-product__labels">
                       <div class="item-product__label item-product__label_zip icon-flash"></div>
                     </div>
@@ -371,10 +354,10 @@
                       </div>
                     </div>
                     <div class="item-product__author">
-                      <a class="item-product__author-avatar" href="">
-                        <img src="img/authors/01.jpg" alt="">
+                      <a class="item-product__author-avatar" href="#">
+                        <img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
                       </a>
-                      <a class="item-product__author-name">Micrsof</a>
+                      <a class="item-product__author-name" href="#">Micrsof</a>
                       <div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
                         <a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
                           <div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)">
@@ -395,7 +378,7 @@
                 </article>
                 <article class="products__item item-product mix category-wordpress" data-order="6">
                   <a class="item-product__image _ibg" href="#">
-                    <img src="img/products/06.jpg" alt="Product 1">
+                    <img src="img/products/06.jpg" alt="Product 1" width="442" height="250">
                   </a>
                   <div class="item-product__content-wrapper">
                     <div class="item-product__body">
@@ -412,10 +395,10 @@
                       </div>
                     </div>
                     <div class="item-product__author">
-                      <a class="item-product__author-avatar" href="">
-                        <img src="img/authors/01.jpg" alt="">
+                      <a class="item-product__author-avatar" href="#">
+                        <img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
                       </a>
-                      <a class="item-product__author-name">Raklouse</a>
+                      <a class="item-product__author-name" href="#">Raklouse</a>
                       <div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
                         <a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
                           <div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)">
@@ -436,7 +419,7 @@
                 </article>
                 <article class="products__item item-product mix category-components category-new" data-order="7">
                   <a class="item-product__image _ibg" href="#">
-                    <img src="img/products/07.jpg" alt="Product 1">
+                    <img src="img/products/07.jpg" alt="Product 1" width="442" height="250">
                     <div class="item-product__labels">
                       <div class="item-product__label item-product__label_zip icon-flash"></div>
                     </div>
@@ -456,10 +439,10 @@
                       </div>
                     </div>
                     <div class="item-product__author">
-                      <a class="item-product__author-avatar" href="">
-                        <img src="img/authors/01.jpg" alt="">
+                      <a class="item-product__author-avatar" href="#">
+                        <img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
                       </a>
-                      <a class="item-product__author-name">Mikc Art</a>
+                      <a class="item-product__author-name" href="#">Mikc Art</a>
                       <div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
                         <a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
                           <div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)">
@@ -480,7 +463,7 @@
                 </article>
                 <article class="products__item item-product mix category-psd category-popular" data-order="8">
                   <a class="item-product__image _ibg" href="#">
-                    <img src="img/products/08.jpg" alt="Product 1">
+                    <img src="img/products/08.jpg" alt="Product 1" width="442" height="250">
                   </a>
                   <div class="item-product__content-wrapper">
                     <div class="item-product__body">
@@ -497,10 +480,10 @@
                       </div>
                     </div>
                     <div class="item-product__author">
-                      <a class="item-product__author-avatar" href="">
-                        <img src="img/authors/01.jpg" alt="">
+                      <a class="item-product__author-avatar" href="#">
+                        <img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
                       </a>
-                      <a class="item-product__author-name">ThemeLol</a>
+                      <a class="item-product__author-name" href="#">ThemeLol</a>
                       <div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
                         <a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
                           <div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)">

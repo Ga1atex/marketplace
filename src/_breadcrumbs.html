@@ -2,11 +2,13 @@
 	<div class="container">
 		<div class="breadcrumbs__inner">
 			<ul class="breadcrumbs__list">
-				<li><a href="/">Home</a></li> <!-- IF statements inside FOR don't work-->
+				<li><a href="/">Home</a></li> <!-- IF statements inside FOR don't work; '' helps-->
 				@@if (context.arr) {
-
+				<!-- ((arr[i][1])||"#" ) also works-->
 				@@if(Array.isArray(context.arr)) {
-				@@for (var i = 0; i < arr.length; i++) { <li><a href="`+(arr[i][1] || '')+`">`+arr[i][0]+`</a></li>
+				@@for (var i = 0; i < arr.length; i++) { <li>
+					`+ ((i!=arr.length-1)?('<a href=' +( (arr[i][1])?(arr[i][1]):("#") )+ '>' +arr[i][0]+ '</a>'):('<span>' +arr[i][0]+ '</span>')) +`
+					</li>
 					}
 					}
 					}

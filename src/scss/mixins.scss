@@ -1,17 +1,17 @@
 //Подключение шрифта
-@mixin font($font_name, $file_name, $weight, $style: 'normal') {
+@mixin font($fontName, $fileName, $weight: 400, $style: 'normal') {
   @font-face {
-    font-family: $font_name;
+    font-family: $fontName;
     font-display: swap;
-    src: url("../fonts/#{$file_name}.woff2") format("woff2"),
-    url("../fonts/#{$file_name}.woff") format("woff");
+    src: url("../fonts/#{$fileName}.woff2") format("woff2"),
+    url("../fonts/#{$fileName}.woff") format("woff");
     font-weight: #{$weight};
     font-style: #{$style};
   }
 }
 
 //Адаптивное свойство
-@mixin adaptiv-value($property, $startSize, $minSize, $type: 1, $desiredMaxWidth: 768) {
+@mixin adaptiveValue($property, $startSize, $minSize, $type: 1, $desiredMaxWidth: 768) {
   $addSize: $startSize - $minSize;
 
   @if $type==1 {
@@ -32,8 +32,8 @@
     }
   }
 
-  @if $type==3 {
-    //Только если меньше контейнера
+  @else if $type==3 {
+    //Меньше определенной ширины
     #{$property}: $startSize + px;
 
     @media (max-width: #{em($desiredMaxWidth)}) {
@@ -48,7 +48,7 @@
 }
 
 //Адаптивное свойство до
-@mixin adaptiv-value-to($property, $startSize, $minSize, $minWidth) {
+@mixin adaptiveValue-to($property, $startSize, $minSize, $minWidth) {
   $addSize: $startSize - $minSize;
 
   //#{$property}: $minSize + px;
@@ -61,8 +61,8 @@
   @return math.div($px, 16)+rem;
 }
 
-@function em($px, $parentFontSize: 16) {
-  @return math.div($px, $parentFontSize)+em;
+@function em($px, $currentFontSize: 16) {
+  @return math.div($px, $currentFontSize)+em;
 }
 
 @function prc($child, $parent) {
@@ -70,5 +70,7 @@
 }
 
 @function resp-value($start, $end) {
+  // min() doesn't work in IE11
+  // @return calc(#{$end + px} + #{$start - $end} * (100vw - 320px) / #{$maxWidthContainer - $minWidth});
   @return min(calc(#{$end + px} + #{$start - $end} * (100vw - 320px) / #{$maxWidthContainer - $minWidth}), #{$start + px});
 }

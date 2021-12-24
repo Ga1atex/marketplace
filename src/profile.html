@@ -8,23 +8,6 @@
   <div class="wrapper">
     @@include('_header.html',{})
     <main class="page">
-      <section class="page__search search" style="background-image: url(img/search-bg.jpg);">
-        <div class="container">
-          <div class="search__inner">
-            <div class="search__inner-text">
-              Premium WordPress Themes, Web Templates and Many More ...
-            </div>
-            <div class="search__inner-form">
-              <form>
-                <input type="text" placeholder="Search Your Keywords . . ." required>
-                <button type="submit" style="background-image: url(img/icons/search.png)">
-                  <!-- <img src="img/icons/search.png" alt=""> -->
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
       @@include('_breadcrumbs.html', {arr: [["Profile"]]})
       <section class="profile">
         <div class="profile__container">
@@ -35,7 +18,7 @@
               </div>
               <div class="product-author__box">
                 <div class="product-author__avatar">
-                  <img src="img/content/avatar.jpg" alt="">
+                  <img src="img/content/avatar.jpg" alt="User's Avatar" width="73" height="63">
                 </div>
                 <div class="product-author__info">
                   <div class="product-author__name">PsdBoss</div>
@@ -52,20 +35,20 @@
               </ul>
             </div>
             <ul class="profile__socials socials">
-              <li class="socials__item"><a class="socials__link link-facebook" href="#"></a></li>
-              <li class="socials__item"><a class="socials__link link-twitter" href="#"></a></li>
-              <li class="socials__item"><a class="socials__link link-youtube" href="#"></a></li>
-              <li class="socials__item"><a class="socials__link link-linledin" href="#"></a></li>
+              <li class="socials__item"><a class="socials__link socials__link--facebook" href="#"></a></li>
+              <li class="socials__item"><a class="socials__link socials__link--twitter" href="#"></a></li>
+              <li class="socials__item"><a class="socials__link socials__link--youtube" href="#"></a></li>
+              <li class="socials__item"><a class="socials__link socials__link--linkedin" href="#"></a></li>
             </ul>
             <div class="profile__aside-btns">
               <a class="profile__aside-btn profile__aside-btn--message icon-envelope-o btn" href="#">Send Message</a>
-              <a class="profile__aside-btn btn" href="#">Following</a>
+              <a class="profile__aside-btn btn btn--green" href="#">Following</a>
             </div>
           </aside>
           <div class="profile__content">
             <div class="profile__banner banner-image">
               <a class="profile__banner-img banner-image__img _ibg">
-                <img src="img/content/banner.jpg" alt="Product Image">
+                <img src="img/content/banner.jpg" alt="Product Image" width="829" height="332">
               </a>
             </div>
             <div class="profile__items profile-info">
@@ -106,11 +89,11 @@
         <div class="profile-settings__container">
           <div class="profile-settings__tabs-block tabs-block tabs-block--vertical _tabs">
             <nav class="tabs-block__nav">
-              <div class="tabs-block__item _tabs-item icon-user _active">About Me</div>
-              <div class="tabs-block__item _tabs-item icon-briefcase">Products ( <span>10</span> )</div>
-              <div class="tabs-block__item _tabs-item icon-envelope-o">Message Box</div>
-              <div class="tabs-block__item _tabs-item icon-comments-o">Customer Reviews ( <span>20</span> )</div>
-              <div class="tabs-block__item _tabs-item icon-users">Followers ( <span>100</span> )</div>
+              <button class="tabs-block__item _tabs-item icon-user _active" type="button">About Me</button>
+              <button class="tabs-block__item _tabs-item icon-briefcase" type="button">Products ( <span>10</span> )</button>
+              <button class="tabs-block__item _tabs-item icon-envelope-o" type="button">Message Box</button>
+              <button class="tabs-block__item _tabs-item icon-comments-o" type="button">Customer Reviews ( <span>20</span> )</button>
+              <button class="tabs-block__item _tabs-item icon-users" type="button">Followers ( <span>100</span> )</button>
             </nav>
             <div class="tabs-block__body">
               <div class="tabs-block__block _tabs-block _active">
@@ -187,50 +170,6 @@
                       survived not only five centuries, but also the leap into electronic.
                     </p>
                   </div>
-                  <div class="personal-box__items">
-                    <div class="personal-box__title">
-                      Skills:
-                    </div>
-                    <div class="personal-box__item">
-                      <div class="personal-box__item-head">
-                        <div class="personal-box__item-name">
-                          Graphic Design
-                        </div>
-                        <div class="personal-box__item-number">
-                          80%
-                        </div>
-                      </div>
-                      <div class="personal-box__item-line">
-                        <span style="max-width: 80%"></span>
-                      </div>
-                    </div>
-                    <div class="personal-box__item">
-                      <div class="personal-box__item-head">
-                        <div class="personal-box__item-name">
-                          Graphic Design
-                        </div>
-                        <div class="personal-box__item-number">
-                          90%
-                        </div>
-                      </div>
-                      <div class="personal-box__item-line">
-                        <span style="max-width: 90%"></span>
-                      </div>
-                    </div>
-                    <div class="personal-box__item">
-                      <div class="personal-box__item-head">
-                        <div class="personal-box__item-name">
-                          Graphic Design
-                        </div>
-                        <div class="personal-box__item-number">
-                          70%
-                        </div>
-                      </div>
-                      <div class="personal-box__item-line">
-                        <span style="max-width: 70%"></span>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
               <div class="tabs-block__block _tabs-block">
@@ -282,7 +221,7 @@
                       </div>
                       <div class="form__row">
                         <label class="form__label" for="" style="visibility: hidden;height:0;">Zip / Postal Code</label>
-                        <button class="form__btn btn">Update</button>
+                        <button class="form__btn btn" type="submit">Update</button>
                       </div>
                     </form>
                   </div>

@@ -9,9 +9,14 @@
 	text-align: center;
 	padding: 0px 5px;
 	min-height: 32px;
+	transition: background-color .3s, color .3s, box-shadow .3s;
 
 	@media (any-hover: hover) {
-		&:hover {}
+		&:hover {
+			background-color: #f7f7f7;
+			color: $mainColor;
+			box-shadow: 0 0 1px 1px $mainColor;
+		}
 	}
 
 	&._fw {
@@ -19,7 +24,7 @@
 	}
 
 	// .btn_white
-	&_white {
+	&--white {
 		min-height: 37px;
 		color: #263238;
 		background-color: #fff;
@@ -32,6 +37,39 @@
 			}
 		}
 	}
+
+	&--green {
+		// min-height: 37px;
+		// color: #263238;
+		color: #fff;
+		background-color: $green;
+		// box-shadow: 0px 1px 3px 0px rgba(204, 216, 228, 0.75);
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #fff;
+				color: $green;
+				box-shadow: 0 0 1px 1px $green;
+			}
+		}
+	}
+
+	&--darkblue {
+		background-color: $text;
+	}
+
+	&--red {
+		color: #fff;
+		background-color: $red;
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #fff;
+				color: $red;
+				box-shadow: 0 0 0 1px $red;
+			}
+		}
+	}
 }
 
 //</BUTTONS>====================================================================================================
@@ -40,55 +78,34 @@
 .form {
 
 	&__row {
-		// display: flex;
-		// flex-wrap: wrap;
-		// align-items: center;
-		// justify-content: space-between;
 		display: grid;
+		column-gap: 30px;
+		@include adaptiveValue("row-gap", 30, 5);
 
 		@media (min-width: em($md3)) {
 			grid-template-columns: prc(230, 798) 1fr;
 		}
 
-		column-gap: 30px;
-		@include adaptiv-value("row-gap", 30, 5);
-
-		// @media (max-width: em($md4)) {}
-
 		&:not(:last-child) {
-			@include adaptiv-value("margin-bottom", 21, 15);
+			@include adaptiveValue("margin-bottom", 21, 15);
 		}
 	}
 
 	&__column {}
 
 	&__label {
-		// flex: 0 1 prc(230, 798);
 		// align-self: center;
 		padding: 8px 5px 5px 0;
 		color: #444;
 
-		// @media (max-width: em($md4)) {
-		// 	flex: 1 1 100%;
-		// }
-		// &--hidden {
-		// 	// .visually-hidden
-		// 	position: absolute;
-		// 	width: 0.1px;
-		// 	height: 0.1px;
-		// 	overflow: hidden;
-		// 	clip: rect(0 0 0 0);
-		// 	padding: 0;
-		// 	bottom: 0;
-		// 	margin: -1px; // ?
+		span {
+			color: $green;
+		}
 
-		// -webkit-appearance: none;
-		// -moz-appearance: none;
-		// appearance: none;
-	}
-
-	span {
-		color: $green;
+		&--hidden {
+			opacity: 0;
+			visibility: hidden;
+		}
 	}
 
 	&__input {
@@ -97,13 +114,11 @@
 		padding-left: 17px;
 		padding-right: 17px;
 		background-color: #f1f4f5;
-		// width: 350px;
-		// flex: 1 1 auto;
 		display: block;
-		// @include adaptiv-value("margin-bottom", 30, 15);
+		// @include adaptiveValue("margin-bottom", 30, 15);
 
 		&::placeholder {
-			font-size: 15px;
+			font-size: rem(15);
 			color: #7a7a7a;
 		}
 	}
@@ -118,7 +133,7 @@
 		resize: none;
 
 		&::placeholder {
-			font-size: 15px;
+			font-size: rem(15);
 			color: #7a7a7a;
 		}
 	}
@@ -126,34 +141,53 @@
 	&__btn {
 		border: none;
 		background-color: $green;
-		font-size: 16px;
+		font-size: rem(16);
 		text-transform: uppercase;
 		text-align: center;
 		font-weight: 700;
 		color: #fff;
 		// padding: 20px 5px;
-		@include adaptiv-value("padding-right", 30, 15);
-		@include adaptiv-value("padding-left", 30, 15);
+		@include adaptiveValue("padding-right", 30, 15);
+		@include adaptiveValue("padding-left", 30, 15);
 
 		@media (min-width: em($md3)) {
 			justify-self: start;
 		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #fff;
+				color: $green;
+				box-shadow: 0 0 0 1px $green;
+			}
+		}
 	}
 
-	&__error {}
+	&__error {
+		position: absolute;
+		color: #e24545;
+	}
 
 	.select__title,
 	textarea,
-	input {
+	input,
+	.input {
 		background-color: #f9f9f9;
 		border: 1px solid #dedede;
+
+		@media (any-hover: hover) {
+			&:hover {
+				border-color: #9c9c9c;
+			}
+		}
 	}
 
 	&--no-borders {
 
 		.select__title,
 		textarea,
-		input {
+		input,
+		.input {
 			border: none;
 		}
 	}
@@ -164,18 +198,28 @@
 //<SELECT (sel+tab)>====================================================================================================
 .select {
 	position: relative;
-	line-height: 130%;
+	line-height: 1.3;
+
+	// &:focus-within {
+	// 	outline: $tomato auto 2px;
+	// }
+
+
 
 
 	// .select__item
 	&__item {
+
 		position: relative;
-		font-size: 14px;
+		font-size: rem(14);
 
-
-		// @media (max-width: ($md2+px)) {
-		// 	font-size: 18px;
+		// @media (max-width: em($md2)) {
+		// 	font-size: rem(18);
 		// }
+
+		select:focus-visible+& {
+			outline: $tomato auto 2px;
+		}
 	}
 
 	// .select__title
@@ -186,17 +230,16 @@
 		cursor: pointer;
 		// display: flex;
 		// align-items: center;
-
 		// border-radius: 4px;
 	}
 
 	// .select__value
 	&__value {
+		width: 100%;
 		min-height: 38px;
 		display: flex;
 		// min-height: 100%;
 		// height: 2em;
-		// min-height: 40px;
 		// line-height: 1em;
 		padding: 0px 17px;
 		align-items: center;
@@ -232,7 +275,11 @@
 
 	// .select__options
 	&__options {
-		min-height: 100%;
+		display: none;
+		max-height: 200px;
+		overflow: auto;
+		// transition stutters because of min-height, because it can't be lower its size
+		// min-height: 100%;
 		// color: #000;
 		position: absolute;
 		// top: 29px;
@@ -245,25 +292,27 @@
 		border-top: 0;
 		border: 1px solid #d9d9d9;
 		border-top: 0;
-		// font-size: 14px;
+		// font-size: rem(14);
 		// padding: 10px 0px 5px 0px;
 
-		// @media (max-width: ($md2+px)) {
-		// 	font-size: 18px;
+		// @media (max-width: em($md2)) {
+		// 	font-size: rem(18);
 		// }
 	}
 
 	// .select__option
 	&__option {
+		width: 100%;
+		text-align: left;
 		cursor: pointer;
 		// padding: 5px 15px;
 		padding: 5px 17px;
 		line-height: 1.5em;
 		margin: 0px 0px 0px 0px;
 
-		@media (min-width: 992px) {
+		@media (min-width: em($md2)) {
 			&:hover {
-				background: #d9d9d9;
+				background-color: #d9d9d9;
 				color: $mainColor;
 			}
 		}
@@ -290,25 +339,58 @@
 input[type="text"],
 input[type="email"],
 input[type="tel"],
+input[type="password"],
 textarea {
 	-webkit-appearance: none;
 	-moz-appearance: none;
+	-ms-appearance: none;
 	appearance: none;
 
 	&:focus {
-		outline: none;
+		// outline: none;
+
+		&::placeholder {
+			font-size: 0.1px;
+		}
 	}
 }
 
-*:focus::placeholder {
-	font-size: 0.1px;
+
+:focus:not(:focus-visible) {
+	outline: none;
 }
 
+:focus-visible {
+	outline: $tomato auto 2px;
+}
+
+// polyfill
+@supports not (selector(:focus-visible)) {
+	.js-focus-visible :focus:not(.focus-visible) {
+		outline: none;
+	}
+
+	.js-focus-visible .focus-visible {
+		outline: $tomato auto 2px;
+		// box-shadow: 0 0 2px 2px #8bc34a;
+	}
+}
+
+
 .input {
-	border-radius: 0 !important;
+	// border-radius: 0 !important;
+	// background-color: #f9f9f9;
+	// border: 1px solid #dedede;
+
+	// @media (any-hover: hover) {
+	// 	&:hover {
+	// 		border-color: #9c9c9c;
+	// 	}
+	// }
+
 	width: 100%;
 	display: block;
-	padding: 0px 20px;
+	padding: 0px 17px;
 
 	&._focus {}
 
@@ -317,7 +399,7 @@ textarea {
 
 textarea.input {
 	resize: none;
-	padding: 0px 0px;
+	// padding: 0px 0px;
 }
 
 //</INPUT>====================================================================================================
@@ -344,7 +426,7 @@ textarea.input {
 		display: inline-flex;
 		align-items: center;
 		position: relative;
-		font-size: 16px;
+		font-size: rem(16);
 		color: #ffffff;
 		letter-spacing: -0.3px;
 		line-height: calc(20 / 16);
@@ -359,7 +441,7 @@ textarea.input {
 			top: 0;
 			width: 20px;
 			height: 18px;
-			background: #fff;
+			background-color: #fff;
 			border: 1px solid #a7a9ac;
 		}
 	}
@@ -368,7 +450,7 @@ textarea.input {
 		color: #fff;
 		text-decoration: underline;
 
-		@media (min-width: 992px) {
+		@media (min-width: em($md2)) {
 			&:hover {
 				text-decoration: none;
 			}
@@ -387,10 +469,15 @@ textarea.input {
 //</CHECK>====================================================================================================
 //<INPUT-FILE>==========================================================================================================
 .input-file {
-	min-height: 40px;
+
+	&:focus-within {
+		outline: $tomato auto 2px;
+	}
+
+	// min-height: 40px;
 	display: inline-flex;
 	align-items: center;
-	padding: 0px resp-value(17, 5);
+	// padding: 0px 17px;
 	border: 1px solid #d7d7d7;
 	background-color: #f9f9f9;
 	font-size: rem(12);
@@ -399,11 +486,13 @@ textarea.input {
 	// .input-file__btn
 
 	&__btn {
+
 		// position: absolute;
 		// top: 50%;
 		// transform: translate3d(0, -50%, 0);
 		// margin-left: calc(-100px + 17px);
 		padding: 0 1em;
+		margin: 3px 0;
 		background-color: #fff;
 		color: #444;
 		border: 1px solid #d7d7d7;
@@ -423,13 +512,12 @@ textarea.input {
 	// .input-file__filename
 
 	&__filename {
-		// height: 40px;
-		@include adaptiv-value("margin-left", 15, 5);
-		// margin-left: 15px;
+		@include adaptiveValue("margin-left", 15, 5);
 		color: #707070;
 	}
 }
 
+//</INPUT-FILE>====================================================================================================
 
 
 //<OPTIONS (opt+tab)>====================================================================================================
@@ -468,7 +556,7 @@ textarea.input {
 		display: inline-flex;
 		align-items: center;
 		position: relative;
-		font-size: 16px;
+		font-size: rem(16);
 		color: #ffffff;
 		letter-spacing: -0.3px;
 		line-height: calc(20 / 16);
@@ -483,7 +571,7 @@ textarea.input {
 			border-radius: 50%;
 			width: 20px;
 			height: 18px;
-			background: #fff;
+			background-color: #fff;
 			border: 1px solid #a7a9ac;
 		}
 
@@ -508,7 +596,7 @@ textarea.input {
 .rating {
 	display: flex;
 	align-items: flex-end;
-	font-size: 40px;
+	font-size: rem(40);
 	line-height: 0.75;
 	transition: opacity 0.3s ease 0s;
 }
@@ -599,7 +687,7 @@ textarea.input {
 			height: 1px;
 		}
 
-		@media (min-width: ($md2+px)) {
+		@media (min-width: em($md2)) {
 			&:hover {
 
 				&::before,
@@ -627,7 +715,7 @@ textarea.input {
 		input {
 			height: 100%;
 			color: #a6a6a6;
-			font-size: 12px;
+			font-size: rem(12);
 			width: 100%;
 			text-align: center;
 		}

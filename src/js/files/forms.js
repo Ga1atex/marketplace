@@ -157,7 +157,7 @@ for (let index = 0; index < viewPass.length; index++) {
 }
 
 //Select
-let selects = document.getElementsByTagName('select');
+let selects = document.querySelectorAll('select');
 if (selects.length > 0) {
 	selectsInit();
 }
@@ -168,14 +168,28 @@ function selectsInit() {
 	}
 	//select_callback();
 	document.addEventListener('click', function (e) {
-		selects_close(e);
-	});
-	document.addEventListener('keydown', function (e) {
-		if (e.code === 'Escape') {
+		if (document.querySelector('.select._active')) {
 			selects_close(e);
 		}
 	});
+	document.addEventListener('keydown', function (e) {
+		let activeSelect = document.querySelector('.select._active');
+
+		if (activeSelect && e.code === 'Escape') {
+			// selects_close(e);
+			activeSelect.classList.remove('_active');
+			_slideUp(activeSelect.querySelector('.select__options'), 100);
+		}
+	});
+
+	document.addEventListener('focus', function (e) {
+		let activeSelect = document.querySelector('.select._active');
+		if (activeSelect) {
+			selects_close(e);
+		}
+	}, true);
 }
+
 function selects_close(e) {
 	const selects = document.querySelectorAll('.select');
 	if (!e.target.closest('.select') && !e.target.classList.contains('_option')) {
@@ -189,12 +203,13 @@ function selects_close(e) {
 }
 function selectInit(select) {
 	const select_parent = select.parentElement;
-	const select_modifikator = select.getAttribute('class');
+	const selectModificator = select.getAttribute('class') || select.getAttribute('id');
 	const select_selected_option = select.querySelector('option:checked');
 	select.setAttribute('data-default', select_selected_option.value);
 	select.style.display = 'none';
+	// select.classList.add('visually-hidden');
 
-	select_parent.insertAdjacentHTML('beforeend', '<div class="select select_' + select_modifikator + '"></div>');
+	select_parent.insertAdjacentHTML('beforeend', '<div class="select select--' + selectModificator + '"></div>');
 
 	let new_select = select.parentElement.querySelector('.select');
 	new_select.appendChild(select);
@@ -216,13 +231,13 @@ function selectItem(select) {
 	if (select_type == 'input') {
 		select_type_content = '<div class="select__value icon-select-arrow"><input autocomplete="off" type="text" name="form[]" value="' + select_selected_text + '" data-error="Ошибка" data-value="' + select_selected_text + '" class="select__input"></div>';
 	} else {
-		select_type_content = '<div class="select__value icon-select-arrow"><span>' + select_selected_text + '</span></div>';
+		select_type_content = '<button class="select__value icon-select-arrow" type="button"><span>' + select_selected_text + '</span></button>';
 	}
 
 	select_parent.insertAdjacentHTML('beforeend',
 		'<div class="select__item">' +
 		'<div class="select__title">' + select_type_content + '</div>' +
-		'<div hidden class="select__options">' + select_get_options(select_options) + '</div>' +
+		'<div class="select__options" style="display: none;">' + select_get_options(select_options) + '</div>' +
 		'</div></div>');
 
 	select_actions(select, select_parent);
@@ -236,6 +251,7 @@ function select_actions(original, select) {
 	const select_input = select.querySelector('.select__input');
 
 	selectTitle.addEventListener('click', function (e) {
+		e.preventDefault();
 		selectItemActions();
 	});
 
@@ -281,7 +297,9 @@ function select_actions(original, select) {
 				select_option.style.display = 'none';
 			}
 		}
-		select_option.addEventListener('click', function () {
+		select_option.addEventListener('click', function (e) {
+			e.preventDefault();
+
 			for (let index = 0; index < select_options.length; index++) {
 				const el = select_options[index];
 				el.style.display = 'block';
@@ -315,7 +333,7 @@ function select_get_options(select_options) {
 			const select_option_value = select_option.value;
 			if (select_option_value != '') {
 				const select_option_text = select_option.innerHTML;
-				select_options_content = select_options_content + '<div data-value="' + select_option_value + '" class="select__option">' + select_option_text + '</div>';
+				select_options_content = select_options_content + '<button class="select__option" data-value="' + select_option_value + '" type="button">' + select_option_text + '</button>';
 			}
 		}
 		return select_options_content;
@@ -348,7 +366,9 @@ function selects_update_all() {
 
 //Placeholers
 let inputs = document.querySelectorAll('input[data-value],textarea[data-value]');
-inputs_init(inputs);
+// if (inputs.length) {
+// 	inputs_init(inputs);
+// }
 
 function inputs_init(inputs) {
 	if (inputs.length > 0) {
@@ -502,7 +522,6 @@ if (quantityButtons.length > 0) {
 	</form> */}
 const priceSlider = document.querySelector('.js-range-slider');
 if (priceSlider) {
-
 	// let textFrom = priceSlider.getAttribute('data-from');
 	// let textTo = priceSlider.getAttribute('data-to');
 

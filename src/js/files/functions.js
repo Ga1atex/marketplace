@@ -63,47 +63,43 @@ window.addEventListener("load", function () {
 
 let unlock = true;
 
-//=================
-//ActionsOnHash
-if (location.hash) {
-	const hsh = location.hash.replace('#', '');
-	if (document.querySelector('.popup_' + hsh)) {
-		popupOpen(hsh);
-	} else if (document.querySelector('div.' + hsh)) {
-		_goto(document.querySelector('.' + hsh), 500, '');
-	}
-}
-//=================
 //Menu
 let iconMenu = document.querySelector(".icon-menu");
 if (iconMenu != null) {
-	let delay = 500;
 	let menuBody = document.querySelector(".menu__body");
 	iconMenu.addEventListener("click", function (e) {
 		if (unlock) {
-			bodyLock(delay);
+			let expanded = iconMenu.getAttribute('aria-expanded').toLowerCase() == 'true';
+			// let expanded = iconMenu.getAttribute('aria-expanded').match(/^true$/i);
+			iconMenu.setAttribute('aria-expanded', !expanded);
+			focusRestrict(menuBody);
+			modalShow(menuBody);
+			bodyLock();
 			iconMenu.classList.toggle("_active");
 			menuBody.classList.toggle("_active");
 		}
 	});
 };
+
 function menuClose() {
 	let iconMenu = document.querySelector(".icon-menu");
 	let menuBody = document.querySelector(".menu__body");
+	modalClose(menuBody);
 	iconMenu.classList.remove("_active");
 	menuBody.classList.remove("_active");
 }
 //=================
 //BodyLock
-function bodyLock(delay) {
+function bodyLock(delay = 500) {
 	let body = document.querySelector("body");
+
 	if (body.classList.contains('_lock')) {
 		bodyLockRemove(delay);
 	} else {
 		bodyLockAdd(delay);
 	}
 }
-function bodyLockRemove(delay) {
+function bodyLockRemove(delay = 500) {
 	let body = document.querySelector("body");
 	if (unlock) {
 		let lockPadding = document.querySelectorAll("._lp");
@@ -119,10 +115,11 @@ function bodyLockRemove(delay) {
 		unlock = false;
 		setTimeout(function () {
 			unlock = true;
+			// document.querySelector('.wrapper').setAttribute('aria-hidden', false);
 		}, delay);
 	}
 }
-function bodyLockAdd(delay) {
+function bodyLockAdd(delay = 500) {
 	let body = document.querySelector("body");
 	if (unlock) {
 		let lock_padding = document.querySelectorAll("._lp");
@@ -136,6 +133,7 @@ function bodyLockAdd(delay) {
 		unlock = false;
 		setTimeout(function () {
 			unlock = true;
+			// document.querySelector('.wrapper').setAttribute('aria-hidden', true);
 		}, delay);
 	}
 }
@@ -196,7 +194,7 @@ if (tabs.length) {
 Для заголовков слойлеров пишем атрибут data-spoller
 Если нужно включать\выключать работу спойлеров на разных размерах экранов
 пишем параметры ширины и типа брейкпоинта.
-Например: 
+Например:
 data-spollers="992,max" - спойлеры будут работать только на экранах меньше или равно 992px
 data-spollers="768,min" - спойлеры будут работать только на экранах больше или равно 768px
 
@@ -394,19 +392,22 @@ function digiAnimateValue(el, start, end, duration) {
 	el.classList.add('_done');
 }
 //=================
-//Popups
+//Popups also can be done with :target
 let popupLinks = document.querySelectorAll('._popup-link');
 let popups = document.querySelectorAll('.popup');
+// let lastFocus = [];
+let lastFocus;
+
 
 if (popupLinks.length) {
 	popupLinks.forEach(el => {
 		el.addEventListener('click', function (e) {
+			e.preventDefault();
 			if (unlock) {
 				let item = el.getAttribute('href').replace('#', '');
 				let video = el.getAttribute('data-video');
 				popupOpen(item, video);
 			}
-			e.preventDefault();
 		});
 	});
 }
@@ -414,72 +415,148 @@ if (popupLinks.length) {
 if (popups.length) {
 	popups.forEach(popup => {
 		popup.addEventListener("click", function (e) {
-			if (!e.target.closest('.popup__body')) {
+			if (!e.target.closest('.popup__body') || e.target.closest('.popup__close')) {
 				popupClose(e.target.closest('.popup'));
 			}
 		});
 	});
 }
+function modalShow(modal, transition = true) {
+	// lastFocus.push(document.activeElement);
+	lastFocus = document.activeElement;
+	// modal.setAttribute('tabindex', '-1');
+	// modal.tabIndex = '-1';
+	transition ? modal.addEventListener('transitionend', modalTransitionListener, { once: true, caption: true }) : modal.focus();
+	// { once: true });
+
+	const focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+	const firstFocusableElement = modal.querySelectorAll(focusableElements)[0];
+	function modalTransitionListener(e) {
+		// if (e.target == modal && (e.propertyName == 'transform' || e.propertyName == 'visibility')) {
+		if (e.target == modal && lastFocus !== firstFocusableElement) {
+			// modal.focus();
+			// modal.querySelector('[tabindex="0"]').focus();
+			firstFocusableElement.focus();
+		}
+	}
+
+}
+function modalClose(modal) {
+	modal.addEventListener('transitionend', function (e) {
+		// if (e.target == modal && (e.propertyName == 'transform' || e.propertyName == 'left')) {
+		if (e.target == modal) {
+			lastFocus.focus();
+		}
+		// lastFocus.pop().focus();
+	}, { once: true, caption: true });
+}
+
+function focusRestrict(modal) {
+	// to prevent scroll to the footer by shift+tab at the modal, can also prevent this by putting modal at afterbegin(prepend) of body or forEach focusable item in body set tabindex=-1 and then revert it when close modal
+
+	const focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+	const firstFocusableElement = modal.querySelectorAll(focusableElements)[0];
+
+	modal.addEventListener('focusout', modalFocusHandler);
+
+	// modal.addEventListener('focusout', modalFocusHandler, true);
+
+	function modalFocusHandler(e) {
+		e.preventDefault();
+		// if (modalOpen && !modal.contains(e.target)) {
+		// if (document.querySelector('.popup._active') && !modal.contains(e.target)) {
+		if (!modal.contains(e.relatedTarget) && (document.querySelector('.popup._active') || modal.classList.contains('_active'))) {
+			e.stopPropagation();
+			// modal.querySelector('[tabindex="0"]').focus();
+			firstFocusableElement.focus();
+			// modal.focus();
+		}
+	}
+}
 
 function popupOpen(item, video = '') {
+	focusRestrict(document.querySelector(`.popup_${item} .popup__body`));
+
 	let activePopup = document.querySelectorAll('.popup._active');
 	if (activePopup.length) {
 		popupClose('', false);
 	}
+
 	let currentPopup = document.querySelector('.popup_' + item);
+
 	if (currentPopup && unlock) {
 		if (video != '' && video != null) {
 			let popupVideo = document.querySelector('.popup_video');
 			popupVideo.querySelector('.popup__video').innerHTML = '<iframe src="https://www.youtube.com/embed/' + video + '?autoplay=1"  allow="autoplay; encrypted-media" allowfullscreen></iframe>';
 		}
 		if (!document.querySelector('.menu__body._active')) {
-			bodyLockAdd(500);
+			bodyLockAdd();
 		}
 		currentPopup.classList.add('_active');
+		modalShow(document.querySelector(`.popup_${item} .popup__body`));
 		history.pushState('', '', '#' + item);
 	}
 }
 
 function popupClose(item, bodyUnlock = true) {
 	if (unlock) {
-		if (!item) {
-			popups.forEach(popup => {
+		if (!item) { //closes all active popups
+			let activePopups = document.querySelectorAll('.popup._active');
+			activePopups.forEach(popup => {
 				let video = popup.querySelector('.popup__video');
 				if (video) {
 					video.innerHTML = '';
 				}
 				popup.classList.remove('_active');
+				modalClose(popup.querySelector('.popup__body'));
 			});
-		} else {
+		} else { //closes a single one
 			let video = item.querySelector('.popup__video');
 			if (video) {
 				video.innerHTML = '';
 			}
 			item.classList.remove('_active');
+			modalClose(item.querySelector('.popup__body'));
 		}
 		if (!document.querySelector('.menu__body._active') && bodyUnlock) {
-			bodyLockRemove(500);
+			bodyLockRemove();
 		}
 		history.pushState('', '', window.location.href.split('#')[0]);
 	}
 }
 
-let popupCloseIcon = document.querySelectorAll('.popup__close,._popup-close');
-if (popupCloseIcon.length) {
-	popupCloseIcon.forEach(el => {
-		el.addEventListener('click', function (e) {
-			e.preventDefault();
-			popupClose(el.closest('.popup'));
-		});
-	});
-}
+// let popupCloseIcon = document.querySelectorAll('.popup__close,._popup-close');
+// if (popupCloseIcon.length) {
+// 	popupCloseIcon.forEach(el => {
+// 		el.addEventListener('click', function (e) {
+// 			e.preventDefault();
+// 			popupClose(el.closest('.popup'));
+// 		});
+// 	});
+// }
 
 document.addEventListener('keydown', function (e) {
-	if (e.code === 'Escape') {
-		popupClose();
+	if (e.code === 'Escape' || e.code === 27) {
+		if (document.querySelector('.popup._active')) {
+			popupClose();
+		}
+		else if (document.querySelector('.menu__body._active')) {
+			menuClose();
+		}
 	}
 });
 
+//=================
+//ActionsOnHash
+if (location.hash) {
+	const hash = location.hash.replace('#', '');
+	if (document.querySelector('.popup_' + hash)) {
+		popupOpen(hash);
+	} else if (document.querySelector('div.' + hash)) {
+		_goto(document.querySelector('.' + hash), 500, '');
+	}
+}
+//=================
 //=================
 //SlideToggle
 function _slideUp(target, duration = 500) {
@@ -525,6 +602,7 @@ function _slideDown(target, duration = 500) {
 	target.style.paddingBottom = 0;
 	target.style.marginTop = 0;
 	target.style.marginBottom = 0;
+	// add border-width 0?
 	target.offsetHeight;
 	target.style.transitionProperty = "height, margin, padding";
 	target.style.transitionDuration = duration + 'ms';
@@ -670,7 +748,7 @@ function initRatings() {
 		const ratingActiveWidth = index / 0.05;
 		ratingActive.style.width = `${ratingActiveWidth}%`;
 	}
-	// Возможность указать оценку 
+	// Возможность указать оценку
 	function setRating(rating) {
 		const ratingItems = rating.querySelectorAll('.rating__item');
 		for (let index = 0; index < ratingItems.length; index++) {
@@ -700,7 +778,6 @@ function initRatings() {
 			});
 		}
 	}
-
 	async function setRatingValue(value, rating) {
 		if (!rating.classList.contains('rating_sending')) {
 			rating.classList.add('rating_sending');

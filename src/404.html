@@ -8,28 +8,10 @@
   <div class="wrapper">
     @@include('_header.html',{})
     <main class="page">
-      <section class="page__search search" style="background-image: url(img/search-bg.jpg);">
-        <div class="container">
-          <div class="search__inner">
-            <div class="search__inner-text">
-              Premium WordPress Themes, Web Templates and Many More ...
-            </div>
-            <div class="search__inner-form">
-              <form>
-                <input type="text" placeholder="Search Your Keywords . . ." required>
-                <button type="submit">
-                  <img src="img/icons/search.png" alt="">
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
       @@include('_breadcrumbs.html', {arr: [["404 Page"]]})
 
-      <div class="page-404">
-
-        <div class="container">
+      <div class="page__page-404 page-404">
+        <div class="page-404__container page__inner">
           <div class="page-404__wrapper page__block-wrapper">
             <div class="page-404__head page__block-title">
               Error Page
@@ -37,7 +19,7 @@
             <div class="page-404__inner">
               <div class="page-404__404">
                 404
-                <div class="page-404__img"><img src="img/page-404.png" alt=""></div>
+                <div class="page-404__img"><img src="img/page-404.png" alt="Confused man"></div>
               </div>
               <div class="page-404__title">Sorry Page Was Not Found</div>
               <div class="page-404__text">

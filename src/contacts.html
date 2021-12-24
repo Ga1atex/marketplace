@@ -6,29 +6,12 @@
 
 <body>
   <div class="wrapper">
-    @@include('_header.html',{})
+    @@include('_header.html',{link:'contacts'})
     <main class="page">
-      <section class="page__search search" style="background-image: url(img/search-bg.jpg);">
-        <div class="container">
-          <div class="search__inner">
-            <div class="search__inner-text">
-              Premium WordPress Themes, Web Templates and Many More ...
-            </div>
-            <div class="search__inner-form">
-              <form>
-                <input type="text" placeholder="Search Your Keywords . . ." required>
-                <button type="submit">
-                  <img src="img/icons/search.png" alt="">
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
       @@include('_breadcrumbs.html', {arr: [["Contact Us"]]})
 
-      <section class="contact">
-        <div class="container">
+      <section class="page__contact contact">
+        <div class="contact__container page__inner">
           <div class="contact__wrapper page__block-wrapper">
             <div class="contact__head page__block-title">
               Contact With Us
@@ -54,9 +37,9 @@
                   </div>
                   <div class="contact__info-item">
                     <div class="contact__info-title icon-envelope-o">E-mail</div>
-                    <div class="contact__info-content">
+                    <a class="contact__info-content" href="mailto:info@foxtar.com">
                       info@foxtar.com
-                    </div>
+                    </a>
                   </div>
                 </div>
                 <div class="contact__form">

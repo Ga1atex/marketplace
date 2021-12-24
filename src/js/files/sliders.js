@@ -90,8 +90,8 @@ if (document.querySelector('.product-slider__inner')) {
 			// >=320
 			320: {
 				slidesPerView: 1.1,
-				spaceBetween: 15,
-				slidesPerGroup: 1.1,
+				spaceBetween: 10,
+				slidesPerGroup: 1,
 			},
 			625: {
 				slidesPerView: 2,

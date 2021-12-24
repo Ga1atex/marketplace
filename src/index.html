@@ -6,43 +6,23 @@
 
 <body>
 	<div class="wrapper">
-		@@include('_header.html',{})
+		@@include('_header.html',{home: true, unlogged: true})
 		<main class="page">
-			<section class="page__search search search--home" style="background-image: url(img/search-bg.jpg);">
-				<div class="container">
-					<div class="search__inner">
-						<h1 class="search__inner-title">
-							Welcome To Moderno Market Place!
-						</h1>
-						<div class="search__inner-text">
-							Premium WordPress Themes, Web Templates and Many More ...
-						</div>
-						<div class="search__inner-form">
-							<form>
-								<input type="text" placeholder="Search Your Keywords . . ." required>
-								<button type="submit">
-									<img src="img/icons/search.png" alt="">
-								</button>
-							</form>
-						</div>
-					</div>
-				</div>
-			</section>
 			<section class="page__products products">
 				<div class="products__wrapper">
 					<h2 class="products__title title">Let’s Check Out Our Newest Release Products</h2>
 					<div class="products__filters">
-						<button class="products__filters-btn btn btn_white" data-filter="all">All</button>
-						<button class="products__filters-btn btn btn_white" data-filter=".category-wordpress">WordPress</button>
-						<button class="products__filters-btn btn btn_white" data-filter=".category-joomla">Joomla</button>
-						<button class="products__filters-btn btn btn_white" data-filter=".category-plugins">Plugins</button>
-						<button class="products__filters-btn btn btn_white" data-filter=".category-components">Components</button>
-						<button class="products__filters-btn btn btn_white" data-filter=".category-psd">PSD</button>
+						<button class="products__filters-btn btn btn--white" type="button" data-filter="all">All</button>
+						<button class="products__filters-btn btn btn--white" type="button" data-filter=".category-wordpress">WordPress</button>
+						<button class="products__filters-btn btn btn--white" type="button" data-filter=".category-joomla">Joomla</button>
+						<button class="products__filters-btn btn btn--white" type="button" data-filter=".category-plugins">Plugins</button>
+						<button class="products__filters-btn btn btn--white" type="button" data-filter=".category-components">Components</button>
+						<button class="products__filters-btn btn btn--white" type="button" data-filter=".category-psd">PSD</button>
 					</div>
 					<div class="products__items product-items">
 						<article class="products__item item-product mix category-component category-new" data-order="1">
 							<a class="item-product__image _ibg" href="#">
-								<img src="img/products/01.jpg" alt="Product 1">
+								<img src="img/products/01.jpg" alt="Product 1" width="442" height="250">
 							</a>
 							<div class="item-product__body">
 								<div class="item-product__content">
@@ -55,9 +35,9 @@
 							</div>
 							<div class="item-product__author">
 								<a class="item-product__author-avatar" href="">
-									<img src="img/authors/01.jpg" alt="">
+									<img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
 								</a>
-								<a class="item-product__author-name">Radiustheme</a>
+								<a class="item-product__author-name" href="#">Radiustheme</a>
 								<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
 									<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
 										<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
@@ -72,7 +52,7 @@
 						</article>
 						<article class="products__item item-product mix category-wordpress" data-order="2">
 							<a class="item-product__image _ibg" href="#">
-								<img src="img/products/02.jpg" alt="Product 1">
+								<img src="img/products/02.jpg" alt="Product 1" width="442" height="250">
 								<div class="item-product__labels">
 									<div class="item-product__label item-product__label_zip icon-flash"></div>
 								</div>
@@ -88,9 +68,9 @@
 							</div>
 							<div class="item-product__author">
 								<a class="item-product__author-avatar" href="">
-									<img src="img/authors/01.jpg" alt="">
+									<img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
 								</a>
-								<a class="item-product__author-name">PsdBosS</a>
+								<a class="item-product__author-name" href="#">PsdBosS</a>
 								<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
 									<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
 										<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
@@ -105,7 +85,7 @@
 						</article>
 						<article class="products__item item-product mix category-wordpress category-new" data-order="3">
 							<a class="item-product__image _ibg" href="#">
-								<img src="img/products/03.jpg" alt="Product 1">
+								<img src="img/products/03.jpg" alt="Product 1" width="442" height="250">
 							</a>
 							<div class="item-product__body">
 								<div class="item-product__content">
@@ -118,9 +98,9 @@
 							</div>
 							<div class="item-product__author">
 								<a class="item-product__author-avatar" href="">
-									<img src="img/authors/01.jpg" alt="">
+									<img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
 								</a>
-								<a class="item-product__author-name">Manilip</a>
+								<a class="item-product__author-name" href="#">Manilip</a>
 								<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
 									<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
 										<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
@@ -135,7 +115,7 @@
 						</article>
 						<article class="products__item item-product mix category-psd category-popular" data-order="4">
 							<a class="item-product__image _ibg" href="#">
-								<img src="img/products/04.jpg" alt="Product 1">
+								<img src="img/products/04.jpg" alt="Product 1" width="442" height="250">
 							</a>
 							<div class="item-product__body">
 								<div class="item-product__content">
@@ -148,9 +128,9 @@
 							</div>
 							<div class="item-product__author">
 								<a class="item-product__author-avatar" href="">
-									<img src="img/authors/01.jpg" alt="">
+									<img src="img/content/user-avatar.jpg" alt="User's Avatar" width="34" height="34">
 								</a>
-								<a class="item-product__author-name">Lolypop</a>
+								<a class="item-product__author-name" href="#">Lolypop</a>
 								<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
 									<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
 										<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
@@ -165,7 +145,7 @@
 						</article>
 						<article class="products__item item-product mix category-joomla category-new" data-order="5">
 							<a class="item-product__image _ibg" href="#">
-								<img src="img/products/05.jpg" alt="Product 1">
+								<img src="img/products/05.jpg" alt="Product 1" width="442" height="250">
 								<div class="item-product__labels">
 									<div class="item-product__label item-product__label_zip icon-flash"></div>
 								</div>
@@ -181,9 +161,9 @@
 							</div>
 							<div class="item-product__author">
 								<a class="item-product__author-avatar" href="">
-									<img src="img/authors/01.jpg" alt="">
+									<img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
 								</a>
-								<a class="item-product__author-name">Micrsof</a>
+								<a class="item-product__author-name" href="#">Micrsof</a>
 								<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
 									<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
 										<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
@@ -198,7 +178,7 @@
 						</article>
 						<article class="products__item item-product mix category-wordpress" data-order="6">
 							<a class="item-product__image _ibg" href="#">
-								<img src="img/products/06.jpg" alt="Product 1">
+								<img src="img/products/06.jpg" alt="Product 1" width="442" height="250">
 							</a>
 							<div class="item-product__body">
 								<div class="item-product__content">
@@ -211,9 +191,9 @@
 							</div>
 							<div class="item-product__author">
 								<a class="item-product__author-avatar" href="">
-									<img src="img/authors/01.jpg" alt="">
+									<img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
 								</a>
-								<a class="item-product__author-name">Raklouse</a>
+								<a class="item-product__author-name" href="#">Raklouse</a>
 								<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
 									<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
 										<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
@@ -228,7 +208,7 @@
 						</article>
 						<article class="products__item item-product mix category-components category-new" data-order="7">
 							<a class="item-product__image _ibg" href="#">
-								<img src="img/products/07.jpg" alt="Product 1">
+								<img src="img/products/07.jpg" alt="Product 1" width="442" height="250">
 								<div class="item-product__labels">
 									<div class="item-product__label item-product__label_zip icon-flash"></div>
 								</div>
@@ -244,9 +224,9 @@
 							</div>
 							<div class="item-product__author">
 								<a class="item-product__author-avatar" href="">
-									<img src="img/authors/01.jpg" alt="">
+									<img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
 								</a>
-								<a class="item-product__author-name">Mikc Art</a>
+								<a class="item-product__author-name" href="#">Mikc Art</a>
 								<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
 									<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
 										<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
@@ -261,7 +241,7 @@
 						</article>
 						<article class="products__item item-product mix category-psd category-popular" data-order="8">
 							<a class="item-product__image _ibg" href="#">
-								<img src="img/products/08.jpg" alt="Product 1">
+								<img src="img/products/08.jpg" alt="Product 1" width="442" height="250">
 							</a>
 							<div class="item-product__body">
 								<div class="item-product__content">
@@ -274,9 +254,9 @@
 							</div>
 							<div class="item-product__author">
 								<a class="item-product__author-avatar" href="">
-									<img src="img/authors/01.jpg" alt="">
+									<img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
 								</a>
-								<a class="item-product__author-name">ThemeLol</a>
+								<a class="item-product__author-name" href="#">ThemeLol</a>
 								<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
 									<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
 										<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
@@ -292,8 +272,10 @@
 					</div>
 					<div class="products__footer">
 						<div class="products__footer-btns">
-							<button class="products__footer-btn products__footer-new btn btn_white" href="#" data-filter=".category-new">All New Items</button>
-							<button class="products__footer-btn products__footer-popular btn btn_white" href="#" data-filter=".category-popular">Popular
+							<button class="products__footer-btn products__footer-new btn btn--white" href="#" data-filter=".category-new" type="button">All New
+								Items</button>
+							<button class="products__footer-btn products__footer-popular btn btn--white" href="#" data-filter=".category-popular"
+								type="button">Popular
 								Items</button>
 						</div>
 					</div>
@@ -301,514 +283,513 @@
 			</section>
 			<section class="page__product-slider product-slider">
 				<div class="product-slider__wrapper">
-					<div class="container-fluid">
-						<div class="product-slider__title title">
-							This Week Trending Products
-						</div>
-						<div class="product-slider__inner _swiper">
-							<article class="products__item item-product mix category-component category-new" data-order="1">
-								<a class="item-product__image _ibg" href="#">
-									<img src="img/products/01.jpg" alt="Product 1">
-								</a>
-								<div class="item-product__body">
-									<div class="item-product__content">
-										<a class="item-product__title" href="#">Responsive Mobile APP</a>
-										<a class="item-product__category" href="#">Site Template</a>
-									</div>
-									<div class="item-product__prices">
-										<div class="item-product__price">$19</div>
-									</div>
-								</div>
-								<div class="item-product__author">
-									<a class="item-product__author-avatar" href="">
-										<img src="img/authors/01.jpg" alt="">
-									</a>
-									<a class="item-product__author-name">Radiustheme</a>
-									<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
-										<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
-											<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
-										</a>
-										<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
-											<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
-											<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
-											<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="products__item item-product mix category-wordpress" data-order="2">
-								<a class="item-product__image _ibg" href="#">
-									<img src="img/products/02.jpg" alt="Product 1">
-									<div class="item-product__labels">
-										<div class="item-product__label item-product__label_zip icon-flash"></div>
-									</div>
-								</a>
-								<div class="item-product__body">
-									<div class="item-product__content">
-										<a class="item-product__title" href="#">The Post Grid Pro</a>
-										<a class="item-product__category" href="#">WordPress Plugin</a>
-									</div>
-									<div class="item-product__prices">
-										<div class="item-product__price">$15</div>
-									</div>
-								</div>
-								<div class="item-product__author">
-									<a class="item-product__author-avatar" href="">
-										<img src="img/authors/01.jpg" alt="">
-									</a>
-									<a class="item-product__author-name">PsdBosS</a>
-									<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
-										<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
-											<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
-										</a>
-										<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
-											<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
-											<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
-											<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="products__item item-product mix category-wordpress category-new" data-order="3">
-								<a class="item-product__image _ibg" href="#">
-									<img src="img/products/03.jpg" alt="Product 1">
-								</a>
-								<div class="item-product__body">
-									<div class="item-product__content">
-										<a class="item-product__title" href="#">Food Menu</a>
-										<a class="item-product__category" href="#">WordPress Plugin</a>
-									</div>
-									<div class="item-product__prices">
-										<div class="item-product__price">$20</div>
-									</div>
-								</div>
-								<div class="item-product__author">
-									<a class="item-product__author-avatar" href="">
-										<img src="img/authors/01.jpg" alt="">
-									</a>
-									<a class="item-product__author-name">Manilip</a>
-									<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
-										<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
-											<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
-										</a>
-										<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
-											<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
-											<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
-											<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="products__item item-product mix category-psd category-popular" data-order="4">
-								<a class="item-product__image _ibg" href="#">
-									<img src="img/products/04.jpg" alt="Product 1">
-								</a>
-								<div class="item-product__body">
-									<div class="item-product__content">
-										<a class="item-product__title" href="#">Imac Mockup</a>
-										<a class="item-product__category" href="#">Psd Template</a>
-									</div>
-									<div class="item-product__prices">
-										<div class="item-product__price">$12</div>
-									</div>
-								</div>
-								<div class="item-product__author">
-									<a class="item-product__author-avatar" href="">
-										<img src="img/authors/01.jpg" alt="">
-									</a>
-									<a class="item-product__author-name">Lolypop</a>
-									<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
-										<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
-											<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
-										</a>
-										<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
-											<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
-											<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
-											<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="products__item item-product mix category-joomla category-new" data-order="5">
-								<a class="item-product__image _ibg" href="#">
-									<img src="img/products/05.jpg" alt="Product 1">
-									<div class="item-product__labels">
-										<div class="item-product__label item-product__label_zip icon-flash"></div>
-									</div>
-								</a>
-								<div class="item-product__body">
-									<div class="item-product__content">
-										<a class="item-product__title" href="#">Gymedge</a>
-										<a class="item-product__category" href="#">Joomla Template</a>
-									</div>
-									<div class="item-product__prices">
-										<div class="item-product__price">$45</div>
-									</div>
-								</div>
-								<div class="item-product__author">
-									<a class="item-product__author-avatar" href="">
-										<img src="img/authors/01.jpg" alt="">
-									</a>
-									<a class="item-product__author-name">Micrsof</a>
-									<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
-										<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
-											<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
-										</a>
-										<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
-											<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
-											<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
-											<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="products__item item-product mix category-wordpress" data-order="6">
-								<a class="item-product__image _ibg" href="#">
-									<img src="img/products/06.jpg" alt="Product 1">
-								</a>
-								<div class="item-product__body">
-									<div class="item-product__content">
-										<a class="item-product__title" href="#">The Post Grid Pro</a>
-										<a class="item-product__category" href="#">WordPress Plugin</a>
-									</div>
-									<div class="item-product__prices">
-										<div class="item-product__price">$19</div>
-									</div>
-								</div>
-								<div class="item-product__author">
-									<a class="item-product__author-avatar" href="">
-										<img src="img/authors/01.jpg" alt="">
-									</a>
-									<a class="item-product__author-name">Raklouse</a>
-									<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
-										<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
-											<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
-										</a>
-										<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
-											<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
-											<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
-											<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="products__item item-product mix category-components category-new" data-order="7">
-								<a class="item-product__image _ibg" href="#">
-									<img src="img/products/07.jpg" alt="Product 1">
-									<div class="item-product__labels">
-										<div class="item-product__label item-product__label_zip icon-flash"></div>
-									</div>
-								</a>
-								<div class="item-product__body">
-									<div class="item-product__content">
-										<a class="item-product__title" href="#">Doll Face</a>
-										<a class="item-product__category" href="#">Illsatration</a>
-									</div>
-									<div class="item-product__prices">
-										<div class="item-product__price">$10</div>
-									</div>
-								</div>
-								<div class="item-product__author">
-									<a class="item-product__author-avatar" href="">
-										<img src="img/authors/01.jpg" alt="">
-									</a>
-									<a class="item-product__author-name">Mikc Art</a>
-									<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
-										<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
-											<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
-										</a>
-										<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
-											<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
-											<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
-											<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="products__item item-product mix category-psd category-popular" data-order="8">
-								<a class="item-product__image _ibg" href="#">
-									<img src="img/products/08.jpg" alt="Product 1">
-								</a>
-								<div class="item-product__body">
-									<div class="item-product__content">
-										<a class="item-product__title" href="#">Designer Mockup</a>
-										<a class="item-product__category" href="#">PsdTemplate</a>
-									</div>
-									<div class="item-product__prices">
-										<div class="item-product__price">$10</div>
-									</div>
-								</div>
-								<div class="item-product__author">
-									<a class="item-product__author-avatar" href="">
-										<img src="img/authors/01.jpg" alt="">
-									</a>
-									<a class="item-product__author-name">ThemeLol</a>
-									<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
-										<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
-											<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
-										</a>
-										<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
-											<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
-											<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
-											<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="products__item item-product mix category-component category-new" data-order="1">
-								<a class="item-product__image _ibg" href="#">
-									<img src="img/products/01.jpg" alt="Product 1">
-								</a>
-								<div class="item-product__body">
-									<div class="item-product__content">
-										<a class="item-product__title" href="#">Responsive Mobile APP</a>
-										<a class="item-product__category" href="#">Site Template</a>
-									</div>
-									<div class="item-product__prices">
-										<div class="item-product__price">$19</div>
-									</div>
-								</div>
-								<div class="item-product__author">
-									<a class="item-product__author-avatar" href="">
-										<img src="img/authors/01.jpg" alt="">
-									</a>
-									<a class="item-product__author-name">Radiustheme</a>
-									<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
-										<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
-											<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
-										</a>
-										<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
-											<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
-											<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
-											<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="products__item item-product mix category-wordpress" data-order="2">
-								<a class="item-product__image _ibg" href="#">
-									<img src="img/products/02.jpg" alt="Product 1">
-									<div class="item-product__labels">
-										<div class="item-product__label item-product__label_zip icon-flash"></div>
-									</div>
-								</a>
-								<div class="item-product__body">
-									<div class="item-product__content">
-										<a class="item-product__title" href="#">The Post Grid Pro</a>
-										<a class="item-product__category" href="#">WordPress Plugin</a>
-									</div>
-									<div class="item-product__prices">
-										<div class="item-product__price">$15</div>
-									</div>
-								</div>
-								<div class="item-product__author">
-									<a class="item-product__author-avatar" href="">
-										<img src="img/authors/01.jpg" alt="">
-									</a>
-									<a class="item-product__author-name">PsdBosS</a>
-									<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
-										<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
-											<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
-										</a>
-										<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
-											<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
-											<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
-											<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="products__item item-product mix category-wordpress category-new" data-order="3">
-								<a class="item-product__image _ibg" href="#">
-									<img src="img/products/03.jpg" alt="Product 1">
-								</a>
-								<div class="item-product__body">
-									<div class="item-product__content">
-										<a class="item-product__title" href="#">Food Menu</a>
-										<a class="item-product__category" href="#">WordPress Plugin</a>
-									</div>
-									<div class="item-product__prices">
-										<div class="item-product__price">$20</div>
-									</div>
-								</div>
-								<div class="item-product__author">
-									<a class="item-product__author-avatar" href="">
-										<img src="img/authors/01.jpg" alt="">
-									</a>
-									<a class="item-product__author-name">Manilip</a>
-									<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
-										<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
-											<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
-										</a>
-										<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
-											<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
-											<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
-											<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="products__item item-product mix category-psd category-popular" data-order="4">
-								<a class="item-product__image _ibg" href="#">
-									<img src="img/products/04.jpg" alt="Product 1">
-								</a>
-								<div class="item-product__body">
-									<div class="item-product__content">
-										<a class="item-product__title" href="#">Imac Mockup</a>
-										<a class="item-product__category" href="#">Psd Template</a>
-									</div>
-									<div class="item-product__prices">
-										<div class="item-product__price">$12</div>
-									</div>
-								</div>
-								<div class="item-product__author">
-									<a class="item-product__author-avatar" href="">
-										<img src="img/authors/01.jpg" alt="">
-									</a>
-									<a class="item-product__author-name">Lolypop</a>
-									<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
-										<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
-											<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
-										</a>
-										<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
-											<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
-											<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
-											<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="products__item item-product mix category-joomla category-new" data-order="5">
-								<a class="item-product__image _ibg" href="#">
-									<img src="img/products/05.jpg" alt="Product 1">
-									<div class="item-product__labels">
-										<div class="item-product__label item-product__label_zip icon-flash"></div>
-									</div>
-								</a>
-								<div class="item-product__body">
-									<div class="item-product__content">
-										<a class="item-product__title" href="#">Gymedge</a>
-										<a class="item-product__category" href="#">Joomla Template</a>
-									</div>
-									<div class="item-product__prices">
-										<div class="item-product__price">$45</div>
-									</div>
-								</div>
-								<div class="item-product__author">
-									<a class="item-product__author-avatar" href="">
-										<img src="img/authors/01.jpg" alt="">
-									</a>
-									<a class="item-product__author-name">Micrsof</a>
-									<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
-										<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
-											<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
-										</a>
-										<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
-											<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
-											<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
-											<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="products__item item-product mix category-wordpress" data-order="6">
-								<a class="item-product__image _ibg" href="#">
-									<img src="img/products/06.jpg" alt="Product 1">
-								</a>
-								<div class="item-product__body">
-									<div class="item-product__content">
-										<a class="item-product__title" href="#">The Post Grid Pro</a>
-										<a class="item-product__category" href="#">WordPress Plugin</a>
-									</div>
-									<div class="item-product__prices">
-										<div class="item-product__price">$19</div>
-									</div>
-								</div>
-								<div class="item-product__author">
-									<a class="item-product__author-avatar" href="">
-										<img src="img/authors/01.jpg" alt="">
-									</a>
-									<a class="item-product__author-name">Raklouse</a>
-									<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
-										<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
-											<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
-										</a>
-										<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
-											<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
-											<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
-											<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="products__item item-product mix category-components category-new" data-order="7">
-								<a class="item-product__image _ibg" href="#">
-									<img src="img/products/07.jpg" alt="Product 1">
-									<div class="item-product__labels">
-										<div class="item-product__label item-product__label_zip icon-flash"></div>
-									</div>
-								</a>
-								<div class="item-product__body">
-									<div class="item-product__content">
-										<a class="item-product__title" href="#">Doll Face</a>
-										<a class="item-product__category" href="#">Illsatration</a>
-									</div>
-									<div class="item-product__prices">
-										<div class="item-product__price">$10</div>
-									</div>
-								</div>
-								<div class="item-product__author">
-									<a class="item-product__author-avatar" href="">
-										<img src="img/authors/01.jpg" alt="">
-									</a>
-									<a class="item-product__author-name">Mikc Art</a>
-									<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
-										<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
-											<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
-										</a>
-										<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
-											<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
-											<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
-											<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
-										</div>
-									</div>
-								</div>
-							</article>
-							<article class="products__item item-product mix category-psd category-popular" data-order="8">
-								<a class="item-product__image _ibg" href="#">
-									<img src="img/products/08.jpg" alt="Product 1">
-								</a>
-								<div class="item-product__body">
-									<div class="item-product__content">
-										<a class="item-product__title" href="#">Designer Mockup</a>
-										<a class="item-product__category" href="#">PsdTemplate</a>
-									</div>
-									<div class="item-product__prices">
-										<div class="item-product__price">$10</div>
-									</div>
-								</div>
-								<div class="item-product__author">
-									<a class="item-product__author-avatar" href="">
-										<img src="img/authors/01.jpg" alt="">
-									</a>
-									<a class="item-product__author-name">ThemeLol</a>
-									<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
-										<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
-											<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
-										</a>
-										<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
-											<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
-											<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
-											<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
-										</div>
-									</div>
-								</div>
-							</article>
-						</div>
-						<div class="product-slider__controls slider-controls">
-							<div class="slider-controls__dots slider-dots"></div>
-						</div>
+					<div class="product-slider__title title">
+						This Week Trending Products
 					</div>
+					<div class="product-slider__inner _swiper">
+						<article class="products__item item-product mix category-component category-new" data-order="1">
+							<a class="item-product__image _ibg" href="#">
+								<img src="img/products/01.jpg" alt="Product 1" width="442" height="250">
+							</a>
+							<div class="item-product__body">
+								<div class="item-product__content">
+									<a class="item-product__title" href="#">Responsive Mobile APP</a>
+									<a class="item-product__category" href="#">Site Template</a>
+								</div>
+								<div class="item-product__prices">
+									<div class="item-product__price">$19</div>
+								</div>
+							</div>
+							<div class="item-product__author">
+								<a class="item-product__author-avatar" href="">
+									<img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
+								</a>
+								<a class="item-product__author-name" href="#">Radiustheme</a>
+								<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
+									<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
+										<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
+									</a>
+									<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+										<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
+										<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
+										<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
+									</div>
+								</div>
+							</div>
+						</article>
+						<article class="products__item item-product mix category-wordpress" data-order="2">
+							<a class="item-product__image _ibg" href="#">
+								<img src="img/products/02.jpg" alt="Product 1" width="442" height="250">
+								<div class="item-product__labels">
+									<div class="item-product__label item-product__label_zip icon-flash"></div>
+								</div>
+							</a>
+							<div class="item-product__body">
+								<div class="item-product__content">
+									<a class="item-product__title" href="#">The Post Grid Pro</a>
+									<a class="item-product__category" href="#">WordPress Plugin</a>
+								</div>
+								<div class="item-product__prices">
+									<div class="item-product__price">$15</div>
+								</div>
+							</div>
+							<div class="item-product__author">
+								<a class="item-product__author-avatar" href="">
+									<img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
+								</a>
+								<a class="item-product__author-name" href="#">PsdBosS</a>
+								<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
+									<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
+										<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
+									</a>
+									<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+										<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
+										<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
+										<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
+									</div>
+								</div>
+							</div>
+						</article>
+						<article class="products__item item-product mix category-wordpress category-new" data-order="3">
+							<a class="item-product__image _ibg" href="#">
+								<img src="img/products/03.jpg" alt="Product 1" width="442" height="250">
+							</a>
+							<div class="item-product__body">
+								<div class="item-product__content">
+									<a class="item-product__title" href="#">Food Menu</a>
+									<a class="item-product__category" href="#">WordPress Plugin</a>
+								</div>
+								<div class="item-product__prices">
+									<div class="item-product__price">$20</div>
+								</div>
+							</div>
+							<div class="item-product__author">
+								<a class="item-product__author-avatar" href="">
+									<img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
+								</a>
+								<a class="item-product__author-name" href="#">Manilip</a>
+								<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
+									<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
+										<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
+									</a>
+									<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+										<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
+										<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
+										<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
+									</div>
+								</div>
+							</div>
+						</article>
+						<article class="products__item item-product mix category-psd category-popular" data-order="4">
+							<a class="item-product__image _ibg" href="#">
+								<img src="img/products/04.jpg" alt="Product 1" width="442" height="250">
+							</a>
+							<div class="item-product__body">
+								<div class="item-product__content">
+									<a class="item-product__title" href="#">Imac Mockup</a>
+									<a class="item-product__category" href="#">Psd Template</a>
+								</div>
+								<div class="item-product__prices">
+									<div class="item-product__price">$12</div>
+								</div>
+							</div>
+							<div class="item-product__author">
+								<a class="item-product__author-avatar" href="">
+									<img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
+								</a>
+								<a class="item-product__author-name" href="#">Lolypop</a>
+								<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
+									<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
+										<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
+									</a>
+									<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+										<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
+										<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
+										<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
+									</div>
+								</div>
+							</div>
+						</article>
+						<article class="products__item item-product mix category-joomla category-new" data-order="5">
+							<a class="item-product__image _ibg" href="#">
+								<img src="img/products/05.jpg" alt="Product 1" width="442" height="250">
+								<div class="item-product__labels">
+									<div class="item-product__label item-product__label_zip icon-flash"></div>
+								</div>
+							</a>
+							<div class="item-product__body">
+								<div class="item-product__content">
+									<a class="item-product__title" href="#">Gymedge</a>
+									<a class="item-product__category" href="#">Joomla Template</a>
+								</div>
+								<div class="item-product__prices">
+									<div class="item-product__price">$45</div>
+								</div>
+							</div>
+							<div class="item-product__author">
+								<a class="item-product__author-avatar" href="">
+									<img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
+								</a>
+								<a class="item-product__author-name" href="#">Micrsof</a>
+								<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
+									<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
+										<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
+									</a>
+									<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+										<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
+										<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
+										<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
+									</div>
+								</div>
+							</div>
+						</article>
+						<article class="products__item item-product mix category-wordpress" data-order="6">
+							<a class="item-product__image _ibg" href="#">
+								<img src="img/products/06.jpg" alt="Product 1" width="442" height="250">
+							</a>
+							<div class="item-product__body">
+								<div class="item-product__content">
+									<a class="item-product__title" href="#">The Post Grid Pro</a>
+									<a class="item-product__category" href="#">WordPress Plugin</a>
+								</div>
+								<div class="item-product__prices">
+									<div class="item-product__price">$19</div>
+								</div>
+							</div>
+							<div class="item-product__author">
+								<a class="item-product__author-avatar" href="">
+									<img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
+								</a>
+								<a class="item-product__author-name" href="#">Raklouse</a>
+								<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
+									<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
+										<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
+									</a>
+									<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+										<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
+										<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
+										<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
+									</div>
+								</div>
+							</div>
+						</article>
+						<article class="products__item item-product mix category-components category-new" data-order="7">
+							<a class="item-product__image _ibg" href="#">
+								<img src="img/products/07.jpg" alt="Product 1" width="442" height="250">
+								<div class="item-product__labels">
+									<div class="item-product__label item-product__label_zip icon-flash"></div>
+								</div>
+							</a>
+							<div class="item-product__body">
+								<div class="item-product__content">
+									<a class="item-product__title" href="#">Doll Face</a>
+									<a class="item-product__category" href="#">Illsatration</a>
+								</div>
+								<div class="item-product__prices">
+									<div class="item-product__price">$10</div>
+								</div>
+							</div>
+							<div class="item-product__author">
+								<a class="item-product__author-avatar" href="">
+									<img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
+								</a>
+								<a class="item-product__author-name" href="#">Mikc Art</a>
+								<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
+									<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
+										<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
+									</a>
+									<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+										<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
+										<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
+										<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
+									</div>
+								</div>
+							</div>
+						</article>
+						<article class="products__item item-product mix category-psd category-popular" data-order="8">
+							<a class="item-product__image _ibg" href="#">
+								<img src="img/products/08.jpg" alt="Product 1" width="442" height="250">
+							</a>
+							<div class="item-product__body">
+								<div class="item-product__content">
+									<a class="item-product__title" href="#">Designer Mockup</a>
+									<a class="item-product__category" href="#">PsdTemplate</a>
+								</div>
+								<div class="item-product__prices">
+									<div class="item-product__price">$10</div>
+								</div>
+							</div>
+							<div class="item-product__author">
+								<a class="item-product__author-avatar" href="">
+									<img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
+								</a>
+								<a class="item-product__author-name" href="#">ThemeLol</a>
+								<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
+									<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
+										<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
+									</a>
+									<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+										<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
+										<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
+										<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
+									</div>
+								</div>
+							</div>
+						</article>
+						<article class="products__item item-product mix category-component category-new" data-order="1">
+							<a class="item-product__image _ibg" href="#">
+								<img src="img/products/01.jpg" alt="Product 1" width="442" height="250">
+							</a>
+							<div class="item-product__body">
+								<div class="item-product__content">
+									<a class="item-product__title" href="#">Responsive Mobile APP</a>
+									<a class="item-product__category" href="#">Site Template</a>
+								</div>
+								<div class="item-product__prices">
+									<div class="item-product__price">$19</div>
+								</div>
+							</div>
+							<div class="item-product__author">
+								<a class="item-product__author-avatar" href="">
+									<img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
+								</a>
+								<a class="item-product__author-name" href="#">Radiustheme</a>
+								<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
+									<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
+										<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
+									</a>
+									<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+										<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
+										<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
+										<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
+									</div>
+								</div>
+							</div>
+						</article>
+						<article class="products__item item-product mix category-wordpress" data-order="2">
+							<a class="item-product__image _ibg" href="#">
+								<img src="img/products/02.jpg" alt="Product 1" width="442" height="250">
+								<div class="item-product__labels">
+									<div class="item-product__label item-product__label_zip icon-flash"></div>
+								</div>
+							</a>
+							<div class="item-product__body">
+								<div class="item-product__content">
+									<a class="item-product__title" href="#">The Post Grid Pro</a>
+									<a class="item-product__category" href="#">WordPress Plugin</a>
+								</div>
+								<div class="item-product__prices">
+									<div class="item-product__price">$15</div>
+								</div>
+							</div>
+							<div class="item-product__author">
+								<a class="item-product__author-avatar" href="">
+									<img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
+								</a>
+								<a class="item-product__author-name" href="#">PsdBosS</a>
+								<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
+									<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
+										<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
+									</a>
+									<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+										<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
+										<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
+										<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
+									</div>
+								</div>
+							</div>
+						</article>
+						<article class="products__item item-product mix category-wordpress category-new" data-order="3">
+							<a class="item-product__image _ibg" href="#">
+								<img src="img/products/03.jpg" alt="Product 1" width="442" height="250">
+							</a>
+							<div class="item-product__body">
+								<div class="item-product__content">
+									<a class="item-product__title" href="#">Food Menu</a>
+									<a class="item-product__category" href="#">WordPress Plugin</a>
+								</div>
+								<div class="item-product__prices">
+									<div class="item-product__price">$20</div>
+								</div>
+							</div>
+							<div class="item-product__author">
+								<a class="item-product__author-avatar" href="">
+									<img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
+								</a>
+								<a class="item-product__author-name" href="#">Manilip</a>
+								<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
+									<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
+										<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
+									</a>
+									<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+										<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
+										<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
+										<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
+									</div>
+								</div>
+							</div>
+						</article>
+						<article class="products__item item-product mix category-psd category-popular" data-order="4">
+							<a class="item-product__image _ibg" href="#">
+								<img src="img/products/04.jpg" alt="Product 1" width="442" height="250">
+							</a>
+							<div class="item-product__body">
+								<div class="item-product__content">
+									<a class="item-product__title" href="#">Imac Mockup</a>
+									<a class="item-product__category" href="#">Psd Template</a>
+								</div>
+								<div class="item-product__prices">
+									<div class="item-product__price">$12</div>
+								</div>
+							</div>
+							<div class="item-product__author">
+								<a class="item-product__author-avatar" href="">
+									<img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
+								</a>
+								<a class="item-product__author-name" href="#">Lolypop</a>
+								<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
+									<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
+										<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
+									</a>
+									<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+										<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
+										<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
+										<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
+									</div>
+								</div>
+							</div>
+						</article>
+						<article class="products__item item-product mix category-joomla category-new" data-order="5">
+							<a class="item-product__image _ibg" href="#">
+								<img src="img/products/05.jpg" alt="Product 1" width="442" height="250">
+								<div class="item-product__labels">
+									<div class="item-product__label item-product__label_zip icon-flash"></div>
+								</div>
+							</a>
+							<div class="item-product__body">
+								<div class="item-product__content">
+									<a class="item-product__title" href="#">Gymedge</a>
+									<a class="item-product__category" href="#">Joomla Template</a>
+								</div>
+								<div class="item-product__prices">
+									<div class="item-product__price">$45</div>
+								</div>
+							</div>
+							<div class="item-product__author">
+								<a class="item-product__author-avatar" href="">
+									<img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
+								</a>
+								<a class="item-product__author-name" href="#">Micrsof</a>
+								<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
+									<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
+										<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
+									</a>
+									<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+										<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
+										<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
+										<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
+									</div>
+								</div>
+							</div>
+						</article>
+						<article class="products__item item-product mix category-wordpress" data-order="6">
+							<a class="item-product__image _ibg" href="#">
+								<img src="img/products/06.jpg" alt="Product 1" width="442" height="250">
+							</a>
+							<div class="item-product__body">
+								<div class="item-product__content">
+									<a class="item-product__title" href="#">The Post Grid Pro</a>
+									<a class="item-product__category" href="#">WordPress Plugin</a>
+								</div>
+								<div class="item-product__prices">
+									<div class="item-product__price">$19</div>
+								</div>
+							</div>
+							<div class="item-product__author">
+								<a class="item-product__author-avatar" href="">
+									<img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
+								</a>
+								<a class="item-product__author-name" href="#">Raklouse</a>
+								<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
+									<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
+										<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
+									</a>
+									<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+										<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
+										<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
+										<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
+									</div>
+								</div>
+							</div>
+						</article>
+						<article class="products__item item-product mix category-components category-new" data-order="7">
+							<a class="item-product__image _ibg" href="#">
+								<img src="img/products/07.jpg" alt="Product 1" width="442" height="250">
+								<div class="item-product__labels">
+									<div class="item-product__label item-product__label_zip icon-flash"></div>
+								</div>
+							</a>
+							<div class="item-product__body">
+								<div class="item-product__content">
+									<a class="item-product__title" href="#">Doll Face</a>
+									<a class="item-product__category" href="#">Illsatration</a>
+								</div>
+								<div class="item-product__prices">
+									<div class="item-product__price">$10</div>
+								</div>
+							</div>
+							<div class="item-product__author">
+								<a class="item-product__author-avatar" href="">
+									<img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
+								</a>
+								<a class="item-product__author-name" href="#">Mikc Art</a>
+								<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
+									<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
+										<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
+									</a>
+									<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+										<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
+										<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
+										<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
+									</div>
+								</div>
+							</div>
+						</article>
+						<article class="products__item item-product mix category-psd category-popular" data-order="8">
+							<a class="item-product__image _ibg" href="#">
+								<img src="img/products/08.jpg" alt="Product 1" width="442" height="250">
+							</a>
+							<div class="item-product__body">
+								<div class="item-product__content">
+									<a class="item-product__title" href="#">Designer Mockup</a>
+									<a class="item-product__category" href="#">PsdTemplate</a>
+								</div>
+								<div class="item-product__prices">
+									<div class="item-product__price">$10</div>
+								</div>
+							</div>
+							<div class="item-product__author">
+								<a class="item-product__author-avatar" href="">
+									<img src="img/content/user-avatar.jpg" alt="User's Avatar" width="512" height="512">
+								</a>
+								<a class="item-product__author-name" href="#">ThemeLol</a>
+								<div class="item-product__rating star-rating" itemscope itemtype="https://schema.org/Product">
+									<a class="star-rating__group" href="#" style="background-image: url(img/icons/rating.svg)">
+										<div class="star-rating__star" style="background-image: url(img/icons/rating-active.svg)"></div>
+									</a>
+									<div class="star-rating__values" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+										<span class="star-rating__value" itemprop="ratingValue" style="display: none;">5.00</span>
+										<span class="star-rating__best-value" itemprop="bestRating" style="display: none;">5.00</span>
+										<a class="star-rating__votes" href="#" title="Amount of votes">(<span itemprop="reviewCount">05</span>)</a>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="product-slider__controls slider-controls">
+						<div class="slider-controls__dots slider-dots"></div>
+					</div>
+
 				</div>
 			</section>
 			<section class="page__advantages advantages">
@@ -918,8 +899,8 @@
 						Over <span>20,000</span> Author
 						Are Involved Here!
 					</h2>
-					<a href="#" class="author__link">
-						Become A Author
+					<a href="#" class="author__link btn btn--white">
+						Become An Author
 					</a>
 				</div>
 			</section>
@@ -931,7 +912,7 @@
 					<div class="tutorial__inner">
 						<div class="tutorial__item">
 							<div class="tutorial__item-img _ibg">
-								<img src="img/content/tutorial.jpg" alt="">
+								<img src="img/content/tutorial.jpg" alt="Product Image" width="370" height="270">
 							</div>
 							<h3 class="tutorial__item-title">
 								Web Design Tutorials
@@ -939,7 +920,7 @@
 						</div>
 						<div class="tutorial__item">
 							<div class="tutorial__item-img _ibg">
-								<img src="img/content/product.jpg" alt="">
+								<img src="img/content/product.jpg" alt="Product Image" width="829" height="422">
 							</div>
 							<h3 class="tutorial__item-title">
 								WordPress Tutorials
@@ -947,7 +928,7 @@
 						</div>
 						<div class="tutorial__item">
 							<div class="tutorial__item-img _ibg">
-								<img src="img/content/product-item.jpg" alt="">
+								<img src="img/content/product-item.jpg" alt="Product Image" width="442" height="250">
 							</div>
 							<h3 class="tutorial__item-title">
 								HTML & CSS Tutorials
