@@ -8,7 +8,6 @@ import autoprefixer from 'gulp-autoprefixer';
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 const scss = gulpSass(dartSass);
-import sourcemaps from 'gulp-sourcemaps';
 import groupMedia from 'gulp-group-css-media-queries';
 import plumber from 'gulp-plumber';
 import del from 'del';
@@ -34,8 +33,8 @@ const projectName = basename(__dirname);
 
 const srcFolder = "src";
 
-// const env = process.env.NODE_ENV || 'development';
-// const production = env === 'production';
+// const isProd = process.env.NODE_ENV === 'production';
+// const isDev = !isProd;
 
 const path = {
 	build: {
@@ -100,17 +99,18 @@ export const html = () => {
 };
 
 export const css = () => {
-	// return src(path.src.css, {sourcemaps: true})
-	return src(path.src.css, {})
+	return src(path.src.css, {
+		sourcemaps: true,
+	})
 		.pipe(plumber())
-		.pipe(sourcemaps.init())
 		.pipe(
-			scss({
+			scss.sync({  //synchronous rendering is twice as fast as asynchronous rendering.
 				outputStyle: "expanded"
 			}).on('error', scss.logError)
 		)
-		.pipe(sourcemaps.write({ includeContent: false }))
-		.pipe(sourcemaps.init({ loadMaps: true }))
+		.pipe(dest(path.build.css, {
+			sourcemaps: true,
+		}))
 		.pipe(groupMedia())
 		.pipe(
 			autoprefixer({
@@ -125,7 +125,6 @@ export const css = () => {
 				noWebpClass: "._no-webp"
 			}
 		))
-		.pipe(dest(path.build.css))
 		// .pipe(cleanCss({ level: { 1: { specialComments: 0 } } }))
 		.pipe(cleanCss({ level: 2 }))
 		.pipe(
@@ -133,8 +132,9 @@ export const css = () => {
 				extname: ".min.css"
 			})
 		)
-		.pipe(sourcemaps.write('../sourcemaps'))
-		.pipe(dest(path.build.css))
+		.pipe(dest(path.build.css, {
+			sourcemaps: true,
+		}))
 		.pipe(browsersync.stream());
 };
 

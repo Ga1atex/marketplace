@@ -529,6 +529,8 @@
       // display: block;
       display: grid;
       grid-template-columns: prc(270, $md1) 1fr;
+      // @include adaptiveValue("gap", 30, 15);
+      gap: 30px;
     }
   }
 
@@ -941,6 +943,10 @@
 .price-range {
   &__form {
     padding-top: 20px;
+  }
+
+  &__inputs {
+    display: none;
   }
 
   &__btn {

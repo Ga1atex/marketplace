@@ -281,6 +281,8 @@
   }
 
   &__summ {
+    display: flex;
+    flex-wrap: wrap;
     padding: 16px 17px 12px;
     border: 1px solid #e0e0e0;
     border-top: none;
@@ -288,6 +290,7 @@
   }
 
   &__title {
+    flex: 1 1 100%;
     display: flex;
     justify-content: space-between;
     padding-left: 13px;
@@ -299,19 +302,14 @@
   }
 
   &__btn {
+    flex: 1 1 auto;
     font-weight: 700;
-    color: #fff;
     font-size: rem(14);
     padding: 12px 5px;
-    background-color: $green;
-    text-align: center;
-    width: 100px;
-  }
-
-  &__btn-checkout {
-    width: 123px;
-    margin-left: 6px;
-    background-color: $red;
+    // width: 100px;
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
   }
 }
 

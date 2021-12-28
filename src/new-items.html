@@ -6,7 +6,7 @@
 
 <body>
   <div class="wrapper">
-    @@include('_header.html',{})
+    @@include('_header.html',{link: "new"})
     <main class="page">
       @@include('_breadcrumbs.html', {arr: [["Product Page"]]})
       <section class="product-page">
@@ -33,6 +33,10 @@
                 </h3>
                 <form class="price-range__form">
                   <div class="js-range-slider"></div>
+                  <div class="price-range__inputs">
+                    <input class="input" id="price-start" type="text" autocomplete="off" name="form[]">
+                    <input class="input" id="price-end" type="text" autocomplete="off" name="form[]">
+                  </div>
                   <button class="price-range__btn icon-search btn btn--green" type="submit">Search</button>
                 </form>
               </div>
@@ -164,7 +168,7 @@
               </div>
               <div class="product-page__items product-items">
                 <article class="products__item item-product mix category-component category-new" data-order="1">
-                  <a class="item-product__image _ibg" href="#">
+                  <a class="item-product__image _ibg" href="product-details.html">
                     <img src="img/products/01.jpg" alt="Product 1" width="442" height="250">
                   </a>
 

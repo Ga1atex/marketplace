@@ -544,12 +544,11 @@ if (priceSlider) {
 		})
 	});
 
-	/*
 	const priceStart = document.getElementById('price-start');
 	const priceEnd = document.getElementById('price-end');
 	priceStart.addEventListener('change', setPriceValues);
 	priceEnd.addEventListener('change', setPriceValues);
-	*/
+
 
 	function setPriceValues() {
 		let priceStartValue;
